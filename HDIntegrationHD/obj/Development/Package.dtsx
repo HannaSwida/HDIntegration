@@ -1,0 +1,709 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/28/2018 2:17:27 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-L5BCB961"
+  DTS:CreatorName="LAPTOP-L5BCB961\hanna"
+  DTS:DTSID="{D2E8045F-3769-404F-BAA9-141858F88D20}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{5443E41F-99CF-4798-A676-29B1D982A368}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Informacje o Osobach legitymowanych"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5EEA382E-3CCB-46CC-84E9-5394665BB0DD}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Informacje o Osobach legitymowanych"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Informacje o Osobach legitymowanych\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input].Columns[ID]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="ID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Right Input].Columns[ID]"
+                      cachedDataType="date"
+                      cachedName="ID"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje o Osobach legitymowanych\Osoby"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1045"
+              name="Osoby"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Informacje o Osobach legitymowanych\Osoby.Connections[FlatFileConnection]"
+                  connectionManagerID="{7795D0A5-678F-436C-B6D3-25818C87368D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Osoby]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output]"
+                  isSorted="true"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[ID]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[ID]"
+                      length="255"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[ID]"
+                      name="ID"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[Imię]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[Imię]"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[Imię]"
+                      name="Imię"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[Nazwisko]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[Nazwisko]"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[Nazwisko]"
+                      name="Nazwisko"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[PESEL]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[PESEL]"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[PESEL]"
+                      name="PESEL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[NumerTelefonu]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[NumerTelefonu]"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[NumerTelefonu]"
+                      name="NumerTelefonu"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[E-mail]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[E-mail]"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[E-mail]"
+                      name="E-mail"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[ID]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[Imię]"
+                      dataType="wstr"
+                      length="50"
+                      name="Imię" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[Nazwisko]"
+                      dataType="wstr"
+                      length="50"
+                      name="Nazwisko" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[PESEL]"
+                      dataType="wstr"
+                      length="50"
+                      name="PESEL" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[NumerTelefonu]"
+                      dataType="wstr"
+                      length="50"
+                      name="NumerTelefonu" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[E-mail]"
+                      dataType="wstr"
+                      length="50"
+                      name="E-mail" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  isSorted="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1250"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1045"
+              name="Wystawianie mandatów"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Connections[FlatFileConnection]"
+                  connectionManagerID="{8C47707B-22F3-47FF-B5F8-07A0E4942891}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Wystawianie Mandatów]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output]"
+                  isSorted="true"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[ID]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[ID]"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[ID]"
+                      name="ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Powód]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Powód]"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Powód]"
+                      name="Powód"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Kwota]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Kwota]"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Kwota]"
+                      name="Kwota"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Czas Wystawienia]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Czas Wystawienia]"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Czas Wystawienia]"
+                      name="Czas Wystawienia"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Osoba Legitymowana (FK)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Osoba Legitymowana (FK)]"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Osoba Legitymowana (FK)]"
+                      name="Osoba Legitymowana (FK)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Miejsce Zdarzenia (FK)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Miejsce Zdarzenia (FK)]"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Miejsce Zdarzenia (FK)]"
+                      name="Miejsce Zdarzenia (FK)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Funkcjonariusz (FK)]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Funkcjonariusz (FK)]"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Funkcjonariusz (FK)]"
+                      name="Funkcjonariusz (FK)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[ID]"
+                      dataType="date"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Powód]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Powód" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Kwota]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Kwota" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Czas Wystawienia]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Czas Wystawienia" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Osoba Legitymowana (FK)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Osoba Legitymowana (FK)" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Miejsce Zdarzenia (FK)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Miejsce Zdarzenia (FK)" />
+                    <externalMetadataColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Funkcjonariusz (FK)]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Funkcjonariusz (FK)" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  isSorted="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1250"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Informacje o Osobach legitymowanych.Paths[Flat File Source Output]"
+              endId="Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input]"
+              name="Flat File Source Output"
+              startId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Informacje o Osobach legitymowanych.Paths[Flat File Source Output1]"
+              endId="Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Right Input]"
+              name="Flat File Source Output"
+              startId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="261.6,41.6"
+          Id="Package\Informacje o Osobach legitymowanych"
+          TopLeft="37.7142863565562,21.4117650061743" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Informacje o Osobach legitymowanych">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="108,41.6"
+          Id="Package\Informacje o Osobach legitymowanych\Osoby"
+          TopLeft="108.8,24.8" />
+        <NodeLayout
+          Size="189.6,41.6"
+          Id="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów"
+          TopLeft="609.6,29.6" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\Informacje o Osobach legitymowanych\Merge Join"
+          TopLeft="398.4,158.4" />
+        <EdgeLayout
+          Id="Package\Informacje o Osobach legitymowanych.Paths[Flat File Source Output]"
+          TopLeft="162.8,66.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="280.133333333333,92"
+              Start="0,0"
+              End="280.133333333333,84.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5268292682927" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,50.5268292682927"
+                    Point2="0,54.5268292682927"
+                    Point3="4,54.5268292682927" />
+                  <mssgle:LineSegment
+                    End="276.133333333333,54.5268292682927" />
+                  <mssgle:CubicBezierSegment
+                    Point1="276.133333333333,54.5268292682927"
+                    Point2="280.133333333333,54.5268292682927"
+                    Point3="280.133333333333,58.5268292682927" />
+                  <mssgle:LineSegment
+                    End="280.133333333333,84.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o Osobach legitymowanych.Paths[Flat File Source Output1]"
+          TopLeft="704.4,71.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-220.933333333333,87.2"
+              Start="0,0"
+              End="-220.933333333333,79.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.6819512195122" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,47.6819512195122"
+                    Point2="0,51.6819512195122"
+                    Point3="-4,51.6819512195122" />
+                  <mssgle:LineSegment
+                    End="-216.933333333333,51.6819512195122" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-216.933333333333,51.6819512195122"
+                    Point2="-220.933333333333,51.6819512195122"
+                    Point3="-220.933333333333,55.6819512195122" />
+                  <mssgle:LineSegment
+                    End="-220.933333333333,79.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

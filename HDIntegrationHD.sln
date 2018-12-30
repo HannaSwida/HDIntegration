@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "HDIntegrationHD", "HDIntegrationHD\HDIntegrationHD.dtproj", "{D5E39FA3-2037-4D51-AFF3-A63D561DA0BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5E39FA3-2037-4D51-AFF3-A63D561DA0BA}.Development|Default.ActiveCfg = Development
+		{D5E39FA3-2037-4D51-AFF3-A63D561DA0BA}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {617D12D8-2046-4A82-8713-142B6063AFD7}
+	EndGlobalSection
+EndGlobal
