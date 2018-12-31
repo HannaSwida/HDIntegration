@@ -11,22 +11,10 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{002FADC0-F6AD-408A-948D-8E0DF2CADA7A}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{4409CA00-B847-42FF-975C-6FD5F10E4E39}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
-      DTS:CreationName="EXCEL"
-      DTS:DTSID="{F76D4AEF-66CB-447B-A932-55A2BE6DE84C}"
-      DTS:ObjectName="Excel Connection Manager">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\hanna\source\repos\HDIntegrationHD\Bez tytułu 1.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -44,172 +32,126 @@
           version="1">
           <components>
             <component
-              refId="Package\Informacje o Osobach legitymowanych\Excel Destination"
-              componentClassID="Microsoft.ExcelDestination"
-              contactInfo="Excel Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Excel Destination"
-              name="Excel Destination"
-              usesDispositions="true">
+              refId="Package\Informacje o Osobach legitymowanych\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1045"
+              name="Flat File Destination">
               <properties>
                 <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
                 <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">Arkusz1$</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
                 <property
                   dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Informacje o Osobach legitymowanych\Excel Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
+                  refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="{5E88A760-336D-4DD4-9D05-0A859D597766}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DebugOutput]"
+                  name="FlatFileConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Informacje o Osobach legitymowanych\Excel Destination.Inputs[Excel Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
+                  refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input]"
                   hasSideEffects="true"
-                  name="Excel Destination Input">
+                  name="Flat File Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Excel Destination.Inputs[Excel Destination Input].Columns[ID]"
+                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].Columns[ID]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="ID"
                       cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Id]"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Id]"
                       lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[ID]" />
                     <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Excel Destination.Inputs[Excel Destination Input].Columns[Nazwisko]"
+                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].Columns[Nazwisko]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Nazwisko"
-                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Nazwisko]"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Nazwisko]"
                       lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Nazwisko]" />
                     <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Excel Destination.Inputs[Excel Destination Input].Columns[Imię]"
+                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].Columns[Pesel]"
                       cachedDataType="wstr"
                       cachedLength="50"
-                      cachedName="Imię"
-                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Imie ]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Imię]" />
+                      cachedName="Pesel"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Pesel ]"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Pesel]" />
                     <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Excel Destination.Inputs[Excel Destination Input].Columns[PESEL]"
+                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].Columns[Imie]"
                       cachedDataType="wstr"
                       cachedLength="50"
-                      cachedName="PESEL"
-                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Pesel ]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[PESEL]" />
+                      cachedName="Imie"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Imie ]"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Imie]" />
                     <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Excel Destination.Inputs[Excel Destination Input].Columns[NumerTelefonu]"
+                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].Columns[Telefon]"
                       cachedDataType="wstr"
                       cachedLength="50"
-                      cachedName="NumerTelefonu"
-                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Telefon]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[NumerTelefonu]" />
+                      cachedName="Telefon"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Telefon]"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Telefon]" />
                     <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Excel Destination.Inputs[Excel Destination Input].Columns[E-mail]"
+                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].Columns[Mail]"
                       cachedDataType="wstr"
                       cachedLength="50"
-                      cachedName="E-mail"
-                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Email]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[E-mail]" />
+                      cachedName="Mail"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Email]"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Mail]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Id]"
-                      dataType="wstr"
-                      length="255"
+                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Id]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
                       name="Id" />
                     <externalMetadataColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Imie ]"
-                      dataType="wstr"
-                      length="255"
+                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Imie ]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
                       name="Imie " />
                     <externalMetadataColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Nazwisko]"
-                      dataType="wstr"
-                      length="255"
+                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Nazwisko]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
                       name="Nazwisko" />
                     <externalMetadataColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Pesel ]"
-                      dataType="wstr"
-                      length="255"
+                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Pesel ]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
                       name="Pesel " />
                     <externalMetadataColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Telefon]"
-                      dataType="wstr"
-                      length="255"
+                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Telefon]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
                       name="Telefon" />
                     <externalMetadataColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[Email]"
-                      dataType="wstr"
-                      length="255"
+                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Email]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
                       name="Email" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
-              <outputs>
-                <output
-                  refId="Package\Informacje o Osobach legitymowanych\Excel Destination.Outputs[Excel Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Excel Destination Error Output"
-                  synchronousInputId="Package\Informacje o Osobach legitymowanych\Excel Destination.Inputs[Excel Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Excel Destination.Outputs[Excel Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
             </component>
             <component
               refId="Package\Informacje o Osobach legitymowanych\Merge Join"
@@ -247,16 +189,10 @@
                       refId="Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input].Columns[ID]"
                       cachedCodepage="1250"
                       cachedDataType="str"
-                      cachedLength="255"
+                      cachedLength="50"
                       cachedName="ID"
                       cachedSortKeyPosition="1"
                       lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[ID]" />
-                    <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input].Columns[Imię]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Imię"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[Imię]" />
                     <inputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input].Columns[Nazwisko]"
                       cachedDataType="wstr"
@@ -264,23 +200,29 @@
                       cachedName="Nazwisko"
                       lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[Nazwisko]" />
                     <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input].Columns[PESEL]"
+                      refId="Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input].Columns[Pesel]"
                       cachedDataType="wstr"
                       cachedLength="50"
-                      cachedName="PESEL"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[PESEL]" />
+                      cachedName="Pesel"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[Pesel]" />
                     <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input].Columns[NumerTelefonu]"
+                      refId="Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input].Columns[Imie]"
                       cachedDataType="wstr"
                       cachedLength="50"
-                      cachedName="NumerTelefonu"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[NumerTelefonu]" />
+                      cachedName="Imie"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[Imie]" />
                     <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input].Columns[E-mail]"
+                      refId="Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input].Columns[Telefon]"
                       cachedDataType="wstr"
                       cachedLength="50"
-                      cachedName="E-mail"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[E-mail]" />
+                      cachedName="Telefon"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[Telefon]" />
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input].Columns[Mail]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Mail"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[Mail]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -324,20 +266,6 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Imię]"
-                      dataType="wstr"
-                      length="50"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Imię]"
-                      name="Imię">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input].Columns[Imię]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Nazwisko]"
                       dataType="wstr"
                       length="50"
@@ -352,45 +280,59 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[PESEL]"
+                      refId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Pesel]"
                       dataType="wstr"
                       length="50"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[PESEL]"
-                      name="PESEL">
+                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Pesel]"
+                      name="Pesel">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input].Columns[PESEL]}</property>
+                          name="InputColumnID">#{Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input].Columns[Pesel]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[NumerTelefonu]"
+                      refId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Imie]"
                       dataType="wstr"
                       length="50"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[NumerTelefonu]"
-                      name="NumerTelefonu">
+                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Imie]"
+                      name="Imie">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input].Columns[NumerTelefonu]}</property>
+                          name="InputColumnID">#{Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input].Columns[Imie]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[E-mail]"
+                      refId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Telefon]"
                       dataType="wstr"
                       length="50"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[E-mail]"
-                      name="E-mail">
+                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Telefon]"
+                      name="Telefon">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input].Columns[E-mail]}</property>
+                          name="InputColumnID">#{Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input].Columns[Telefon]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Mail]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Mail]"
+                      name="Mail">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input].Columns[Mail]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -437,7 +379,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[ID]"
-                      length="255"
+                      length="50"
                       lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[ID]"
                       name="ID"
                       sortKeyPosition="1"
@@ -454,14 +396,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[Imię]"
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[Imie]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[Imię]"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[Imie]"
                       length="50"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[Imię]"
-                      name="Imię"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[Imie]"
+                      name="Imie"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -496,14 +438,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[PESEL]"
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[Pesel]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[PESEL]"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[Pesel]"
                       length="50"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[PESEL]"
-                      name="PESEL"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[Pesel]"
+                      name="Pesel"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -517,14 +459,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[NumerTelefonu]"
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[Telefon]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[NumerTelefonu]"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[Telefon]"
                       length="50"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[NumerTelefonu]"
-                      name="NumerTelefonu"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[Telefon]"
+                      name="Telefon"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -538,14 +480,14 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[E-mail]"
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[Mail]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[E-mail]"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[Mail]"
                       length="50"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[E-mail]"
-                      name="E-mail"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[Mail]"
+                      name="Mail"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -565,33 +507,33 @@
                       refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[ID]"
                       codePage="1250"
                       dataType="str"
-                      length="255"
+                      length="50"
                       name="ID" />
                     <externalMetadataColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[Imię]"
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[Imie]"
                       dataType="wstr"
                       length="50"
-                      name="Imię" />
+                      name="Imie" />
                     <externalMetadataColumn
                       refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[Nazwisko]"
                       dataType="wstr"
                       length="50"
                       name="Nazwisko" />
                     <externalMetadataColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[PESEL]"
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[Pesel]"
                       dataType="wstr"
                       length="50"
-                      name="PESEL" />
+                      name="Pesel" />
                     <externalMetadataColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[NumerTelefonu]"
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[Telefon]"
                       dataType="wstr"
                       length="50"
-                      name="NumerTelefonu" />
+                      name="Telefon" />
                     <externalMetadataColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[E-mail]"
+                      refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[Mail]"
                       dataType="wstr"
                       length="50"
-                      name="E-mail" />
+                      name="Mail" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -657,10 +599,12 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[ID]"
-                      dataType="date"
+                      codePage="1250"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[ID]"
+                      length="50"
                       lineageId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[ID]"
                       name="ID"
                       truncationRowDisposition="FailComponent">
@@ -813,7 +757,9 @@
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[ID]"
-                      dataType="date"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
                       name="ID" />
                     <externalMetadataColumn
                       refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Powód]"
@@ -896,7 +842,7 @@
               startId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output]" />
             <path
               refId="Package\Informacje o Osobach legitymowanych.Paths[Merge Join Output]"
-              endId="Package\Informacje o Osobach legitymowanych\Excel Destination.Inputs[Excel Destination Input]"
+              endId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input]"
               name="Merge Join Output"
               startId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output]" />
           </paths>
@@ -917,7 +863,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="261.6,41.6"
+          Size="261.333333333334,41.3333333333334"
           Id="Package\Informacje o Osobach legitymowanych"
           TopLeft="42.2857150058358,28.7529415797198" />
       </GraphLayout>
@@ -929,77 +875,47 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="108,41.6"
+          Size="129.333333333334,41.3333333333334"
+          Id="Package\Informacje o Osobach legitymowanych\Merge Join"
+          TopLeft="336,128" />
+        <NodeLayout
+          Size="109.333333333334,42.6666666666667"
           Id="Package\Informacje o Osobach legitymowanych\Osoby"
           TopLeft="108.8,24.8" />
         <NodeLayout
-          Size="189.6,41.6"
+          Size="189.333333333334,41.3333333333334"
           Id="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów"
           TopLeft="609.6,29.6" />
         <NodeLayout
-          Size="129.6,41.6"
-          Id="Package\Informacje o Osobach legitymowanych\Merge Join"
-          TopLeft="336,128" />
-        <EdgeLayout
-          Id="Package\Informacje o Osobach legitymowanych.Paths[Flat File Source Output]"
-          TopLeft="162.8,66.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="217.733333333333,61.6"
-              Start="0,0"
-              End="217.733333333333,54.1">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.5092682926829" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.5092682926829"
-                    Point2="0,36.5092682926829"
-                    Point3="4,36.5092682926829" />
-                  <mssgle:LineSegment
-                    End="213.733333333333,36.5092682926829" />
-                  <mssgle:CubicBezierSegment
-                    Point1="213.733333333333,36.5092682926829"
-                    Point2="217.733333333333,36.5092682926829"
-                    Point3="217.733333333333,40.5092682926829" />
-                  <mssgle:LineSegment
-                    End="217.733333333333,54.1" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="172,42.6666666666667"
+          Id="Package\Informacje o Osobach legitymowanych\Flat File Destination"
+          TopLeft="378.472216582547,255.666662094991" />
         <EdgeLayout
           Id="Package\Informacje o Osobach legitymowanych.Paths[Flat File Source Output1]"
-          TopLeft="704.4,71.2">
+          TopLeft="704.266666666667,70.9333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-283.333333333333,56.8"
+              EndConnector="-283.377777777778,57.0666666666666"
               Start="0,0"
-              End="-283.333333333333,49.3">
+              End="-283.377777777778,49.5666666666666">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.6643902439024" />
+                    End="0,29.8215885947047" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.6643902439024"
-                    Point2="0,33.6643902439024"
-                    Point3="-4,33.6643902439024" />
+                    Point1="0,29.8215885947047"
+                    Point2="0,33.8215885947047"
+                    Point3="-4,33.8215885947047" />
                   <mssgle:LineSegment
-                    End="-279.333333333333,33.6643902439024" />
+                    End="-279.377777777778,33.8215885947047" />
                   <mssgle:CubicBezierSegment
-                    Point1="-279.333333333333,33.6643902439024"
-                    Point2="-283.333333333333,33.6643902439024"
-                    Point3="-283.333333333333,37.6643902439024" />
+                    Point1="-279.377777777778,33.8215885947047"
+                    Point2="-283.377777777778,33.8215885947047"
+                    Point3="-283.377777777778,37.8215885947047" />
                   <mssgle:LineSegment
-                    End="-283.333333333333,49.3" />
+                    End="-283.377777777778,49.5666666666666" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1008,36 +924,66 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="159.2,41.6"
-          Id="Package\Informacje o Osobach legitymowanych\Excel Destination"
-          TopLeft="453.6,260.8" />
         <EdgeLayout
-          Id="Package\Informacje o Osobach legitymowanych.Paths[Merge Join Output]"
-          TopLeft="400.8,169.6">
+          Id="Package\Informacje o Osobach legitymowanych.Paths[Flat File Source Output]"
+          TopLeft="163.466666666667,67.4666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="132.4,91.2"
+              EndConnector="216.977777777778,60.5333333333333"
               Start="0,0"
-              End="132.4,83.7">
+              End="216.977777777778,53.0333333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.6" />
+                    End="0,31.8761710794297" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,41.6"
-                    Point2="0,45.6"
-                    Point3="4,45.6" />
+                    Point1="0,31.8761710794297"
+                    Point2="0,35.8761710794297"
+                    Point3="4,35.8761710794297" />
                   <mssgle:LineSegment
-                    End="128.4,45.6" />
+                    End="212.977777777778,35.8761710794297" />
                   <mssgle:CubicBezierSegment
-                    Point1="128.4,45.6"
-                    Point2="132.4,45.6"
-                    Point3="132.4,49.6" />
+                    Point1="212.977777777778,35.8761710794297"
+                    Point2="216.977777777778,35.8761710794297"
+                    Point3="216.977777777778,39.8761710794297" />
                   <mssgle:LineSegment
-                    End="132.4,83.7" />
+                    End="216.977777777778,53.0333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o Osobach legitymowanych.Paths[Merge Join Output]"
+          TopLeft="400.666666666667,169.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63.80554991588,86.3333287616572"
+              Start="0,0"
+              End="63.80554991588,78.8333287616572">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.1666643808286" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.1666643808286"
+                    Point2="0,43.1666643808286"
+                    Point3="4,43.1666643808286" />
+                  <mssgle:LineSegment
+                    End="59.80554991588,43.1666643808286" />
+                  <mssgle:CubicBezierSegment
+                    Point1="59.80554991588,43.1666643808286"
+                    Point2="63.80554991588,43.1666643808286"
+                    Point3="63.80554991588,47.1666643808286" />
+                  <mssgle:LineSegment
+                    End="63.80554991588,78.8333287616572" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1049,18 +995,5 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Informacje o Osobach legitymowanych\Excel Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

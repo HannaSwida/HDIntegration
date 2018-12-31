@@ -1,17 +1,18 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="Wystawianie Mandatów"
-  DTS:DTSID="{8C47707B-22F3-47FF-B5F8-07A0E4942891}"
+  DTS:ObjectName="DebugOutput"
+  DTS:DTSID="{5E88A760-336D-4DD4-9D05-0A859D597766}"
   DTS:CreationName="FLATFILE">
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:Format="Delimited"
       DTS:LocaleID="1045"
       DTS:HeaderRowDelimiter="_x000D__x000A_"
+      DTS:ColumnNamesInFirstDataRow="True"
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x003C_none_x003E_"
       DTS:CodePage="1250"
-      DTS:ConnectionString="C:\Users\Felo\Desktop\HD\HDIntegration\WystawienieMandatu.bulk">
+      DTS:ConnectionString="C:\Users\Felo\Desktop\HD\HDIntegration\Bez tytułu 1.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -19,8 +20,8 @@
           DTS:MaximumWidth="50"
           DTS:DataType="129"
           DTS:TextQualified="True"
-          DTS:ObjectName="ID"
-          DTS:DTSID="{570C19BE-8FAF-44AE-BCD7-B966D79A5702}"
+          DTS:ObjectName="Id"
+          DTS:DTSID="{B74DDC31-36E0-44C8-B3FD-4A73C0C73053}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -28,8 +29,8 @@
           DTS:MaximumWidth="50"
           DTS:DataType="129"
           DTS:TextQualified="True"
-          DTS:ObjectName="Powód"
-          DTS:DTSID="{D4B34A6A-FB2D-402C-8F38-79A7941F0D41}"
+          DTS:ObjectName="Imie "
+          DTS:DTSID="{71BD5755-5EA4-4C9D-B93F-0AF4A8D3D319}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -37,8 +38,8 @@
           DTS:MaximumWidth="50"
           DTS:DataType="129"
           DTS:TextQualified="True"
-          DTS:ObjectName="Kwota"
-          DTS:DTSID="{781D9DA1-B582-4B01-8F1D-DF51A17A1FAF}"
+          DTS:ObjectName="Nazwisko"
+          DTS:DTSID="{225160C8-F9FD-4312-9C80-2D17656E89E1}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -46,8 +47,8 @@
           DTS:MaximumWidth="50"
           DTS:DataType="129"
           DTS:TextQualified="True"
-          DTS:ObjectName="Czas Wystawienia"
-          DTS:DTSID="{733A59DF-EAF6-4277-BF67-25F30384AC4E}"
+          DTS:ObjectName="Pesel "
+          DTS:DTSID="{7167751D-4DC6-4AA8-A7AF-431B73E3B33C}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -55,17 +56,8 @@
           DTS:MaximumWidth="50"
           DTS:DataType="129"
           DTS:TextQualified="True"
-          DTS:ObjectName="Osoba Legitymowana (FK)"
-          DTS:DTSID="{7D2C3901-D070-4884-8C68-EA098817157B}"
-          DTS:CreationName="" />
-        <DTS:FlatFileColumn
-          DTS:ColumnType="Delimited"
-          DTS:ColumnDelimiter="_x007C_"
-          DTS:MaximumWidth="50"
-          DTS:DataType="129"
-          DTS:TextQualified="True"
-          DTS:ObjectName="Miejsce Zdarzenia (FK)"
-          DTS:DTSID="{63A3FE7C-EDFE-4BA3-8AAB-92ABDCE6C018}"
+          DTS:ObjectName="Telefon"
+          DTS:DTSID="{5518E0F8-290A-4F0D-A5AE-83CD0EE83E19}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -73,8 +65,8 @@
           DTS:MaximumWidth="50"
           DTS:DataType="129"
           DTS:TextQualified="True"
-          DTS:ObjectName="Funkcjonariusz (FK)"
-          DTS:DTSID="{3D3FD766-2BDD-4B6C-8786-1167CF7CEE8B}"
+          DTS:ObjectName="Email"
+          DTS:DTSID="{86742957-78F4-4758-82C8-773B818092B5}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
