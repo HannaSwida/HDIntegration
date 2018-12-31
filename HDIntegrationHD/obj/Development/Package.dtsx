@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{4409CA00-B847-42FF-975C-6FD5F10E4E39}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{D35C4B4F-581D-46AD-92D4-F465A5AB204C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -31,6 +31,94 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Informacje o Osobach legitymowanych\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Informacje o Osobach legitymowanych\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Derived Column.Inputs[Derived Column Input].Columns[Nazwisko]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Nazwisko"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Nazwisko]" />
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Derived Column.Inputs[Derived Column Input].Columns[Imie]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Imie"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Imie]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Informacje o Osobach legitymowanych\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Output].Columns[Imię i Nazwisko]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="101"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Output].Columns[Imię i Nazwisko]"
+                      name="Imię i Nazwisko"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Imie]} + " " + #{Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Nazwisko]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">Imie + " " + Nazwisko</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Informacje o Osobach legitymowanych\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Informacje o Osobach legitymowanych\Flat File Destination"
               componentClassID="Microsoft.FlatFileDestination"
@@ -90,13 +178,6 @@
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Pesel ]"
                       lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Pesel]" />
                     <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].Columns[Imie]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Imie"
-                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Imie ]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Imie]" />
-                    <inputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].Columns[Telefon]"
                       cachedDataType="wstr"
                       cachedLength="50"
@@ -110,6 +191,13 @@
                       cachedName="Mail"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Email]"
                       lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Mail]" />
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].Columns[Imię i Nazwisko]"
+                      cachedDataType="wstr"
+                      cachedLength="101"
+                      cachedName="Imię i Nazwisko"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Imie ]"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Output].Columns[Imię i Nazwisko]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -831,6 +919,11 @@
           </components>
           <paths>
             <path
+              refId="Package\Informacje o Osobach legitymowanych.Paths[Derived Column Output]"
+              endId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Output]" />
+            <path
               refId="Package\Informacje o Osobach legitymowanych.Paths[Flat File Source Output]"
               endId="Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input]"
               name="Flat File Source Output"
@@ -842,7 +935,7 @@
               startId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output]" />
             <path
               refId="Package\Informacje o Osobach legitymowanych.Paths[Merge Join Output]"
-              endId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input]"
+              endId="Package\Informacje o Osobach legitymowanych\Derived Column.Inputs[Derived Column Input]"
               name="Merge Join Output"
               startId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output]" />
           </paths>
@@ -873,7 +966,7 @@
     design-time-name="Package\Informacje o Osobach legitymowanych">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="129.333333333334,41.3333333333334"
           Id="Package\Informacje o Osobach legitymowanych\Merge Join"
@@ -958,32 +1051,70 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Informacje o Osobach legitymowanych\Derived Column"
+          TopLeft="155.833331011236,224.399996869564" />
         <EdgeLayout
           Id="Package\Informacje o Osobach legitymowanych.Paths[Merge Join Output]"
           TopLeft="400.666666666667,169.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="63.80554991588,86.3333287616572"
+              EndConnector="-167.500002322098,55.0666635362308"
               Start="0,0"
-              End="63.80554991588,78.8333287616572">
+              End="-167.500002322098,47.5666635362308">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.1666643808286" />
+                    End="0,23.5333317681154" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,39.1666643808286"
-                    Point2="0,43.1666643808286"
-                    Point3="4,43.1666643808286" />
+                    Point1="0,23.5333317681154"
+                    Point2="0,27.5333317681154"
+                    Point3="-4,27.5333317681154" />
                   <mssgle:LineSegment
-                    End="59.80554991588,43.1666643808286" />
+                    End="-163.500002322098,27.5333317681154" />
                   <mssgle:CubicBezierSegment
-                    Point1="59.80554991588,43.1666643808286"
-                    Point2="63.80554991588,43.1666643808286"
-                    Point3="63.80554991588,47.1666643808286" />
+                    Point1="-163.500002322098,27.5333317681154"
+                    Point2="-167.500002322098,27.5333317681154"
+                    Point3="-167.500002322098,31.5333317681154" />
                   <mssgle:LineSegment
-                    End="63.80554991588,78.8333287616572" />
+                    End="-167.500002322098,47.5666635362308" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o Osobach legitymowanych.Paths[Derived Column Output]"
+          TopLeft="310.499997677902,245.733330202897">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="67.9722189046445,31.2666652254268"
+              Start="0,0"
+              End="60.4722189046445,31.2666652254268">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="29.9861094523223,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="29.9861094523223,0"
+                    Point2="33.9861094523223,0"
+                    Point3="33.9861094523223,4" />
+                  <mssgle:LineSegment
+                    End="33.9861094523223,27.2666652254268" />
+                  <mssgle:CubicBezierSegment
+                    Point1="33.9861094523223,27.2666652254268"
+                    Point2="33.9861094523223,31.2666652254268"
+                    Point3="37.9861094523223,31.2666652254268" />
+                  <mssgle:LineSegment
+                    End="60.4722189046445,31.2666652254268" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
