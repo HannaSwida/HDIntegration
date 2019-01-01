@@ -17,64 +17,64 @@
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x007C_"
           DTS:MaximumWidth="50"
-          DTS:DataType="129"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="ID"
-          DTS:DTSID="{570C19BE-8FAF-44AE-BCD7-B966D79A5702}"
+          DTS:DTSID="{7BBFF76A-4258-4CF3-8F8B-17952ADBA5DE}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x007C_"
           DTS:MaximumWidth="50"
-          DTS:DataType="129"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Powód"
-          DTS:DTSID="{D4B34A6A-FB2D-402C-8F38-79A7941F0D41}"
+          DTS:DTSID="{A708778E-9323-4368-8E60-0F82C76BCF66}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x007C_"
           DTS:MaximumWidth="50"
-          DTS:DataType="129"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Kwota"
-          DTS:DTSID="{781D9DA1-B582-4B01-8F1D-DF51A17A1FAF}"
+          DTS:DTSID="{83A74A49-1E36-4690-97CB-8CCF80AFCF60}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x007C_"
           DTS:MaximumWidth="50"
-          DTS:DataType="129"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Czas Wystawienia"
-          DTS:DTSID="{733A59DF-EAF6-4277-BF67-25F30384AC4E}"
+          DTS:DTSID="{6958FCDC-4571-43D8-92A1-0C07CC08504D}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x007C_"
           DTS:MaximumWidth="50"
-          DTS:DataType="129"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Osoba Legitymowana (FK)"
-          DTS:DTSID="{7D2C3901-D070-4884-8C68-EA098817157B}"
+          DTS:DTSID="{6593322A-F71E-4008-B72E-35B7BFB452F9}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x007C_"
           DTS:MaximumWidth="50"
-          DTS:DataType="129"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Miejsce Zdarzenia (FK)"
-          DTS:DTSID="{63A3FE7C-EDFE-4BA3-8AAB-92ABDCE6C018}"
+          DTS:DTSID="{E58D8275-3ABC-4D89-99EA-D86B3F7AC752}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x000D__x000A_"
           DTS:MaximumWidth="50"
-          DTS:DataType="129"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Funkcjonariusz (FK)"
-          DTS:DTSID="{3D3FD766-2BDD-4B6C-8786-1167CF7CEE8B}"
+          DTS:DTSID="{68789A3D-EE5F-4F02-8FDC-BB32789D0E0C}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

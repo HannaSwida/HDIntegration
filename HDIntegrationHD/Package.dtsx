@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{F41DCCD3-1C17-49A6-AFAF-4C5842671D07}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{69205AC9-F7ED-469D-9F66-161678D5F8AF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -31,6 +31,253 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Informacje o Osobach legitymowanych\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Informacje o Osobach legitymowanych\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Data Conversion.Inputs[Data Conversion Input].Columns[ID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[ID]" />
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Data Conversion.Inputs[Data Conversion Input].Columns[Nazwisko]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Nazwisko"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Nazwisko]" />
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Data Conversion.Inputs[Data Conversion Input].Columns[Pesel]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Pesel"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Pesel]" />
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Data Conversion.Inputs[Data Conversion Input].Columns[Imie]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Imie"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Imie]" />
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Data Conversion.Inputs[Data Conversion Input].Columns[Telefon]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Telefon"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Telefon]" />
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Data Conversion.Inputs[Data Conversion Input].Columns[Mail]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Mail"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Mail]" />
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Data Conversion.Inputs[Data Conversion Input].Columns[Imie i Nazwisko]"
+                      cachedDataType="wstr"
+                      cachedLength="101"
+                      cachedName="Imie i Nazwisko"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Output].Columns[Imie i Nazwisko]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Informacje o Osobach legitymowanych\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID]"
+                      name="Copy of ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[ID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Nazwisko]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Nazwisko]"
+                      name="Copy of Nazwisko"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Nazwisko]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Pesel]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Pesel]"
+                      name="Copy of Pesel"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Pesel]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Imie]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Imie]"
+                      name="Copy of Imie"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Imie]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Telefon]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Telefon]"
+                      name="Copy of Telefon"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Telefon]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Mail]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Mail]"
+                      name="Copy of Mail"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Mail]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Imie i Nazwisko]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="101"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Imie i Nazwisko]"
+                      name="Copy of Imie i Nazwisko"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Output].Columns[Imie i Nazwisko]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Informacje o Osobach legitymowanych\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Informacje o Osobach legitymowanych\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
@@ -69,13 +316,13 @@
                   synchronousInputId="Package\Informacje o Osobach legitymowanych\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Output].Columns[Imię i Nazwisko]"
+                      refId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Output].Columns[Imie i Nazwisko]"
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="101"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Output].Columns[Imię i Nazwisko]"
-                      name="Imię i Nazwisko"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Output].Columns[Imie i Nazwisko]"
+                      name="Imie i Nazwisko"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -272,128 +519,6 @@
               </outputs>
             </component>
             <component
-              refId="Package\Informacje o Osobach legitymowanych\Flat File Destination"
-              componentClassID="Microsoft.FlatFileDestination"
-              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
-              description="Flat File Destination"
-              localeId="1045"
-              name="Flat File Destination">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Specifies whether the data will overwrite or append to the destination file."
-                  name="Overwrite">true</property>
-                <property
-                  dataType="System.Null"
-                  description="Specifies the text to write to the destination file before any data is written."
-                  expressionType="Notify"
-                  name="Header" />
-                <property
-                  dataType="System.Boolean"
-                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
-                  name="EscapeQualifier">false</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Connections[FlatFileConnection]"
-                  connectionManagerID="{5E88A760-336D-4DD4-9D05-0A859D597766}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DebugOutput]"
-                  name="FlatFileConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input]"
-                  hasSideEffects="true"
-                  name="Flat File Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].Columns[ID]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="ID"
-                      cachedSortKeyPosition="1"
-                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Id]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[ID]" />
-                    <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].Columns[Nazwisko]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Nazwisko"
-                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Nazwisko]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Nazwisko]" />
-                    <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].Columns[Pesel]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Pesel"
-                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Pesel ]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Pesel]" />
-                    <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].Columns[Telefon]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Telefon"
-                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Telefon]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Telefon]" />
-                    <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].Columns[Mail]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Mail"
-                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Email]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Mail]" />
-                    <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].Columns[Imię i Nazwisko]"
-                      cachedDataType="wstr"
-                      cachedLength="101"
-                      cachedName="Imię i Nazwisko"
-                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Imie ]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Output].Columns[Imię i Nazwisko]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Id]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="Id" />
-                    <externalMetadataColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Imie ]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="Imie " />
-                    <externalMetadataColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Nazwisko]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="Nazwisko" />
-                    <externalMetadataColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Pesel ]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="Pesel " />
-                    <externalMetadataColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Telefon]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="Telefon" />
-                    <externalMetadataColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Email]"
-                      codePage="1250"
-                      dataType="str"
-                      length="50"
-                      name="Email" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-            </component>
-            <component
               refId="Package\Informacje o Osobach legitymowanych\Insert Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -466,33 +591,29 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].Columns[Imię i Nazwisko]"
-                      cachedDataType="wstr"
+                      refId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of Imie i Nazwisko]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
                       cachedLength="101"
-                      cachedName="Imię i Nazwisko"
+                      cachedName="Copy of Imie i Nazwisko"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Imie_nazwisko]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Imię i Nazwisko]" />
+                      lineageId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Imie i Nazwisko]" />
                     <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].Columns[Pesel]"
-                      cachedDataType="wstr"
+                      refId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of Telefon]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Pesel"
-                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pesel]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Pesel]" />
-                    <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].Columns[Telefon]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Telefon"
+                      cachedName="Copy of Telefon"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Numer_telefonu]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Telefon]" />
+                      lineageId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Telefon]" />
                     <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].Columns[Mail]"
-                      cachedDataType="wstr"
+                      refId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of Mail]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Mail"
+                      cachedName="Copy of Mail"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[E_mail]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Mail]" />
+                      lineageId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Mail]" />
                     <inputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].Columns[data_wstawienia]"
                       cachedCodepage="1250"
@@ -502,13 +623,21 @@
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[data_wstawienia]"
                       lineageId="Package\Informacje o Osobach legitymowanych\Derived Column 2.Outputs[Derived Column Output].Columns[data_wstawienia]" />
                     <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].Columns[ID]"
+                      refId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of ID]"
                       cachedCodepage="1250"
                       cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="ID"
+                      cachedLength="50"
+                      cachedName="Copy of ID"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[klucz_biznesowy]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[ID]" />
+                      lineageId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of ID]" />
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].Columns[Copy of Pesel]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Pesel"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Pesel]"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Pesel]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -547,21 +676,15 @@
                       length="191"
                       name="data_wstawienia" />
                     <externalMetadataColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[data_aktualizacji]"
-                      codePage="1250"
-                      dataType="str"
-                      length="191"
-                      name="data_aktualizacji" />
-                    <externalMetadataColumn
                       refId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[klucz_biznesowy]"
                       codePage="1250"
                       dataType="str"
                       length="191"
                       name="klucz_biznesowy" />
                     <externalMetadataColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[test]"
+                      refId="Package\Informacje o Osobach legitymowanych\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[czy_aktualne]"
                       dataType="bool"
-                      name="test" />
+                      name="czy_aktualne" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -624,8 +747,7 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Left Input].Columns[ID]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
+                      cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="ID"
                       cachedSortKeyPosition="1"
@@ -670,8 +792,7 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Merge Join.Inputs[Merge Join Right Input].Columns[Osoba Legitymowana (FK)]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
+                      cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Osoba Legitymowana (FK)"
                       cachedSortKeyPosition="1"
@@ -688,9 +809,8 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[ID]"
-                      codePage="1250"
-                      dataType="str"
-                      length="255"
+                      dataType="wstr"
+                      length="50"
                       lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[ID]"
                       name="ID"
                       sortKeyPosition="1">
@@ -818,14 +938,13 @@
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\OLE DB Command.Inputs[OLE DB Command Input].Columns[ID]"
+                      refId="Package\Informacje o Osobach legitymowanych\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of ID]"
                       cachedCodepage="1250"
                       cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="ID"
-                      cachedSortKeyPosition="1"
+                      cachedLength="50"
+                      cachedName="Copy of ID"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[ID]" />
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID]" />
                     <inputColumn
                       refId="Package\Informacje o Osobach legitymowanych\OLE DB Command.Inputs[OLE DB Command Input].Columns[data_wstawienia]"
                       cachedCodepage="1250"
@@ -916,7 +1035,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[Osoba_legitymowana] SET [E_mail] = ?,[Imie_nazwisko] = ?,[Numer_telefonu] = ?,[Pesel] = ?,[test] = '0' WHERE [klucz_biznesowy] = ? AND [test] = '1'</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[Osoba_legitymowana] SET [E_mail] = ?,[Imie_nazwisko] = ?,[Numer_telefonu] = ?,[Pesel] = ?,[czy_aktualne] = '0' WHERE [klucz_biznesowy] = ? AND [czy_aktualne] = '1'</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -939,42 +1058,45 @@
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Mail]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Mail"
-                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Mail]" />
-                    <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Imię i Nazwisko]"
-                      cachedDataType="wstr"
-                      cachedLength="101"
-                      cachedName="Imię i Nazwisko"
-                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Output].Columns[Imię i Nazwisko]" />
-                    <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID]"
+                      refId="Package\Informacje o Osobach legitymowanych\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Copy of Mail]"
                       cachedCodepage="1250"
                       cachedDataType="str"
-                      cachedLength="255"
-                      cachedName="ID"
-                      cachedSortKeyPosition="1"
+                      cachedLength="50"
+                      cachedName="Copy of Mail"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Mail]" />
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Copy of Imie i Nazwisko]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="101"
+                      cachedName="Copy of Imie i Nazwisko"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Imie i Nazwisko]" />
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Copy of ID]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of ID"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[ID]" />
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID]" />
                     <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Telefon]"
-                      cachedDataType="wstr"
+                      refId="Package\Informacje o Osobach legitymowanych\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Copy of Telefon]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Telefon"
+                      cachedName="Copy of Telefon"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Telefon]" />
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Telefon]" />
                     <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Pesel]"
-                      cachedDataType="wstr"
+                      refId="Package\Informacje o Osobach legitymowanych\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Copy of Pesel]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
                       cachedLength="50"
-                      cachedName="Pesel"
+                      cachedName="Copy of Pesel"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Pesel]" />
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Pesel]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1112,8 +1234,7 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].Columns[ID]"
-                      codePage="1250"
-                      dataType="str"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[ID]"
@@ -1243,8 +1364,7 @@
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Informacje o Osobach legitymowanych\Osoby.Outputs[Flat File Source Output].ExternalColumns[ID]"
-                      codePage="1250"
-                      dataType="str"
+                      dataType="wstr"
                       length="50"
                       name="ID" />
                     <externalMetadataColumn
@@ -1315,7 +1435,7 @@
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [E_mail], [Imie_nazwisko], [klucz_biznesowy], [Numer_telefonu], [Pesel],[data_wstawienia],[test] FROM [dbo].[Osoba_legitymowana]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [E_mail], [Imie_nazwisko], [klucz_biznesowy], [Numer_telefonu], [Pesel],[data_wstawienia],[czy_aktualne] FROM [dbo].[Osoba_legitymowana]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -1331,7 +1451,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the column name for the inferred member."
-                  name="InferredMemberIndicator">test</property>
+                  name="InferredMemberIndicator">czy_aktualne</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether inferred member updates are detected."
@@ -1378,12 +1498,12 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Imię i Nazwisko]"
+                      refId="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Imie i Nazwisko]"
                       cachedDataType="wstr"
                       cachedLength="101"
-                      cachedName="Imię i Nazwisko"
+                      cachedName="Imie i Nazwisko"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Imie_nazwisko]"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Output].Columns[Imię i Nazwisko]">
+                      lineageId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Output].Columns[Imie i Nazwisko]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1393,9 +1513,8 @@
                     </inputColumn>
                     <inputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[ID]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="255"
+                      cachedDataType="wstr"
+                      cachedLength="50"
                       cachedName="ID"
                       cachedSortKeyPosition="1"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[klucz_biznesowy]"
@@ -1428,6 +1547,81 @@
                       cachedName="Pesel"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Pesel]"
                       lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[Pesel]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of Mail]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Mail"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[E_mail]"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Mail]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of Imie i Nazwisko]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="101"
+                      cachedName="Copy of Imie i Nazwisko"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Imie_nazwisko]"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Imie i Nazwisko]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of ID]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of ID"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[klucz_biznesowy]"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of Telefon]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Telefon"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Numer_telefonu]"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Telefon]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Copy of Pesel]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Pesel"
+                      externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Pesel]"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Pesel]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1475,9 +1669,9 @@
                       length="191"
                       name="data_wstawienia" />
                     <externalMetadataColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[test]"
+                      refId="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[czy_aktualne]"
                       dataType="bool"
-                      name="test" />
+                      name="czy_aktualne" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1546,9 +1740,8 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Union All.Inputs[Union All Input 1].Columns[ID]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="255"
+                      cachedDataType="wstr"
+                      cachedLength="50"
                       cachedName="ID"
                       cachedSortKeyPosition="1"
                       lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[ID]">
@@ -1631,17 +1824,122 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Union All.Inputs[Union All Input 1].Columns[Imię i Nazwisko]"
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Inputs[Union All Input 1].Columns[Imie i Nazwisko]"
                       cachedDataType="wstr"
                       cachedLength="101"
-                      cachedName="Imię i Nazwisko"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Output].Columns[Imię i Nazwisko]">
+                      cachedName="Imie i Nazwisko"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Output].Columns[Imie i Nazwisko]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Imię i Nazwisko]}</property>
+                          name="OutputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Imie i Nazwisko]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Inputs[Union All Input 1].Columns[Copy of ID]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of ID"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Inputs[Union All Input 1].Columns[Copy of Nazwisko]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Nazwisko"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Nazwisko]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Nazwisko]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Inputs[Union All Input 1].Columns[Copy of Pesel]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Pesel"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Pesel]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Pesel]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Inputs[Union All Input 1].Columns[Copy of Imie]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Imie"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Imie]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Imie]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Inputs[Union All Input 1].Columns[Copy of Telefon]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Telefon"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Telefon]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Telefon]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Inputs[Union All Input 1].Columns[Copy of Mail]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Mail"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Mail]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Mail]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Inputs[Union All Input 1].Columns[Copy of Imie i Nazwisko]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="101"
+                      cachedName="Copy of Imie i Nazwisko"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Imie i Nazwisko]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Imie i Nazwisko]}</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -1654,9 +1952,8 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Union All.Inputs[Union All Input 2].Columns[ID]"
-                      cachedCodepage="1250"
-                      cachedDataType="str"
-                      cachedLength="255"
+                      cachedDataType="wstr"
+                      cachedLength="50"
                       cachedName="ID"
                       cachedSortKeyPosition="1"
                       lineageId="Package\Informacje o Osobach legitymowanych\Merge Join.Outputs[Merge Join Output].Columns[ID]">
@@ -1739,17 +2036,122 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Union All.Inputs[Union All Input 2].Columns[Imię i Nazwisko]"
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Inputs[Union All Input 2].Columns[Imie i Nazwisko]"
                       cachedDataType="wstr"
                       cachedLength="101"
-                      cachedName="Imię i Nazwisko"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Output].Columns[Imię i Nazwisko]">
+                      cachedName="Imie i Nazwisko"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Output].Columns[Imie i Nazwisko]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Imię i Nazwisko]}</property>
+                          name="OutputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Imie i Nazwisko]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Inputs[Union All Input 2].Columns[Copy of ID]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of ID"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Inputs[Union All Input 2].Columns[Copy of Nazwisko]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Nazwisko"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Nazwisko]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Nazwisko]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Inputs[Union All Input 2].Columns[Copy of Pesel]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Pesel"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Pesel]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Pesel]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Inputs[Union All Input 2].Columns[Copy of Imie]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Imie"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Imie]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Imie]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Inputs[Union All Input 2].Columns[Copy of Telefon]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Telefon"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Telefon]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Telefon]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Inputs[Union All Input 2].Columns[Copy of Mail]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of Mail"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Mail]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Mail]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Inputs[Union All Input 2].Columns[Copy of Imie i Nazwisko]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="101"
+                      cachedName="Copy of Imie i Nazwisko"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Imie i Nazwisko]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Imie i Nazwisko]}</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -1770,9 +2172,8 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[ID]"
-                      codePage="1250"
-                      dataType="str"
-                      length="255"
+                      dataType="wstr"
+                      length="50"
                       lineageId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[ID]"
                       name="ID" />
                     <outputColumn
@@ -1806,11 +2207,60 @@
                       lineageId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Mail]"
                       name="Mail" />
                     <outputColumn
-                      refId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Imię i Nazwisko]"
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Imie i Nazwisko]"
                       dataType="wstr"
                       length="101"
-                      lineageId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Imię i Nazwisko]"
-                      name="Imię i Nazwisko" />
+                      lineageId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Imie i Nazwisko]"
+                      name="Imie i Nazwisko" />
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of ID]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of ID]"
+                      name="Copy of ID" />
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Nazwisko]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Nazwisko]"
+                      name="Copy of Nazwisko" />
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Pesel]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Pesel]"
+                      name="Copy of Pesel" />
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Imie]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Imie]"
+                      name="Copy of Imie" />
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Telefon]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Telefon]"
+                      name="Copy of Telefon" />
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Mail]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Mail]"
+                      name="Copy of Mail" />
+                    <outputColumn
+                      refId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Imie i Nazwisko]"
+                      codePage="1250"
+                      dataType="str"
+                      length="101"
+                      lineageId="Package\Informacje o Osobach legitymowanych\Union All.Outputs[Union All Output 1].Columns[Copy of Imie i Nazwisko]"
+                      name="Copy of Imie i Nazwisko" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -1850,8 +2300,7 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[ID]"
-                      codePage="1250"
-                      dataType="str"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[ID]"
@@ -1872,8 +2321,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Powód]"
-                      codePage="1250"
-                      dataType="str"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Powód]"
@@ -1894,8 +2342,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Kwota]"
-                      codePage="1250"
-                      dataType="str"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Kwota]"
@@ -1916,8 +2363,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Czas Wystawienia]"
-                      codePage="1250"
-                      dataType="str"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Czas Wystawienia]"
@@ -1938,8 +2384,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Osoba Legitymowana (FK)]"
-                      codePage="1250"
-                      dataType="str"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Osoba Legitymowana (FK)]"
@@ -1961,8 +2406,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Miejsce Zdarzenia (FK)]"
-                      codePage="1250"
-                      dataType="str"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Miejsce Zdarzenia (FK)]"
@@ -1983,8 +2427,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Funkcjonariusz (FK)]"
-                      codePage="1250"
-                      dataType="str"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Funkcjonariusz (FK)]"
@@ -2082,8 +2525,13 @@
           </components>
           <paths>
             <path
-              refId="Package\Informacje o Osobach legitymowanych.Paths[Derived Column Output]"
+              refId="Package\Informacje o Osobach legitymowanych.Paths[Data Conversion Output]"
               endId="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="Data Conversion Output"
+              startId="Package\Informacje o Osobach legitymowanych\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Informacje o Osobach legitymowanych.Paths[Derived Column Output]"
+              endId="Package\Informacje o Osobach legitymowanych\Data Conversion.Inputs[Data Conversion Input]"
               name="Derived Column Output"
               startId="Package\Informacje o Osobach legitymowanych\Derived Column.Outputs[Derived Column Output]" />
             <path
@@ -2156,7 +2604,7 @@
         <NodeLayout
           Size="261.333333333334,41.3333333333334"
           Id="Package\Informacje o Osobach legitymowanych"
-          TopLeft="42.2857150058358,28.7529415797198" />
+          TopLeft="8.95238216920782,5.35294199814441" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2166,96 +2614,24 @@
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="129.333333333334,41.3333333333334"
-          Id="Package\Informacje o Osobach legitymowanych\Merge Join"
-          TopLeft="205.5,108.166666666667" />
-        <NodeLayout
-          Size="109.333333333334,42.6666666666667"
-          Id="Package\Informacje o Osobach legitymowanych\Osoby"
-          TopLeft="5.50000000000002,5.49999999999993" />
-        <NodeLayout
           Size="189.333333333334,41.3333333333334"
           Id="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów"
-          TopLeft="175.5,6.16666666666659" />
+          TopLeft="15.8333333333333,6.16666666666659" />
         <NodeLayout
-          Size="172,42.6666666666667"
-          Id="Package\Informacje o Osobach legitymowanych\Flat File Destination"
-          TopLeft="413.166666666667,825.5" />
-        <EdgeLayout
-          Id="Package\Informacje o Osobach legitymowanych.Paths[Flat File Source Output1]"
-          TopLeft="270.166666666667,47.4999999999999">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="20.2222222222222,60.6666666666667"
-              Start="0,0"
-              End="20.2222222222222,53.1666666666667">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.9551934826884" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.9551934826884"
-                    Point2="0,35.9551934826884"
-                    Point3="4,35.9551934826884" />
-                  <mssgle:LineSegment
-                    End="16.2222222222222,35.9551934826884" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16.2222222222222,35.9551934826884"
-                    Point2="20.2222222222222,35.9551934826884"
-                    Point3="20.2222222222222,39.9551934826884" />
-                  <mssgle:LineSegment
-                    End="20.2222222222222,53.1666666666667" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o Osobach legitymowanych.Paths[Flat File Source Output]"
-          TopLeft="60.1666666666667,48.1666666666666">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="189.777777777778,60"
-              Start="0,0"
-              End="189.777777777778,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5600814663951" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5600814663951"
-                    Point2="0,35.5600814663951"
-                    Point3="4,35.5600814663951" />
-                  <mssgle:LineSegment
-                    End="185.777777777778,35.5600814663951" />
-                  <mssgle:CubicBezierSegment
-                    Point1="185.777777777778,35.5600814663951"
-                    Point2="189.777777777778,35.5600814663951"
-                    Point3="189.777777777778,39.5600814663951" />
-                  <mssgle:LineSegment
-                    End="189.777777777778,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="129.333333333334,41.3333333333334"
+          Id="Package\Informacje o Osobach legitymowanych\Merge Join"
+          TopLeft="255.833333333333,108.166666666667" />
         <NodeLayout
           Size="154.666666666667,42.6666666666667"
           Id="Package\Informacje o Osobach legitymowanych\Derived Column"
-          TopLeft="192.833333333333,209.5" />
+          TopLeft="243.166666666667,209.5" />
+        <NodeLayout
+          Size="109.333333333334,42.6666666666667"
+          Id="Package\Informacje o Osobach legitymowanych\Osoby"
+          TopLeft="265.833333333333,5.49999999999993" />
         <EdgeLayout
           Id="Package\Informacje o Osobach legitymowanych.Paths[Merge Join Output]"
-          TopLeft="270.166666666667,149.5">
+          TopLeft="320.5,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2275,13 +2651,81 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o Osobach legitymowanych.Paths[Flat File Source Output1]"
+          TopLeft="110.5,47.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="189.777777777778,60.6666666666667"
+              Start="0,0"
+              End="189.777777777778,53.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.9551934826884" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.9551934826884"
+                    Point2="0,35.9551934826884"
+                    Point3="4,35.9551934826884" />
+                  <mssgle:LineSegment
+                    End="185.777777777778,35.9551934826884" />
+                  <mssgle:CubicBezierSegment
+                    Point1="185.777777777778,35.9551934826884"
+                    Point2="189.777777777778,35.9551934826884"
+                    Point3="189.777777777778,39.9551934826884" />
+                  <mssgle:LineSegment
+                    End="189.777777777778,53.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o Osobach legitymowanych.Paths[Flat File Source Output]"
+          TopLeft="320.5,48.1666666666666">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.2222222222222,60"
+              Start="0,0"
+              End="20.2222222222222,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5600814663951" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5600814663951"
+                    Point2="0,35.5600814663951"
+                    Point3="4,35.5600814663951" />
+                  <mssgle:LineSegment
+                    End="16.2222222222222,35.5600814663951" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.2222222222222,35.5600814663951"
+                    Point2="20.2222222222222,35.5600814663951"
+                    Point3="20.2222222222222,39.5600814663951" />
+                  <mssgle:LineSegment
+                    End="20.2222222222222,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <NodeLayout
-          Size="209.333333333334,42.6666666666667"
-          Id="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension"
-          TopLeft="165.5,312.166666666666" />
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\Informacje o Osobach legitymowanych\Data Conversion"
+          TopLeft="241.833333333333,312.166666666666" />
         <EdgeLayout
           Id="Package\Informacje o Osobach legitymowanych.Paths[Derived Column Output]"
-          TopLeft="270.166666666667,252.166666666667">
+          TopLeft="320.5,252.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2302,18 +2746,44 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\Informacje o Osobach legitymowanych\Derived Column 1"
-          TopLeft="45.1666666666667,414.833333333333" />
+          Size="209.333333333334,42.6666666666667"
+          Id="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension"
+          TopLeft="215.833333333333,414.833333333333" />
         <EdgeLayout
-          Id="Package\Informacje o Osobach legitymowanych.Paths[Historical Attribute Inserts Output]"
-          TopLeft="219.833333333333,354.833333333333">
+          Id="Package\Informacje o Osobach legitymowanych.Paths[Data Conversion Output]"
+          TopLeft="320.5,354.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-92.6666666666667,59.9999999999999"
+              EndConnector="0,59.9999999999998"
               Start="0,0"
-              End="-92.6666666666667,52.4999999999999">
+              End="0,52.4999999999998">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999998" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Informacje o Osobach legitymowanych\Derived Column 1"
+          TopLeft="95.5000000000001,517.5" />
+        <EdgeLayout
+          Id="Package\Informacje o Osobach legitymowanych.Paths[Historical Attribute Inserts Output]"
+          TopLeft="270.166666666667,457.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-92.6666666666666,59.9999999999999"
+              Start="0,0"
+              End="-92.6666666666666,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -2324,13 +2794,13 @@
                     Point2="0,20.503144654088"
                     Point3="-4,20.503144654088" />
                   <mssgle:LineSegment
-                    End="-88.6666666666667,20.503144654088" />
+                    End="-88.6666666666666,20.503144654088" />
                   <mssgle:CubicBezierSegment
-                    Point1="-88.6666666666667,20.503144654088"
-                    Point2="-92.6666666666667,20.503144654088"
-                    Point3="-92.6666666666667,24.503144654088" />
+                    Point1="-88.6666666666666,20.503144654088"
+                    Point2="-92.6666666666666,20.503144654088"
+                    Point3="-92.6666666666666,24.503144654088" />
                   <mssgle:LineSegment
-                    End="-92.6666666666667,52.4999999999999" />
+                    End="-92.6666666666666,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2344,21 +2814,21 @@
         <NodeLayout
           Size="166.666666666667,42.6666666666667"
           Id="Package\Informacje o Osobach legitymowanych\OLE DB Command"
-          TopLeft="42.8333333333334,517.5" />
+          TopLeft="93.1666666666667,620.166666666666" />
         <EdgeLayout
           Id="Package\Informacje o Osobach legitymowanych.Paths[Derived Column Output1]"
-          TopLeft="126.666666666667,457.5">
+          TopLeft="177,560.166666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,60.0000000000001"
               Start="0,0"
-              End="0,52.5">
+              End="0,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2370,10 +2840,10 @@
         <NodeLayout
           Size="121.333333333334,42.6666666666667"
           Id="Package\Informacje o Osobach legitymowanych\Union All"
-          TopLeft="209.5,620.166666666667" />
+          TopLeft="259.833333333333,722.833333333333" />
         <EdgeLayout
           Id="Package\Informacje o Osobach legitymowanych.Paths[New Output]"
-          TopLeft="270.166666666667,354.833333333333">
+          TopLeft="320.5,457.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2409,7 +2879,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Informacje o Osobach legitymowanych.Paths[OLE DB Command Output]"
-          TopLeft="126.166666666667,560.166666666666">
+          TopLeft="176.5,662.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2444,10 +2914,10 @@
         <NodeLayout
           Size="164,42.6666666666667"
           Id="Package\Informacje o Osobach legitymowanych\Derived Column 2"
-          TopLeft="188.166666666667,722.833333333333" />
+          TopLeft="238.5,825.5" />
         <EdgeLayout
           Id="Package\Informacje o Osobach legitymowanych.Paths[Union All Output 1]"
-          TopLeft="270.166666666667,662.833333333333">
+          TopLeft="320.5,765.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2470,10 +2940,10 @@
         <NodeLayout
           Size="164,42.6666666666667"
           Id="Package\Informacje o Osobach legitymowanych\Insert Destination"
-          TopLeft="188.166666666667,825.5" />
+          TopLeft="238.5,928.166666666667" />
         <EdgeLayout
           Id="Package\Informacje o Osobach legitymowanych.Paths[Derived Column Output2]"
-          TopLeft="270.166666666667,765.5">
+          TopLeft="320.5,868.166666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2496,10 +2966,10 @@
         <NodeLayout
           Size="176,42.6666666666667"
           Id="Package\Informacje o Osobach legitymowanych\OLE DB Command 1"
-          TopLeft="331.166666666667,414.833333333333" />
+          TopLeft="381.5,517.5" />
         <EdgeLayout
           Id="Package\Informacje o Osobach legitymowanych.Paths[Inferred Member Updates Output]"
-          TopLeft="320.5,354.833333333333">
+          TopLeft="370.833333333333,457.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2548,25 +3018,25 @@
   &lt;TableName&gt;[dbo].[Osoba_legitymowana]&lt;/TableName&gt;
   &lt;InputToColumnsCollection&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Merge Join.Outputs[Merge Join Output].Columns[Mail]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Mail]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;E_mail&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Derived Column.Outputs[Derived Column Output].Columns[Imię i Nazwisko]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Imie i Nazwisko]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;Imie_nazwisko&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Merge Join.Outputs[Merge Join Output].Columns[ID]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;klucz_biznesowy&lt;/ColumnName&gt;
       &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
       &lt;ChangeType&gt;None&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Merge Join.Outputs[Merge Join Output].Columns[Telefon]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Telefon]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;Numer_telefonu&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
@@ -2590,7 +3060,7 @@
   &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
   &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
   &lt;CurrentIndicatorColumn&gt;data_wstawienia&lt;/CurrentIndicatorColumn&gt;
-  &lt;InferredIndicatorColumn&gt;test&lt;/InferredIndicatorColumn&gt;
+  &lt;InferredIndicatorColumn&gt;czy_aktualne&lt;/InferredIndicatorColumn&gt;
   &lt;ValueCurrent&gt;Current&lt;/ValueCurrent&gt;
   &lt;ValueExpired&gt;Expired&lt;/ValueExpired&gt;
   &lt;StartDateColumn /&gt;
@@ -2598,6 +3068,19 @@
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje o Osobach legitymowanych\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

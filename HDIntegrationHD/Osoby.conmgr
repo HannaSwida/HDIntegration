@@ -17,10 +17,10 @@
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x007C_"
           DTS:MaximumWidth="50"
-          DTS:DataType="129"
+          DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="ID"
-          DTS:DTSID="{C835814B-D97C-4853-80D4-AB7DC87A8362}"
+          DTS:DTSID="{3F2A8329-B575-443C-88F0-B64074215CEA}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Imie"
-          DTS:DTSID="{4F791D95-AF3E-4EB3-A1F5-A6A26E66B56C}"
+          DTS:DTSID="{C43D6546-2EA4-4AE9-AF9E-D8B540EA1CDC}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Nazwisko"
-          DTS:DTSID="{441A47BE-6A7F-48EC-B94A-4E8607A11CDA}"
+          DTS:DTSID="{9F9AB399-C36F-4335-BC2C-3754FB455A1B}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -47,7 +47,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Pesel"
-          DTS:DTSID="{A0277A19-C88E-41F5-BFD8-A2AC04344C4E}"
+          DTS:DTSID="{AD383BE1-B2AC-419E-B933-968476730F47}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -56,7 +56,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Telefon"
-          DTS:DTSID="{FE130B01-D8CA-4EB1-B3B7-0627880DC1FE}"
+          DTS:DTSID="{1368A80B-75AE-4AF9-BA0D-AF040BA389D2}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -65,7 +65,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Mail"
-          DTS:DTSID="{5182C231-816A-4C92-861E-A76ADE3617EF}"
+          DTS:DTSID="{831D6EB6-31CB-4889-9716-E09F9D9EC56F}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
