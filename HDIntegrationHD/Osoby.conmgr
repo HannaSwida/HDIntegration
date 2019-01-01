@@ -20,7 +20,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="ID"
-          DTS:DTSID="{3F2A8329-B575-443C-88F0-B64074215CEA}"
+          DTS:DTSID="{612A3BAF-5F8B-42AA-A6C8-53A31AD48E92}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Imie"
-          DTS:DTSID="{C43D6546-2EA4-4AE9-AF9E-D8B540EA1CDC}"
+          DTS:DTSID="{FCB279FA-EF04-43F9-BD92-754B694B86BF}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Nazwisko"
-          DTS:DTSID="{9F9AB399-C36F-4335-BC2C-3754FB455A1B}"
+          DTS:DTSID="{70ADA505-4FC2-4890-B334-EE7FC61B7016}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -47,7 +47,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Pesel"
-          DTS:DTSID="{AD383BE1-B2AC-419E-B933-968476730F47}"
+          DTS:DTSID="{9604AF21-A796-48D3-9811-A8998CDE958A}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -56,7 +56,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Telefon"
-          DTS:DTSID="{1368A80B-75AE-4AF9-BA0D-AF040BA389D2}"
+          DTS:DTSID="{DC125A04-F109-4AD8-909E-738D2E36A399}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -65,7 +65,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Mail"
-          DTS:DTSID="{831D6EB6-31CB-4889-9716-E09F9D9EC56F}"
+          DTS:DTSID="{73094E7B-757A-40F7-A759-1EEAEA636B96}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
