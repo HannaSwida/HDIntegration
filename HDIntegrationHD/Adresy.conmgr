@@ -11,7 +11,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x003C_none_x003E_"
       DTS:CodePage="1250"
-      DTS:ConnectionString="C:\Users\hanna\source\repos\HDIntegrationHD\Adresy.bulk">
+      DTS:ConnectionString="C:\Users\Felo\Desktop\ETAP 2 GENERATOR\HD-GENERATOR\t1\Adresy.bulk">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -20,7 +20,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="ID"
-          DTS:DTSID="{371A73C0-0889-4BAE-AF39-4F95F6A2B48D}"
+          DTS:DTSID="{B19D8A0E-C556-45DC-B434-8F1AE37775D9}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Kraj"
-          DTS:DTSID="{300B0494-D705-438B-94E6-2C82EAEA259D}"
+          DTS:DTSID="{6B333F73-6D48-4190-A1D8-427BBF4161AB}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Miasto"
-          DTS:DTSID="{6317C0C0-771D-4577-B6B5-B1DCD8040BDD}"
+          DTS:DTSID="{DC05EBBD-04F6-46ED-9BE6-E5F2D6209FFF}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -47,7 +47,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Ulica"
-          DTS:DTSID="{2014AE38-D768-4DE1-99FE-4F48BB52B165}"
+          DTS:DTSID="{ADACAC6B-4206-4883-8239-194933F72EED}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -56,7 +56,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Numer"
-          DTS:DTSID="{519B2484-37ED-450F-93C1-AD9EBCA344A4}"
+          DTS:DTSID="{92E093C9-32DA-4DB7-9C1D-ABD20FE91915}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

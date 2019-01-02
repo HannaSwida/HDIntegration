@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Felo_Serwer"
+  DTS:DTSID="{5E850A63-B3C5-4A71-AA9B-DF60415326F1}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=192.168.0.52, 1433;User ID=admin;Initial Catalog=Policja;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArmogg/lyU0+wL0imCpubXAAAAAACAAAAAAAQZgAAAAEAACAAAAAAxbnLF4AS9rfkxt/i1w/tU4c5r0I+Sxko9jkkVDmk6AAAAAAOgAAAAAIAACAAAAAB9G9i9rGTge4jK+I7Zijd0iR+xwFBTcUgvuJz0ktGC4AAAADHxu0/7G2oavUKfAKt6ffXfP/m0d4Z0JRVDftOarXaMpqWrn5rct5ST51oG3kkiUCo43VtyfrpnBWvVcRbEZRUkELBZqT5oXkhkJ/DomJvh+PE6rqj+xmF40E4F86AzgFRPSSTm2Tb6x+pZ1Jf98S9IBE+YsR9HmpID3vS5K2eDkAAAACadym8PnHyL7J8TKwlxz6qQh63Ou46VtfBqZYzTo3oM7MkgdLBWaWWLAOihhWRJilI2kJaTJ/v+orkmdJgvSR9</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

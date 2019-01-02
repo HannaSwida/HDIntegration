@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="28"
-  DTS:VersionGUID="{C2750A47-5E33-4585-A372-FE161AFE0E3A}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{030215C5-5763-4590-83F1-446A8F5452DA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -5272,8 +5272,8 @@
                     </inputColumn>
                     <inputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Sort.Inputs[Sort Input].Columns[Powód]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedCodepage="1250"
+                      cachedDataType="text"
                       cachedName="Powód"
                       lineageId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Powód]">
                       <properties>
@@ -5398,8 +5398,8 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Sort.Outputs[Sort Output].Columns[Powód]"
-                      dataType="wstr"
-                      length="50"
+                      codePage="1250"
+                      dataType="text"
                       lineageId="Package\Informacje o Osobach legitymowanych\Sort.Outputs[Sort Output].Columns[Powód]"
                       name="Powód">
                       <properties>
@@ -6305,11 +6305,11 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Powód]"
-                      dataType="wstr"
+                      codePage="1250"
+                      dataType="text"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Powód]"
-                      length="50"
                       lineageId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Powód]"
                       name="Powód"
                       truncationRowDisposition="FailComponent">
@@ -6439,8 +6439,8 @@
                       name="ID" />
                     <externalMetadataColumn
                       refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Powód]"
-                      dataType="wstr"
-                      length="50"
+                      codePage="1250"
+                      dataType="text"
                       name="Powód" />
                     <externalMetadataColumn
                       refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Kwota]"

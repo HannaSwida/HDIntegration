@@ -20,7 +20,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="ID"
-          DTS:DTSID="{8184C5E5-9987-4C06-B819-11CFA9602920}"
+          DTS:DTSID="{AB4FE5AB-636D-41DD-9468-BAE392FBADF1}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,16 +29,15 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Kwota"
-          DTS:DTSID="{7D461DE2-8186-4330-A33B-DF2C376EB7D0}"
+          DTS:DTSID="{CF6BE4D8-61B2-4375-8B11-7EE238FAD5E9}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x007C_"
-          DTS:MaximumWidth="50"
-          DTS:DataType="130"
+          DTS:DataType="302"
           DTS:TextQualified="True"
           DTS:ObjectName="Powód"
-          DTS:DTSID="{779E721E-672F-4B05-87B8-D210F20EB90A}"
+          DTS:DTSID="{D6306CA5-EE4C-4DFA-9F31-E50A08FF345E}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -47,7 +46,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Czas Wystawienia"
-          DTS:DTSID="{0FB01928-150A-43F1-81B7-78E1527489D7}"
+          DTS:DTSID="{CF97D5C4-632F-43E3-A850-0B41C503E44F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -56,7 +55,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Osoba Legitymowana (FK)"
-          DTS:DTSID="{3BB64070-A67C-4896-9223-D58E2E7F6DE5}"
+          DTS:DTSID="{79214511-7A5B-4A07-8891-F48C6AA0EFA0}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -65,7 +64,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Miejsce Zdarzenia (FK)"
-          DTS:DTSID="{AF2BA727-288B-4E33-B7AB-F4E8A9276CBD}"
+          DTS:DTSID="{E84F30B5-9B46-43F2-8286-BD03179905B1}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -74,7 +73,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Funkcjonariusz (FK)"
-          DTS:DTSID="{7FB58B5D-7B60-4ABB-8B0E-60DF74C9A8ED}"
+          DTS:DTSID="{23C7EC80-142B-433F-BE0F-D8912AE138D5}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

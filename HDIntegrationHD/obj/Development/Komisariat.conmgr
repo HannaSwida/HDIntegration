@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="Komisariat"
   DTS:DTSID="{D756C7D5-CE9A-46BA-BD08-9F74D428E86C}"
@@ -11,7 +11,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x003C_none_x003E_"
       DTS:CodePage="1250"
-      DTS:ConnectionString="C:\Users\hanna\source\repos\HDIntegrationHD\Komisariat.bulk">
+      DTS:ConnectionString="C:\Users\Felo\Desktop\ETAP 2 GENERATOR\HD-GENERATOR\t1\Komisariat.bulk">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -20,7 +20,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="ID"
-          DTS:DTSID="{475A1C4A-1142-4105-B814-8D9FC517C362}"
+          DTS:DTSID="{44B710CB-7FC4-4BD4-9178-B71FFEC85B7D}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Nazwa"
-          DTS:DTSID="{594FEB2E-24B0-4124-B0B5-EB9FCC9CA94F}"
+          DTS:DTSID="{6FE83009-20CE-49A3-8F42-71FA7D69F132}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Adres (FK)"
-          DTS:DTSID="{AACB1AA4-F739-4C7E-B301-68544791F92D}"
+          DTS:DTSID="{1B5CCFDF-2750-447B-9D6A-A00C488520AF}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
