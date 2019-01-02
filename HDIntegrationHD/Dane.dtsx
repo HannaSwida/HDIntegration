@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-L5BCB961"
   DTS:CreatorName="LAPTOP-L5BCB961\hanna"
-  DTS:DTSID="{D2E8045F-3769-404F-BAA9-141858F88D20}"
+  DTS:DTSID="{83128350-1B9C-4D6D-949A-9AC1BF5B27A0}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1045"
-  DTS:ObjectName="Package"
+  DTS:ObjectName="Dane"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{680D722B-3571-4345-9B95-D3AE40875254}">
+  DTS:VersionBuild="58"
+  DTS:VersionGUID="{A60D977E-6E21-4D44-B18C-3F82E82A82D8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1029,7 +1029,7 @@
                 <connection
                   refId="Package\Informacje o funkcjonariuszach\Insert Destination.Connections[OleDbConnection]"
                   connectionManagerID="{5E850A63-B3C5-4A71-AA9B-DF60415326F1}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Felo_Serwer]"
+                  connectionManagerRefId="Project.ConnectionManagers[Policja_DB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1828,7 +1828,7 @@
                 <connection
                   refId="Package\Informacje o funkcjonariuszach\OLE DB Command.Connections[OleDbConnection]"
                   connectionManagerID="{5E850A63-B3C5-4A71-AA9B-DF60415326F1}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Felo_Serwer]"
+                  connectionManagerRefId="Project.ConnectionManagers[Policja_DB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1967,7 +1967,7 @@
                 <connection
                   refId="Package\Informacje o funkcjonariuszach\Slowly Changing Dimension.Connections[LookupConnection]"
                   connectionManagerID="{5E850A63-B3C5-4A71-AA9B-DF60415326F1}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Felo_Serwer]"
+                  connectionManagerRefId="Project.ConnectionManagers[Policja_DB]"
                   description="Defines the connection to use for lookups in the dimension table"
                   name="LookupConnection" />
               </connections>
@@ -3708,7 +3708,7 @@
               name="Data Conversion Output"
               startId="Package\Informacje o funkcjonariuszach\Data Conversion.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Informacje o funkcjonariuszach.Paths[Derived Column Output2]"
+              refId="Package\Informacje o funkcjonariuszach.Paths[Derived Column Output]"
               endId="Package\Informacje o funkcjonariuszach\Insert Destination.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
               startId="Package\Informacje o funkcjonariuszach\Derived Column 2.Outputs[Derived Column Output]" />
@@ -3718,7 +3718,7 @@
               name="Derived Column Output"
               startId="Package\Informacje o funkcjonariuszach\Derived Column 1.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Informacje o funkcjonariuszach.Paths[Derived Column Output]"
+              refId="Package\Informacje o funkcjonariuszach.Paths[Derived Column Output2]"
               endId="Package\Informacje o funkcjonariuszach\Data Conversion.Inputs[Data Conversion Input]"
               name="Derived Column Output"
               startId="Package\Informacje o funkcjonariuszach\Derived Column.Outputs[Derived Column Output]" />
@@ -3728,12 +3728,12 @@
               name="Flat File Source Output"
               startId="Package\Informacje o funkcjonariuszach\Funkcjonariusz.Outputs[Flat File Source Output]" />
             <path
-              refId="Package\Informacje o funkcjonariuszach.Paths[Flat File Source Output2]"
+              refId="Package\Informacje o funkcjonariuszach.Paths[Flat File Source Output1]"
               endId="Package\Informacje o funkcjonariuszach\Sort 2.Inputs[Sort Input]"
               name="Flat File Source Output"
               startId="Package\Informacje o funkcjonariuszach\Komisariat.Outputs[Flat File Source Output]" />
             <path
-              refId="Package\Informacje o funkcjonariuszach.Paths[Flat File Source Output1]"
+              refId="Package\Informacje o funkcjonariuszach.Paths[Flat File Source Output2]"
               endId="Package\Informacje o funkcjonariuszach\Sort 1.Inputs[Sort Input]"
               name="Flat File Source Output"
               startId="Package\Informacje o funkcjonariuszach\Dane osoby.Outputs[Flat File Source Output]" />
@@ -3743,15 +3743,15 @@
               name="Historical Attribute Inserts Output"
               startId="Package\Informacje o funkcjonariuszach\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]" />
             <path
-              refId="Package\Informacje o funkcjonariuszach.Paths[Merge Join Output]"
-              endId="Package\Informacje o funkcjonariuszach\Sort 3.Inputs[Sort Input]"
-              name="Merge Join Output"
-              startId="Package\Informacje o funkcjonariuszach\Merge Join.Outputs[Merge Join Output]" />
-            <path
               refId="Package\Informacje o funkcjonariuszach.Paths[Merge Join Output1]"
               endId="Package\Informacje o funkcjonariuszach\Derived Column.Inputs[Derived Column Input]"
               name="Merge Join Output"
               startId="Package\Informacje o funkcjonariuszach\Merge Join 1.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Informacje o funkcjonariuszach.Paths[Merge Join Output]"
+              endId="Package\Informacje o funkcjonariuszach\Sort 3.Inputs[Sort Input]"
+              name="Merge Join Output"
+              startId="Package\Informacje o funkcjonariuszach\Merge Join.Outputs[Merge Join Output]" />
             <path
               refId="Package\Informacje o funkcjonariuszach.Paths[New Output]"
               endId="Package\Informacje o funkcjonariuszach\Union All.Inputs[Union All Input 1]"
@@ -3763,22 +3763,22 @@
               name="OLE DB Command Output"
               startId="Package\Informacje o funkcjonariuszach\OLE DB Command.Outputs[OLE DB Command Output]" />
             <path
-              refId="Package\Informacje o funkcjonariuszach.Paths[Sort Output2]"
+              refId="Package\Informacje o funkcjonariuszach.Paths[Sort Output]"
               endId="Package\Informacje o funkcjonariuszach\Merge Join 1.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Informacje o funkcjonariuszach\Sort 3.Outputs[Sort Output]" />
             <path
-              refId="Package\Informacje o funkcjonariuszach.Paths[Sort Output3]"
+              refId="Package\Informacje o funkcjonariuszach.Paths[Sort Output1]"
               endId="Package\Informacje o funkcjonariuszach\Merge Join 1.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\Informacje o funkcjonariuszach\Sort 2.Outputs[Sort Output]" />
             <path
-              refId="Package\Informacje o funkcjonariuszach.Paths[Sort Output]"
+              refId="Package\Informacje o funkcjonariuszach.Paths[Sort Output2]"
               endId="Package\Informacje o funkcjonariuszach\Merge Join.Inputs[Merge Join Left Input]"
               name="Sort Output"
               startId="Package\Informacje o funkcjonariuszach\Sort 1.Outputs[Sort Output]" />
             <path
-              refId="Package\Informacje o funkcjonariuszach.Paths[Sort Output1]"
+              refId="Package\Informacje o funkcjonariuszach.Paths[Sort Output3]"
               endId="Package\Informacje o funkcjonariuszach\Merge Join.Inputs[Merge Join Right Input]"
               name="Sort Output"
               startId="Package\Informacje o funkcjonariuszach\Sort.Outputs[Sort Output]" />
@@ -4348,7 +4348,7 @@
                 <connection
                   refId="Package\Informacje o Osobach legitymowanych\Insert Destination.Connections[OleDbConnection]"
                   connectionManagerID="{5E850A63-B3C5-4A71-AA9B-DF60415326F1}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Felo_Serwer]"
+                  connectionManagerRefId="Project.ConnectionManagers[Policja_DB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4691,7 +4691,7 @@
                 <connection
                   refId="Package\Informacje o Osobach legitymowanych\OLE DB Command.Connections[OleDbConnection]"
                   connectionManagerID="{5E850A63-B3C5-4A71-AA9B-DF60415326F1}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Felo_Serwer]"
+                  connectionManagerRefId="Project.ConnectionManagers[Policja_DB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5051,7 +5051,7 @@
                 <connection
                   refId="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension.Connections[LookupConnection]"
                   connectionManagerID="{5E850A63-B3C5-4A71-AA9B-DF60415326F1}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Felo_Serwer]"
+                  connectionManagerRefId="Project.ConnectionManagers[Policja_DB]"
                   description="Defines the connection to use for lookups in the dimension table"
                   name="LookupConnection" />
               </connections>
@@ -5306,8 +5306,7 @@
                     </inputColumn>
                     <inputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Sort.Inputs[Sort Input].Columns[Czas Wystawienia]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedDataType="date"
                       cachedName="Czas Wystawienia"
                       lineageId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Czas Wystawienia]">
                       <properties>
@@ -5426,8 +5425,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Sort.Outputs[Sort Output].Columns[Czas Wystawienia]"
-                      dataType="wstr"
-                      length="50"
+                      dataType="date"
                       lineageId="Package\Informacje o Osobach legitymowanych\Sort.Outputs[Sort Output].Columns[Czas Wystawienia]"
                       name="Czas Wystawienia">
                       <properties>
@@ -6347,11 +6345,10 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Czas Wystawienia]"
-                      dataType="wstr"
+                      dataType="date"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Czas Wystawienia]"
-                      length="50"
                       lineageId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Czas Wystawienia]"
                       name="Czas Wystawienia"
                       truncationRowDisposition="FailComponent">
@@ -6449,8 +6446,7 @@
                       name="Kwota" />
                     <externalMetadataColumn
                       refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Czas Wystawienia]"
-                      dataType="wstr"
-                      length="50"
+                      dataType="date"
                       name="Czas Wystawienia" />
                     <externalMetadataColumn
                       refId="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Osoba Legitymowana (FK)]"
@@ -7156,7 +7152,7 @@
                 <connection
                   refId="Package\Miejsce Zdarzenia\OLE DB Destination.Connections[OleDbConnection]"
                   connectionManagerID="{5E850A63-B3C5-4A71-AA9B-DF60415326F1}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Felo_Serwer]"
+                  connectionManagerRefId="Project.ConnectionManagers[Policja_DB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -7533,8 +7529,7 @@
                     </inputColumn>
                     <inputColumn
                       refId="Package\Miejsce Zdarzenia\Sort 1.Inputs[Sort Input].Columns[Czas Wystawienia]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
+                      cachedDataType="date"
                       cachedName="Czas Wystawienia"
                       lineageId="Package\Miejsce Zdarzenia\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Czas Wystawienia]">
                       <properties>
@@ -7653,8 +7648,7 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Miejsce Zdarzenia\Sort 1.Outputs[Sort Output].Columns[Czas Wystawienia]"
-                      dataType="wstr"
-                      length="50"
+                      dataType="date"
                       lineageId="Package\Miejsce Zdarzenia\Sort 1.Outputs[Sort Output].Columns[Czas Wystawienia]"
                       name="Czas Wystawienia">
                       <properties>
@@ -7809,11 +7803,10 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Miejsce Zdarzenia\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Czas Wystawienia]"
-                      dataType="wstr"
+                      dataType="date"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Miejsce Zdarzenia\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Czas Wystawienia]"
-                      length="50"
                       lineageId="Package\Miejsce Zdarzenia\Wystawianie mandatów.Outputs[Flat File Source Output].Columns[Czas Wystawienia]"
                       name="Czas Wystawienia"
                       truncationRowDisposition="FailComponent">
@@ -7911,8 +7904,7 @@
                       name="Powód" />
                     <externalMetadataColumn
                       refId="Package\Miejsce Zdarzenia\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Czas Wystawienia]"
-                      dataType="wstr"
-                      length="50"
+                      dataType="date"
                       name="Czas Wystawienia" />
                     <externalMetadataColumn
                       refId="Package\Miejsce Zdarzenia\Wystawianie mandatów.Outputs[Flat File Source Output].ExternalColumns[Osoba Legitymowana (FK)]"
@@ -8030,14 +8022,18 @@
         <NodeLayout
           Size="227,43"
           Id="Package\Informacje o funkcjonariuszach"
-          TopLeft="28.3333329111337,94.4666649774711" />
+          TopLeft="79.3333329111337,123.466664977471" />
         <NodeLayout
           Size="261,41"
           Id="Package\Informacje o Osobach legitymowanych"
-          TopLeft="18.1190486992805,5.35294199814441" />
+          TopLeft="69.1190486992805,34.352941998144" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Miejsce Zdarzenia"
+          TopLeft="109,211" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="145.226190805207,46.6862753314777">
+          TopLeft="196.226190805207,75.686275331478">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8057,13 +8053,9 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Miejsce Zdarzenia"
-          TopLeft="58,182" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="140.666666455567,137.466664977471">
+          TopLeft="191.666666455567,166.466664977471">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8092,147 +8084,99 @@
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="135,43"
-          Id="Package\Informacje o funkcjonariuszach\Dane osoby"
-          TopLeft="5.5,5.5" />
+          Size="156,42"
+          Id="Package\Informacje o funkcjonariuszach\Data Conversion"
+          TopLeft="225,629.5" />
         <NodeLayout
           Size="149,43"
           Id="Package\Informacje o funkcjonariuszach\Funkcjonariusz"
           TopLeft="201.5,5.5" />
         <NodeLayout
-          Size="129,53"
-          Id="Package\Informacje o funkcjonariuszach\Komisariat"
-          TopLeft="238.5,210.5" />
-        <NodeLayout
-          Size="98,42"
-          Id="Package\Informacje o funkcjonariuszach\Sort"
-          TopLeft="227,108.5" />
+          Size="121,42"
+          Id="Package\Informacje o funkcjonariuszach\Union All"
+          TopLeft="242.5,1037.5" />
         <NodeLayout
           Size="107,42"
           Id="Package\Informacje o funkcjonariuszach\Sort 1"
           TopLeft="59.5,108.5" />
         <NodeLayout
+          Size="135,43"
+          Id="Package\Informacje o funkcjonariuszach\Dane osoby"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Informacje o funkcjonariuszach\Derived Column 2"
+          TopLeft="221.5,1139.5" />
+        <NodeLayout
           Size="107,42"
-          Id="Package\Informacje o funkcjonariuszach\Sort 2"
-          TopLeft="249.5,323.5" />
-        <EdgeLayout
-          Id="Package\Informacje o funkcjonariuszach.Paths[Flat File Source Output]"
-          TopLeft="276,48.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o funkcjonariuszach.Paths[Flat File Source Output1]"
-          TopLeft="73,48.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="40,60"
-              Start="0,0"
-              End="40,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26"
-                    Point2="0,30"
-                    Point3="4,30" />
-                  <mssgle:LineSegment
-                    End="36,30" />
-                  <mssgle:CubicBezierSegment
-                    Point1="36,30"
-                    Point2="40,30"
-                    Point3="40,34" />
-                  <mssgle:LineSegment
-                    End="40,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o funkcjonariuszach.Paths[Flat File Source Output2]"
-          TopLeft="303,263.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Id="Package\Informacje o funkcjonariuszach\Sort 3"
+          TopLeft="81.5000000000001,323.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Informacje o funkcjonariuszach\Insert Destination"
+          TopLeft="221.5,1241.5" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Informacje o funkcjonariuszach\OLE DB Command"
+          TopLeft="76.0000000000001,935.5" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Informacje o funkcjonariuszach\Sort"
+          TopLeft="227,108.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Informacje o funkcjonariuszach\Derived Column 1"
+          TopLeft="78.5000000000001,833.5" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Informacje o funkcjonariuszach\Slowly Changing Dimension"
+          TopLeft="198.5,731.5" />
+        <NodeLayout
+          Size="129,53"
+          Id="Package\Informacje o funkcjonariuszach\Komisariat"
+          TopLeft="238.5,210.5" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Informacje o funkcjonariuszach\Merge Join 1"
+          TopLeft="233.5,425.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Informacje o funkcjonariuszach\Derived Column"
+          TopLeft="226,527.5" />
         <NodeLayout
           Size="130,42"
           Id="Package\Informacje o funkcjonariuszach\Merge Join"
           TopLeft="48,216" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Informacje o funkcjonariuszach\Sort 2"
+          TopLeft="249.5,323.5" />
         <EdgeLayout
-          Id="Package\Informacje o funkcjonariuszach.Paths[Sort Output]"
-          TopLeft="113,150.5">
+          Id="Package\Informacje o funkcjonariuszach.Paths[Union All Output 1]"
+          TopLeft="303,1079.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-20.3333333333333,65.5"
+              EndConnector="0,60"
               Start="0,0"
-              End="-20.3333333333333,58">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.822188449848" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,34.822188449848"
-                    Point2="0,38.822188449848"
-                    Point3="-4,38.822188449848" />
-                  <mssgle:LineSegment
-                    End="-16.3333333333333,38.822188449848" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-16.3333333333333,38.822188449848"
-                    Point2="-20.3333333333333,38.822188449848"
-                    Point3="-20.3333333333333,42.822188449848" />
-                  <mssgle:LineSegment
-                    End="-20.3333333333333,58" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o funkcjonariuszach.Paths[Sort Output1]"
+          Id="Package\Informacje o funkcjonariuszach.Paths[Sort Output3]"
           TopLeft="276,150.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8262,87 +8206,49 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="107,42"
-          Id="Package\Informacje o funkcjonariuszach\Sort 3"
-          TopLeft="81.5000000000001,323.5" />
-        <EdgeLayout
-          Id="Package\Informacje o funkcjonariuszach.Paths[Merge Join Output]"
-          TopLeft="113,258">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="22,65.5"
-              Start="0,0"
-              End="22,58">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.75"
-                    Point2="0,32.75"
-                    Point3="4,32.75" />
-                  <mssgle:LineSegment
-                    End="18,32.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18,32.75"
-                    Point2="22,32.75"
-                    Point3="22,36.75" />
-                  <mssgle:LineSegment
-                    End="22,58" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="139,42"
-          Id="Package\Informacje o funkcjonariuszach\Merge Join 1"
-          TopLeft="233.5,425.5" />
         <EdgeLayout
           Id="Package\Informacje o funkcjonariuszach.Paths[Sort Output2]"
-          TopLeft="135,365.5">
+          TopLeft="113,150.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="146.166666666667,60"
+              EndConnector="-20.3333333333333,65.5"
               Start="0,0"
-              End="146.166666666667,52.5">
+              End="-20.3333333333333,58">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5903271692745" />
+                    End="0,34.822188449848" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.5903271692745"
-                    Point2="0,35.5903271692745"
-                    Point3="4,35.5903271692745" />
+                    Point1="0,34.822188449848"
+                    Point2="0,38.822188449848"
+                    Point3="-4,38.822188449848" />
                   <mssgle:LineSegment
-                    End="142.166666666667,35.5903271692745" />
+                    End="-16.3333333333333,38.822188449848" />
                   <mssgle:CubicBezierSegment
-                    Point1="142.166666666667,35.5903271692745"
-                    Point2="146.166666666667,35.5903271692745"
-                    Point3="146.166666666667,39.5903271692745" />
+                    Point1="-16.3333333333333,38.822188449848"
+                    Point2="-20.3333333333333,38.822188449848"
+                    Point3="-20.3333333333333,42.822188449848" />
                   <mssgle:LineSegment
-                    End="146.166666666667,52.5" />
+                    End="-20.3333333333333,58" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o funkcjonariuszach.Paths[Sort Output3]"
+          Id="Package\Informacje o funkcjonariuszach.Paths[Sort Output1]"
           TopLeft="303,365.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8372,157 +8278,83 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Informacje o funkcjonariuszach\Derived Column"
-          TopLeft="226,527.5" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Informacje o funkcjonariuszach\Data Conversion"
-          TopLeft="225,629.5" />
         <EdgeLayout
-          Id="Package\Informacje o funkcjonariuszach.Paths[Merge Join Output1]"
-          TopLeft="303,467.5">
+          Id="Package\Informacje o funkcjonariuszach.Paths[Sort Output]"
+          TopLeft="135,365.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="146.166666666667,60"
               Start="0,0"
-              End="0,52.5">
+              End="146.166666666667,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o funkcjonariuszach.Paths[Derived Column Output]"
-          TopLeft="303,569.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Informacje o funkcjonariuszach\Slowly Changing Dimension"
-          TopLeft="198.5,731.5" />
-        <EdgeLayout
-          Id="Package\Informacje o funkcjonariuszach.Paths[Data Conversion Output]"
-          TopLeft="303,671.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Informacje o funkcjonariuszach\Derived Column 1"
-          TopLeft="78.5000000000001,833.5" />
-        <EdgeLayout
-          Id="Package\Informacje o funkcjonariuszach.Paths[Historical Attribute Inserts Output]"
-          TopLeft="269.5,773.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-109.5,60"
-              Start="0,0"
-              End="-109.5,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2735042735043" />
+                    End="0,31.5903271692745" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.2735042735043"
-                    Point2="0,24.2735042735043"
-                    Point3="-4,24.2735042735043" />
+                    Point1="0,31.5903271692745"
+                    Point2="0,35.5903271692745"
+                    Point3="4,35.5903271692745" />
                   <mssgle:LineSegment
-                    End="-105.5,24.2735042735043" />
+                    End="142.166666666667,35.5903271692745" />
                   <mssgle:CubicBezierSegment
-                    Point1="-105.5,24.2735042735043"
-                    Point2="-109.5,24.2735042735043"
-                    Point3="-109.5,28.2735042735043" />
+                    Point1="142.166666666667,35.5903271692745"
+                    Point2="146.166666666667,35.5903271692745"
+                    Point3="146.166666666667,39.5903271692745" />
                   <mssgle:LineSegment
-                    End="-109.5,52.5" />
+                    End="146.166666666667,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-129.80638671875,29.2735042735043,150.1127734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Informacje o funkcjonariuszach\OLE DB Command"
-          TopLeft="76.0000000000001,935.5" />
         <EdgeLayout
-          Id="Package\Informacje o funkcjonariuszach.Paths[Derived Column Output1]"
-          TopLeft="159.5,875.5">
+          Id="Package\Informacje o funkcjonariuszach.Paths[OLE DB Command Output]"
+          TopLeft="159,977.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="125.166666666667,60"
               Start="0,0"
-              End="0,52.5">
+              End="125.166666666667,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,31.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5301794453507"
+                    Point2="0,35.5301794453507"
+                    Point3="4,35.5301794453507" />
+                  <mssgle:LineSegment
+                    End="121.166666666667,35.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121.166666666667,35.5301794453507"
+                    Point2="125.166666666667,35.5301794453507"
+                    Point3="125.166666666667,39.5301794453507" />
+                  <mssgle:LineSegment
+                    End="125.166666666667,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Informacje o funkcjonariuszach\Union All"
-          TopLeft="242.5,1037.5" />
         <EdgeLayout
           Id="Package\Informacje o funkcjonariuszach.Paths[New Output]"
           TopLeft="336.5,773.5">
@@ -8560,46 +8392,8 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o funkcjonariuszach.Paths[OLE DB Command Output]"
-          TopLeft="159,977.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="125.166666666667,60"
-              Start="0,0"
-              End="125.166666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5301794453507" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5301794453507"
-                    Point2="0,35.5301794453507"
-                    Point3="4,35.5301794453507" />
-                  <mssgle:LineSegment
-                    End="121.166666666667,35.5301794453507" />
-                  <mssgle:CubicBezierSegment
-                    Point1="121.166666666667,35.5301794453507"
-                    Point2="125.166666666667,35.5301794453507"
-                    Point3="125.166666666667,39.5301794453507" />
-                  <mssgle:LineSegment
-                    End="125.166666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Informacje o funkcjonariuszach\Derived Column 2"
-          TopLeft="221.5,1139.5" />
-        <EdgeLayout
-          Id="Package\Informacje o funkcjonariuszach.Paths[Union All Output 1]"
-          TopLeft="303,1079.5">
+          Id="Package\Informacje o funkcjonariuszach.Paths[Merge Join Output1]"
+          TopLeft="303,467.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8616,15 +8410,217 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Informacje o funkcjonariuszach\Insert Destination"
-          TopLeft="221.5,1241.5" />
+        <EdgeLayout
+          Id="Package\Informacje o funkcjonariuszach.Paths[Merge Join Output]"
+          TopLeft="113,258">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="22,65.5"
+              Start="0,0"
+              End="22,58">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.75"
+                    Point2="0,32.75"
+                    Point3="4,32.75" />
+                  <mssgle:LineSegment
+                    End="18,32.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18,32.75"
+                    Point2="22,32.75"
+                    Point3="22,36.75" />
+                  <mssgle:LineSegment
+                    End="22,58" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o funkcjonariuszach.Paths[Historical Attribute Inserts Output]"
+          TopLeft="269.5,773.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-109.5,60"
+              Start="0,0"
+              End="-109.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2735042735043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2735042735043"
+                    Point2="0,24.2735042735043"
+                    Point3="-4,24.2735042735043" />
+                  <mssgle:LineSegment
+                    End="-105.5,24.2735042735043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-105.5,24.2735042735043"
+                    Point2="-109.5,24.2735042735043"
+                    Point3="-109.5,28.2735042735043" />
+                  <mssgle:LineSegment
+                    End="-109.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-129.80638671875,29.2735042735043,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o funkcjonariuszach.Paths[Flat File Source Output2]"
+          TopLeft="73,48.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="40,60"
+              Start="0,0"
+              End="40,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="4,30" />
+                  <mssgle:LineSegment
+                    End="36,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36,30"
+                    Point2="40,30"
+                    Point3="40,34" />
+                  <mssgle:LineSegment
+                    End="40,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o funkcjonariuszach.Paths[Flat File Source Output1]"
+          TopLeft="303,263.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o funkcjonariuszach.Paths[Flat File Source Output]"
+          TopLeft="276,48.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Informacje o funkcjonariuszach.Paths[Derived Column Output2]"
+          TopLeft="303,569.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o funkcjonariuszach.Paths[Derived Column Output1]"
+          TopLeft="159.5,875.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o funkcjonariuszach.Paths[Derived Column Output]"
           TopLeft="303,1181.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8642,12 +8638,127 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o funkcjonariuszach.Paths[Data Conversion Output]"
+          TopLeft="303,671.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje o funkcjonariuszach\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Informacje o funkcjonariuszach\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{5E850A63-B3C5-4A71-AA9B-DF60415326F1}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[Funkcjonariusz]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Mail]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;E_mail&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Imie i Nazwisko]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Imie_nazwisko&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;klucz_biznesowy&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Nazwa]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Nazwa_komisariatu&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Telefon]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Numer_telefonu&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Pesel]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Pesel&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Stopień]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Stopien&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 2&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;data_wstawienia&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;data_przedawnienia&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::CreationDate&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Informacje o Osobach legitymowanych">
     <LayoutInfo>
@@ -8658,88 +8769,56 @@
           Id="Package\Informacje o Osobach legitymowanych\Derived Column"
           TopLeft="232.5,312.5" />
         <NodeLayout
-          Size="189,41"
-          Id="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów"
-          TopLeft="5.49999999999997,6.5" />
+          Size="130,42"
+          Id="Package\Informacje o Osobach legitymowanych\Merge Join"
+          TopLeft="245,210.5" />
         <NodeLayout
           Size="109,43"
           Id="Package\Informacje o Osobach legitymowanych\Osoby"
           TopLeft="255.5,5.5" />
         <NodeLayout
-          Size="157,43"
-          Id="Package\Informacje o Osobach legitymowanych\Data Conversion"
-          TopLeft="231.5,415.5" />
-        <EdgeLayout
-          Id="Package\Informacje o Osobach legitymowanych.Paths[Derived Column Output]"
-          TopLeft="310,355.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="107,42"
+          Id="Package\Informacje o Osobach legitymowanych\Sort 1"
+          TopLeft="256.5,108.5" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension"
+          TopLeft="205.5,518.5" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Informacje o Osobach legitymowanych\Union All"
+          TopLeft="249.5,824.5" />
         <NodeLayout
           Size="98,42"
           Id="Package\Informacje o Osobach legitymowanych\Sort"
           TopLeft="98,108.5" />
         <NodeLayout
-          Size="107,42"
-          Id="Package\Informacje o Osobach legitymowanych\Sort 1"
-          TopLeft="256.5,108.5" />
+          Size="163,42"
+          Id="Package\Informacje o Osobach legitymowanych\Derived Column 2"
+          TopLeft="228.5,926.5" />
         <NodeLayout
-          Size="130,42"
-          Id="Package\Informacje o Osobach legitymowanych\Merge Join"
-          TopLeft="245,210.5" />
+          Size="166,42"
+          Id="Package\Informacje o Osobach legitymowanych\OLE DB Command"
+          TopLeft="83.0000000000001,722.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Informacje o Osobach legitymowanych\Derived Column 1"
+          TopLeft="85.5000000000001,620.5" />
+        <NodeLayout
+          Size="189,41"
+          Id="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów"
+          TopLeft="5.49999999999997,6.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Informacje o Osobach legitymowanych\Insert Destination"
+          TopLeft="228.5,1028.5" />
+        <NodeLayout
+          Size="157,43"
+          Id="Package\Informacje o Osobach legitymowanych\Data Conversion"
+          TopLeft="231.5,415.5" />
         <EdgeLayout
-          Id="Package\Informacje o Osobach legitymowanych.Paths[Flat File Source Output]"
-          TopLeft="100,47.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="47,61"
-              Start="0,0"
-              End="47,53.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.5"
-                    Point2="0,30.5"
-                    Point3="4,30.5" />
-                  <mssgle:LineSegment
-                    End="43,30.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="43,30.5"
-                    Point2="47,30.5"
-                    Point3="47,34.5" />
-                  <mssgle:LineSegment
-                    End="47,53.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o Osobach legitymowanych.Paths[Flat File Source Output1]"
-          TopLeft="310,48.5">
+          Id="Package\Informacje o Osobach legitymowanych.Paths[Union All Output 1]"
+          TopLeft="310,866.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8751,40 +8830,6 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o Osobach legitymowanych.Paths[Sort Output]"
-          TopLeft="310,150.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="20.3333333333333,60"
-              Start="0,0"
-              End="20.3333333333333,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5623100303951" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5623100303951"
-                    Point2="0,35.5623100303951"
-                    Point3="4,35.5623100303951" />
-                  <mssgle:LineSegment
-                    End="16.3333333333333,35.5623100303951" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16.3333333333333,35.5623100303951"
-                    Point2="20.3333333333333,35.5623100303951"
-                    Point3="20.3333333333333,39.5623100303951" />
-                  <mssgle:LineSegment
-                    End="20.3333333333333,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8828,111 +8873,31 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Osobach legitymowanych.Paths[Merge Join Output]"
-          TopLeft="310,252.5">
+          Id="Package\Informacje o Osobach legitymowanych.Paths[Sort Output]"
+          TopLeft="310,150.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="20.3333333333333,60"
               Start="0,0"
-              End="0,52.5">
+              End="20.3333333333333,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension"
-          TopLeft="205.5,518.5" />
-        <EdgeLayout
-          Id="Package\Informacje o Osobach legitymowanych.Paths[Data Conversion Output]"
-          TopLeft="310,458.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Informacje o Osobach legitymowanych\Derived Column 1"
-          TopLeft="85.5000000000001,620.5" />
-        <EdgeLayout
-          Id="Package\Informacje o Osobach legitymowanych.Paths[Historical Attribute Inserts Output]"
-          TopLeft="276.5,560.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-109.5,60"
-              Start="0,0"
-              End="-109.5,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.2735042735043" />
+                    End="0,31.5623100303951" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.2735042735043"
-                    Point2="0,24.2735042735043"
-                    Point3="-4,24.2735042735043" />
+                    Point1="0,31.5623100303951"
+                    Point2="0,35.5623100303951"
+                    Point3="4,35.5623100303951" />
                   <mssgle:LineSegment
-                    End="-105.5,24.2735042735043" />
+                    End="16.3333333333333,35.5623100303951" />
                   <mssgle:CubicBezierSegment
-                    Point1="-105.5,24.2735042735043"
-                    Point2="-109.5,24.2735042735043"
-                    Point3="-109.5,28.2735042735043" />
+                    Point1="16.3333333333333,35.5623100303951"
+                    Point2="20.3333333333333,35.5623100303951"
+                    Point3="20.3333333333333,39.5623100303951" />
                   <mssgle:LineSegment
-                    End="-109.5,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-129.80638671875,29.2735042735043,150.1127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Informacje o Osobach legitymowanych\OLE DB Command"
-          TopLeft="83.0000000000001,722.5" />
-        <EdgeLayout
-          Id="Package\Informacje o Osobach legitymowanych.Paths[Derived Column Output1]"
-          TopLeft="166.5,662.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="20.3333333333333,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8941,10 +8906,40 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Informacje o Osobach legitymowanych\Union All"
-          TopLeft="249.5,824.5" />
+        <EdgeLayout
+          Id="Package\Informacje o Osobach legitymowanych.Paths[OLE DB Command Output]"
+          TopLeft="166,764.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="125.166666666667,60"
+              Start="0,0"
+              End="125.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5301794453507"
+                    Point2="0,35.5301794453507"
+                    Point3="4,35.5301794453507" />
+                  <mssgle:LineSegment
+                    End="121.166666666667,35.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121.166666666667,35.5301794453507"
+                    Point2="125.166666666667,35.5301794453507"
+                    Point3="125.166666666667,39.5301794453507" />
+                  <mssgle:LineSegment
+                    End="125.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Informacje o Osobach legitymowanych.Paths[New Output]"
           TopLeft="343.5,560.5">
@@ -8982,46 +8977,8 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o Osobach legitymowanych.Paths[OLE DB Command Output]"
-          TopLeft="166,764.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="125.166666666667,60"
-              Start="0,0"
-              End="125.166666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5301794453507" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.5301794453507"
-                    Point2="0,35.5301794453507"
-                    Point3="4,35.5301794453507" />
-                  <mssgle:LineSegment
-                    End="121.166666666667,35.5301794453507" />
-                  <mssgle:CubicBezierSegment
-                    Point1="121.166666666667,35.5301794453507"
-                    Point2="125.166666666667,35.5301794453507"
-                    Point3="125.166666666667,39.5301794453507" />
-                  <mssgle:LineSegment
-                    End="125.166666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Informacje o Osobach legitymowanych\Derived Column 2"
-          TopLeft="228.5,926.5" />
-        <EdgeLayout
-          Id="Package\Informacje o Osobach legitymowanych.Paths[Union All Output 1]"
-          TopLeft="310,866.5">
+          Id="Package\Informacje o Osobach legitymowanych.Paths[Merge Join Output]"
+          TopLeft="310,252.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9041,13 +8998,167 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Informacje o Osobach legitymowanych\Insert Destination"
-          TopLeft="228.5,1028.5" />
+        <EdgeLayout
+          Id="Package\Informacje o Osobach legitymowanych.Paths[Historical Attribute Inserts Output]"
+          TopLeft="276.5,560.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-109.5,60"
+              Start="0,0"
+              End="-109.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2735042735043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2735042735043"
+                    Point2="0,24.2735042735043"
+                    Point3="-4,24.2735042735043" />
+                  <mssgle:LineSegment
+                    End="-105.5,24.2735042735043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-105.5,24.2735042735043"
+                    Point2="-109.5,24.2735042735043"
+                    Point3="-109.5,28.2735042735043" />
+                  <mssgle:LineSegment
+                    End="-109.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-129.80638671875,29.2735042735043,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o Osobach legitymowanych.Paths[Flat File Source Output1]"
+          TopLeft="310,48.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o Osobach legitymowanych.Paths[Flat File Source Output]"
+          TopLeft="100,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="47,61"
+              Start="0,0"
+              End="47,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.5"
+                    Point2="0,30.5"
+                    Point3="4,30.5" />
+                  <mssgle:LineSegment
+                    End="43,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="43,30.5"
+                    Point2="47,30.5"
+                    Point3="47,34.5" />
+                  <mssgle:LineSegment
+                    End="47,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Informacje o Osobach legitymowanych.Paths[Derived Column Output2]"
           TopLeft="310,968.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o Osobach legitymowanych.Paths[Derived Column Output1]"
+          TopLeft="166.5,662.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o Osobach legitymowanych.Paths[Derived Column Output]"
+          TopLeft="310,355.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Informacje o Osobach legitymowanych.Paths[Data Conversion Output]"
+          TopLeft="310,458.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9147,100 +9258,31 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Informacje o funkcjonariuszach\Slowly Changing Dimension">
-    <Properties>
-      <Property>
-        <Name>SCDMetadata</Name>
-        <Value
-          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionID&gt;{5E850A63-B3C5-4A71-AA9B-DF60415326F1}&lt;/ConnectionID&gt;
-  &lt;TableName&gt;[dbo].[Funkcjonariusz]&lt;/TableName&gt;
-  &lt;InputToColumnsCollection&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Mail]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;E_mail&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Imie i Nazwisko]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Imie_nazwisko&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ID]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;klucz_biznesowy&lt;/ColumnName&gt;
-      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Nazwa]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Nazwa_komisariatu&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Telefon]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Numer_telefonu&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Pesel]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Pesel&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Stopień]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Stopien&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-  &lt;/InputToColumnsCollection&gt;
-  &lt;GeneratedComponentsIdentificationStrings&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 2&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
-  &lt;/GeneratedComponentsIdentificationStrings&gt;
-  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
-  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
-  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
-  &lt;CurrentIndicatorColumn /&gt;
-  &lt;InferredIndicatorColumn /&gt;
-  &lt;ValueCurrent /&gt;
-  &lt;ValueExpired /&gt;
-  &lt;StartDateColumn&gt;data_wstawienia&lt;/StartDateColumn&gt;
-  &lt;EndDateColumn&gt;data_przedawnienia&lt;/EndDateColumn&gt;
-  &lt;DateVariable&gt;System::CreationDate&lt;/DateVariable&gt;
-  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
-&lt;/SCDWizardMetadata&gt;</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Informacje o funkcjonariuszach\Insert Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Miejsce Zdarzenia">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Miejsce Zdarzenia\Sort"
+          TopLeft="111,126" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Miejsce Zdarzenia\Data Conversion"
+          TopLeft="180,309" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Miejsce Zdarzenia\Merge Join"
+          TopLeft="191,217" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Miejsce Zdarzenia\Sort 1"
+          TopLeft="321,123" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Miejsce Zdarzenia\OLE DB Destination"
+          TopLeft="178,422" />
         <NodeLayout
           Size="111,42"
           Id="Package\Miejsce Zdarzenia\Adresy"
@@ -9249,46 +9291,100 @@
           Size="190,42"
           Id="Package\Miejsce Zdarzenia\Wystawianie mandatów"
           TopLeft="250,41" />
-        <NodeLayout
-          Size="98,42"
-          Id="Package\Miejsce Zdarzenia\Sort"
-          TopLeft="111,126" />
-        <NodeLayout
-          Size="98,42"
-          Id="Package\Miejsce Zdarzenia\Sort 1"
-          TopLeft="321,123" />
         <EdgeLayout
-          Id="Package\Miejsce Zdarzenia.Paths[Flat File Source Output]"
-          TopLeft="143.5,82">
+          Id="Package\Miejsce Zdarzenia.Paths[Sort Output1]"
+          TopLeft="370,165">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="16.5,44"
+              EndConnector="-93.6666666666667,52"
               Start="0,0"
-              End="16.5,36.5">
+              End="-93.6666666666667,44.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18" />
+                    End="0,26.8206686930091" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18"
-                    Point2="0,22"
-                    Point3="4,22" />
+                    Point1="0,26.8206686930091"
+                    Point2="0,30.8206686930091"
+                    Point3="-4,30.8206686930091" />
                   <mssgle:LineSegment
-                    End="12.5,22" />
+                    End="-89.6666666666667,30.8206686930091" />
                   <mssgle:CubicBezierSegment
-                    Point1="12.5,22"
-                    Point2="16.5,22"
-                    Point3="16.5,26" />
+                    Point1="-89.6666666666667,30.8206686930091"
+                    Point2="-93.6666666666667,30.8206686930091"
+                    Point3="-93.6666666666667,34.8206686930091" />
                   <mssgle:LineSegment
-                    End="16.5,36.5" />
+                    End="-93.6666666666667,44.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Miejsce Zdarzenia.Paths[Sort Output]"
+          TopLeft="160,168">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="96,49"
+              Start="0,0"
+              End="96,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.5"
+                    Point2="0,24.5"
+                    Point3="4,24.5" />
+                  <mssgle:LineSegment
+                    End="92,24.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="92,24.5"
+                    Point2="96,24.5"
+                    Point3="96,28.5" />
+                  <mssgle:LineSegment
+                    End="96,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Miejsce Zdarzenia.Paths[Merge Join Output]"
+          TopLeft="257,259">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9322,109 +9418,45 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Miejsce Zdarzenia\Merge Join"
-          TopLeft="191,217" />
         <EdgeLayout
-          Id="Package\Miejsce Zdarzenia.Paths[Sort Output]"
-          TopLeft="160,168">
+          Id="Package\Miejsce Zdarzenia.Paths[Flat File Source Output]"
+          TopLeft="143.5,82">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="96,49"
+              EndConnector="16.5,44"
               Start="0,0"
-              End="96,41.5">
+              End="16.5,36.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.5" />
+                    End="0,18" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.5"
-                    Point2="0,24.5"
-                    Point3="4,24.5" />
+                    Point1="0,18"
+                    Point2="0,22"
+                    Point3="4,22" />
                   <mssgle:LineSegment
-                    End="92,24.5" />
+                    End="12.5,22" />
                   <mssgle:CubicBezierSegment
-                    Point1="92,24.5"
-                    Point2="96,24.5"
-                    Point3="96,28.5" />
+                    Point1="12.5,22"
+                    Point2="16.5,22"
+                    Point3="16.5,26" />
                   <mssgle:LineSegment
-                    End="96,41.5" />
+                    End="16.5,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Miejsce Zdarzenia.Paths[Sort Output1]"
-          TopLeft="370,165">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-93.6666666666667,52"
-              Start="0,0"
-              End="-93.6666666666667,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.8206686930091" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.8206686930091"
-                    Point2="0,30.8206686930091"
-                    Point3="-4,30.8206686930091" />
-                  <mssgle:LineSegment
-                    End="-89.6666666666667,30.8206686930091" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-89.6666666666667,30.8206686930091"
-                    Point2="-93.6666666666667,30.8206686930091"
-                    Point3="-93.6666666666667,34.8206686930091" />
-                  <mssgle:LineSegment
-                    End="-93.6666666666667,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Miejsce Zdarzenia\OLE DB Destination"
-          TopLeft="178,422" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Miejsce Zdarzenia\Data Conversion"
-          TopLeft="180,309" />
-        <EdgeLayout
-          Id="Package\Miejsce Zdarzenia.Paths[Merge Join Output]"
-          TopLeft="257,259">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50"
-              Start="0,0"
-              End="0,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9446,7 +9478,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

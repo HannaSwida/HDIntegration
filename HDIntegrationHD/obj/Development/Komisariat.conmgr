@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="Komisariat"
   DTS:DTSID="{D756C7D5-CE9A-46BA-BD08-9F74D428E86C}"

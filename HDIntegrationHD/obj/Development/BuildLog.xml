@@ -2,13 +2,18 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>HDIntegrationHD</Name>
-    <LastWriteTime>2019-01-02T14:31:26.3241012Z</LastWriteTime>
+    <LastWriteTime>2019-01-02T20:51:45.7994319Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
-      <Name>Package.dtsx</Name>
-      <LastWriteTime>2019-01-02T14:35:19.3365664Z</LastWriteTime>
+      <Name>Inicjalizacja.dtsx</Name>
+      <LastWriteTime>2019-01-02T21:03:46.2429473Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Dane.dtsx</Name>
+      <LastWriteTime>2019-01-02T20:36:44.6692195Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

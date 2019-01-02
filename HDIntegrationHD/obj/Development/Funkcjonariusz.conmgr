@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="Funkcjonariusz"
   DTS:DTSID="{A9652B92-E232-43D0-BD0C-4A1852912719}"

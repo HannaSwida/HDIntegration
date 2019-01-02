@@ -12,7 +12,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x003C_none_x003E_"
       DTS:CodePage="28592"
-      DTS:ConnectionString="C:\Users\hanna\source\repos\HDIntegrationHD\Patrole.csv">
+      DTS:ConnectionString="C:\Users\Felo\Desktop\ETAP 2 GENERATOR\HD-GENERATOR\Patrole.csv">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -21,7 +21,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Numer porządkowy samochodu funkcjonariuszy"
-          DTS:DTSID="{1DE63C5E-8B62-45C3-BB24-7E955CCDF42C}"
+          DTS:DTSID="{53A8DD5D-0A9E-43AE-B360-E5D3B88C68FB}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -30,7 +30,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Długość trasy patrolu"
-          DTS:DTSID="{0CFD3ABA-494B-46BF-B8F8-D25BDD1E9FB6}"
+          DTS:DTSID="{997A6B52-5613-4B20-8C14-977975D5DD45}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Początek trasy"
-          DTS:DTSID="{3F36A882-0A18-46AE-B394-C11780381880}"
+          DTS:DTSID="{C0685E77-6A54-4B08-89D3-C7BBFD024960}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Koniec trasy"
-          DTS:DTSID="{5D684DFE-69BF-428B-98C1-BBE5F6C292F0}"
+          DTS:DTSID="{0C601D96-B3C5-4B8A-B0D1-6862833AD331}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Czas patrolu"
-          DTS:DTSID="{44617147-32A8-4F9D-B72B-4E6EE46BB433}"
+          DTS:DTSID="{745FD189-D03A-413C-A2E8-1E4F760EAC98}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Ilość problemów podczas patrolu"
-          DTS:DTSID="{2B92D784-2089-4584-B543-78DB6C6C47D0}"
+          DTS:DTSID="{6FE62C76-F792-44A6-B510-3CD169D6469E}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

@@ -4,8 +4,30 @@
     <Configuration>
       <Name>Development</Name>
       <Options>
-        <UserIDs />
-        <UserPasswords />
+        <UserIDs>
+          <ConfigurationSetting>
+            <Id>{5E850A63-B3C5-4A71-AA9B-DF60415326F1}</Id>
+            <Name>{5E850A63-B3C5-4A71-AA9B-DF60415326F1}</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArmogg/lyU0+wL0imCpubXAAAAABOAAAAewA1AEUAOAA1ADAAQQA2ADMALQBCADMAQwA1AC0ANABBADcAMQAtAEEAQQA5AEIALQBEAEYANgAwADQAMQA1ADMAMgA2AEYAMQB9AAAAEGYAAAABAAAgAAAARAuvbOg685xHfUmCWQd+2IHPU6jAmklvAu0MIHSxoYIAAAAADoAAAAACAAAgAAAAnvs6315jW1AafK3jrZdk0fSVHq36n3uohncllZua0x8QAAAAI7XPbmb9sgPSb5e1WvSa80AAAACTq6+PpZPtJtlf5wOxwsz4JlK5QGNMuqTl6DfqU2PGNKKgGhYL5C2KD9YUObbmgeErXtoVsvQmCVujcdQVqHvr</Value>
+          </ConfigurationSetting>
+          <ConfigurationSetting>
+            <Id>{E9FCFBB2-A477-4111-AF90-DF9B21E0198C}</Id>
+            <Name>{E9FCFBB2-A477-4111-AF90-DF9B21E0198C}</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArmogg/lyU0+wL0imCpubXAAAAABOAAAAewBFADkARgBDAEYAQgBCADIALQBBADQANwA3AC0ANAAxADEAMQAtAEEARgA5ADAALQBEAEYAOQBCADIAMQBFADAAMQA5ADgAQwB9AAAAEGYAAAABAAAgAAAAQ3Mr3Zr5C/22bPPt5SspLom2MKuBkrsoxOdQWn2CcFwAAAAADoAAAAACAAAgAAAAIGBg1lSNFAu65dbislDhWym/hpHCJ++ZR2aIuraenTMQAAAA1olXEE0LbtoPJNPlI4sO/UAAAAAJSYmv1WI4BCyBEhHpizdLvfrAY9s5RztZ4keYd2f2oSu5L20Z1lJ49Fo2oMbgG/yVS8hFrOk9QYo6T8UGWZfX</Value>
+          </ConfigurationSetting>
+        </UserIDs>
+        <UserPasswords>
+          <ConfigurationSetting>
+            <Id>{5E850A63-B3C5-4A71-AA9B-DF60415326F1}</Id>
+            <Name>{5E850A63-B3C5-4A71-AA9B-DF60415326F1}</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArmogg/lyU0+wL0imCpubXAAAAABOAAAAewA1AEUAOAA1ADAAQQA2ADMALQBCADMAQwA1AC0ANABBADcAMQAtAEEAQQA5AEIALQBEAEYANgAwADQAMQA1ADMAMgA2AEYAMQB9AAAAEGYAAAABAAAgAAAA9ix530oC0M+U4c0nh9KRn9jQmbWYU+iXPEWnRjoHEeIAAAAADoAAAAACAAAgAAAASeIBuPlYO18UiF9Y2uAVxsAT1GJE6dEiC/PgZkjZhpEgAAAAVbvZDc39PZVzc3WVlxHpeOrn6HEYaK3+KJaBDuxAnoRAAAAAUrEenADeJL8vEDIhxqs2pP0fXkNCAUpwpsxj3HVl/H645OX2Q64rN3ywn1BicH6LN7ZONveDvozpVKrJsi/ioQ==</Value>
+          </ConfigurationSetting>
+          <ConfigurationSetting>
+            <Id>{E9FCFBB2-A477-4111-AF90-DF9B21E0198C}</Id>
+            <Name>{E9FCFBB2-A477-4111-AF90-DF9B21E0198C}</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArmogg/lyU0+wL0imCpubXAAAAABOAAAAewBFADkARgBDAEYAQgBCADIALQBBADQANwA3AC0ANAAxADEAMQAtAEEARgA5ADAALQBEAEYAOQBCADIAMQBFADAAMQA5ADgAQwB9AAAAEGYAAAABAAAgAAAA0OFK55fg2fbItRz5Sm49Akev71rWACyEkegER+UEzQkAAAAADoAAAAACAAAgAAAASldpCs3Q/pDUdTDKzI+uFZ4eHbLjmGzIgnN0UhA8yNQgAAAA+BX3yVKYH3pgckxi1A97uEJu5PczYr+Y0IeWqtDmen5AAAAAuWYKTTBW56WPg/DhJVebyAiIEACOvrW4pIsy0bTnoClidvZdCj3EjiR+dmz9UyNC0SNzR/BkQd76njO8Qm7JZg==</Value>
+          </ConfigurationSetting>
+        </UserPasswords>
         <OfflineMode>false</OfflineMode>
         <ProgressReporting>true</ProgressReporting>
         <ParameterConfigurationSensitiveValues>

@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="Święta"
   DTS:DTSID="{EC8C50E9-7C68-4FD4-9730-F61240DD2B55}"
