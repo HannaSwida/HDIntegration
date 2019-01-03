@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Inicjalizacja"
   DTS:PackageType="5"
-  DTS:VersionBuild="33"
-  DTS:VersionGUID="{A4498E6E-70A8-4ACC-B619-9DC78530588D}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{E45BA8C8-C7CF-4FAA-8B23-FAA53ADB151E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -41,13 +41,13 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Czas i Data Mandatów"
+      DTS:refId="Package\Czas i Data"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{72017455-63ae-4b6a-9b69-8f08572bef81}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Czas i Data Mandatów"
+      DTS:ObjectName="Czas i Data"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -55,7 +55,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Czas i Data Mandatów\Czas"
+              refId="Package\Czas i Data\Czas"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -112,7 +112,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Czas i Data Mandatów\Czas.Connections[OleDbConnection]"
+                  refId="Package\Czas i Data\Czas.Connections[OleDbConnection]"
                   connectionManagerID="{5E850A63-B3C5-4A71-AA9B-DF60415326F1}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Policja_DB]"
                   description="The OLE DB runtime connection used to access the database."
@@ -120,37 +120,37 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Czas i Data Mandatów\Czas.Inputs[OLE DB Destination Input]"
+                  refId="Package\Czas i Data\Czas.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Czas i Data Mandatów\Czas.Inputs[OLE DB Destination Input].Columns[Godzina]"
+                      refId="Package\Czas i Data\Czas.Inputs[OLE DB Destination Input].Columns[Godzina]"
                       cachedDataType="i4"
                       cachedName="Godzina"
-                      externalMetadataColumnId="Package\Czas i Data Mandatów\Czas.Inputs[OLE DB Destination Input].ExternalColumns[Godzina]"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output].Columns[Godzina]" />
+                      externalMetadataColumnId="Package\Czas i Data\Czas.Inputs[OLE DB Destination Input].ExternalColumns[Godzina]"
+                      lineageId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output].Columns[Godzina]" />
                     <inputColumn
-                      refId="Package\Czas i Data Mandatów\Czas.Inputs[OLE DB Destination Input].Columns[Minuta]"
+                      refId="Package\Czas i Data\Czas.Inputs[OLE DB Destination Input].Columns[Minuta]"
                       cachedDataType="i4"
                       cachedName="Minuta"
-                      externalMetadataColumnId="Package\Czas i Data Mandatów\Czas.Inputs[OLE DB Destination Input].ExternalColumns[Minuta]"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output].Columns[Minuta]" />
+                      externalMetadataColumnId="Package\Czas i Data\Czas.Inputs[OLE DB Destination Input].ExternalColumns[Minuta]"
+                      lineageId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output].Columns[Minuta]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Czas.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      refId="Package\Czas i Data\Czas.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
                       dataType="i4"
                       name="Id" />
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Czas.Inputs[OLE DB Destination Input].ExternalColumns[Godzina]"
+                      refId="Package\Czas i Data\Czas.Inputs[OLE DB Destination Input].ExternalColumns[Godzina]"
                       dataType="i4"
                       name="Godzina" />
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Czas.Inputs[OLE DB Destination Input].ExternalColumns[Minuta]"
+                      refId="Package\Czas i Data\Czas.Inputs[OLE DB Destination Input].ExternalColumns[Minuta]"
                       dataType="i4"
                       name="Minuta" />
                   </externalMetadataColumns>
@@ -158,22 +158,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Czas i Data Mandatów\Czas.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Czas i Data\Czas.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Czas i Data Mandatów\Czas.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Czas i Data\Czas.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Czas.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Czas i Data\Czas.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Czas i Data Mandatów\Czas.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Czas i Data\Czas.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Czas.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Czas i Data\Czas.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Czas i Data Mandatów\Czas.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Czas i Data\Czas.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -182,7 +182,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Czas i Data Mandatów\Czasy mandatów"
+              refId="Package\Czas i Data\Czasy mandatów"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
@@ -202,23 +202,23 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Czas i Data Mandatów\Czasy mandatów.Connections[FlatFileConnection]"
+                  refId="Package\Czas i Data\Czasy mandatów.Connections[FlatFileConnection]"
                   connectionManagerID="{8C47707B-22F3-47FF-B5F8-07A0E4942891}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Wystawianie Mandatów]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Czas i Data Mandatów\Czasy mandatów.Outputs[Flat File Source Output]"
+                  refId="Package\Czas i Data\Czasy mandatów.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Czasy mandatów.Outputs[Flat File Source Output].Columns[Czas Wystawienia]"
+                      refId="Package\Czas i Data\Czasy mandatów.Outputs[Flat File Source Output].Columns[Czas Wystawienia]"
                       dataType="date"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Czas i Data Mandatów\Czasy mandatów.Outputs[Flat File Source Output].ExternalColumns[Czas Wystawienia]"
-                      lineageId="Package\Czas i Data Mandatów\Czasy mandatów.Outputs[Flat File Source Output].Columns[Czas Wystawienia]"
+                      externalMetadataColumnId="Package\Czas i Data\Czasy mandatów.Outputs[Flat File Source Output].ExternalColumns[Czas Wystawienia]"
+                      lineageId="Package\Czas i Data\Czasy mandatów.Outputs[Flat File Source Output].Columns[Czas Wystawienia]"
                       name="Czas Wystawienia"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -236,63 +236,63 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Czasy mandatów.Outputs[Flat File Source Output].ExternalColumns[ID]"
+                      refId="Package\Czas i Data\Czasy mandatów.Outputs[Flat File Source Output].ExternalColumns[ID]"
                       dataType="wstr"
                       length="50"
                       name="ID" />
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Czasy mandatów.Outputs[Flat File Source Output].ExternalColumns[Kwota]"
+                      refId="Package\Czas i Data\Czasy mandatów.Outputs[Flat File Source Output].ExternalColumns[Kwota]"
                       dataType="wstr"
                       length="50"
                       name="Kwota" />
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Czasy mandatów.Outputs[Flat File Source Output].ExternalColumns[Powód]"
+                      refId="Package\Czas i Data\Czasy mandatów.Outputs[Flat File Source Output].ExternalColumns[Powód]"
                       codePage="1250"
                       dataType="text"
                       name="Powód" />
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Czasy mandatów.Outputs[Flat File Source Output].ExternalColumns[Czas Wystawienia]"
+                      refId="Package\Czas i Data\Czasy mandatów.Outputs[Flat File Source Output].ExternalColumns[Czas Wystawienia]"
                       dataType="date"
                       name="Czas Wystawienia" />
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Czasy mandatów.Outputs[Flat File Source Output].ExternalColumns[Osoba Legitymowana (FK)]"
+                      refId="Package\Czas i Data\Czasy mandatów.Outputs[Flat File Source Output].ExternalColumns[Osoba Legitymowana (FK)]"
                       dataType="wstr"
                       length="50"
                       name="Osoba Legitymowana (FK)" />
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Czasy mandatów.Outputs[Flat File Source Output].ExternalColumns[Miejsce Zdarzenia (FK)]"
+                      refId="Package\Czas i Data\Czasy mandatów.Outputs[Flat File Source Output].ExternalColumns[Miejsce Zdarzenia (FK)]"
                       dataType="wstr"
                       length="50"
                       name="Miejsce Zdarzenia (FK)" />
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Czasy mandatów.Outputs[Flat File Source Output].ExternalColumns[Funkcjonariusz (FK)]"
+                      refId="Package\Czas i Data\Czasy mandatów.Outputs[Flat File Source Output].ExternalColumns[Funkcjonariusz (FK)]"
                       dataType="wstr"
                       length="50"
                       name="Funkcjonariusz (FK)" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Czas i Data Mandatów\Czasy mandatów.Outputs[Flat File Source Error Output]"
+                  refId="Package\Czas i Data\Czasy mandatów.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Czasy mandatów.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Czas i Data\Czasy mandatów.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="1250"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Czas i Data Mandatów\Czasy mandatów.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Czas i Data\Czasy mandatów.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Czasy mandatów.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Czas i Data\Czasy mandatów.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Czas i Data Mandatów\Czasy mandatów.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Czas i Data\Czasy mandatów.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Czasy mandatów.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Czas i Data\Czasy mandatów.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Czas i Data Mandatów\Czasy mandatów.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Czas i Data\Czasy mandatów.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -301,7 +301,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Czas i Data Mandatów\Data"
+              refId="Package\Czas i Data\Data"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -358,7 +358,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Czas i Data Mandatów\Data.Connections[OleDbConnection]"
+                  refId="Package\Czas i Data\Data.Connections[OleDbConnection]"
                   connectionManagerID="{5E850A63-B3C5-4A71-AA9B-DF60415326F1}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Policja_DB]"
                   description="The OLE DB runtime connection used to access the database."
@@ -366,71 +366,71 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Czas i Data Mandatów\Data.Inputs[OLE DB Destination Input]"
+                  refId="Package\Czas i Data\Data.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Czas i Data Mandatów\Data.Inputs[OLE DB Destination Input].Columns[Rok]"
+                      refId="Package\Czas i Data\Data.Inputs[OLE DB Destination Input].Columns[Rok]"
                       cachedDataType="i4"
                       cachedName="Rok"
-                      externalMetadataColumnId="Package\Czas i Data Mandatów\Data.Inputs[OLE DB Destination Input].ExternalColumns[Rok]"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output].Columns[Rok]" />
+                      externalMetadataColumnId="Package\Czas i Data\Data.Inputs[OLE DB Destination Input].ExternalColumns[Rok]"
+                      lineageId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output].Columns[Rok]" />
                     <inputColumn
-                      refId="Package\Czas i Data Mandatów\Data.Inputs[OLE DB Destination Input].Columns[Miesiąc]"
+                      refId="Package\Czas i Data\Data.Inputs[OLE DB Destination Input].Columns[Miesiąc]"
                       cachedDataType="i4"
                       cachedName="Miesiąc"
-                      externalMetadataColumnId="Package\Czas i Data Mandatów\Data.Inputs[OLE DB Destination Input].ExternalColumns[Miesiac]"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output].Columns[Miesiąc]" />
+                      externalMetadataColumnId="Package\Czas i Data\Data.Inputs[OLE DB Destination Input].ExternalColumns[Miesiac]"
+                      lineageId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output].Columns[Miesiąc]" />
                     <inputColumn
-                      refId="Package\Czas i Data Mandatów\Data.Inputs[OLE DB Destination Input].Columns[Dzień]"
+                      refId="Package\Czas i Data\Data.Inputs[OLE DB Destination Input].Columns[Dzień]"
                       cachedDataType="i4"
                       cachedName="Dzień"
-                      externalMetadataColumnId="Package\Czas i Data Mandatów\Data.Inputs[OLE DB Destination Input].ExternalColumns[Dzien]"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output].Columns[Dzień]" />
+                      externalMetadataColumnId="Package\Czas i Data\Data.Inputs[OLE DB Destination Input].ExternalColumns[Dzien]"
+                      lineageId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output].Columns[Dzień]" />
                     <inputColumn
-                      refId="Package\Czas i Data Mandatów\Data.Inputs[OLE DB Destination Input].Columns[Czy święto]"
+                      refId="Package\Czas i Data\Data.Inputs[OLE DB Destination Input].Columns[Czy święto]"
                       cachedCodepage="1250"
                       cachedDataType="str"
                       cachedLength="191"
                       cachedName="Czy święto"
-                      externalMetadataColumnId="Package\Czas i Data Mandatów\Data.Inputs[OLE DB Destination Input].ExternalColumns[Swieto]"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output].Columns[Czy święto]" />
+                      externalMetadataColumnId="Package\Czas i Data\Data.Inputs[OLE DB Destination Input].ExternalColumns[Swieto]"
+                      lineageId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output].Columns[Czy święto]" />
                     <inputColumn
-                      refId="Package\Czas i Data Mandatów\Data.Inputs[OLE DB Destination Input].Columns[Dzień tygodnia]"
+                      refId="Package\Czas i Data\Data.Inputs[OLE DB Destination Input].Columns[Dzień tygodnia]"
                       cachedDataType="i4"
                       cachedName="Dzień tygodnia"
-                      externalMetadataColumnId="Package\Czas i Data Mandatów\Data.Inputs[OLE DB Destination Input].ExternalColumns[Dzien_tygodnia]"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output].Columns[Dzień tygodnia]" />
+                      externalMetadataColumnId="Package\Czas i Data\Data.Inputs[OLE DB Destination Input].ExternalColumns[Dzien_tygodnia]"
+                      lineageId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output].Columns[Dzień tygodnia]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Data.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      refId="Package\Czas i Data\Data.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
                       dataType="i4"
                       name="Id" />
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Data.Inputs[OLE DB Destination Input].ExternalColumns[Rok]"
+                      refId="Package\Czas i Data\Data.Inputs[OLE DB Destination Input].ExternalColumns[Rok]"
                       dataType="i4"
                       name="Rok" />
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Data.Inputs[OLE DB Destination Input].ExternalColumns[Miesiac]"
+                      refId="Package\Czas i Data\Data.Inputs[OLE DB Destination Input].ExternalColumns[Miesiac]"
                       dataType="i4"
                       name="Miesiac" />
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Data.Inputs[OLE DB Destination Input].ExternalColumns[Dzien]"
+                      refId="Package\Czas i Data\Data.Inputs[OLE DB Destination Input].ExternalColumns[Dzien]"
                       dataType="i4"
                       name="Dzien" />
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Data.Inputs[OLE DB Destination Input].ExternalColumns[Swieto]"
+                      refId="Package\Czas i Data\Data.Inputs[OLE DB Destination Input].ExternalColumns[Swieto]"
                       codePage="1250"
                       dataType="str"
                       length="191"
                       name="Swieto" />
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Data.Inputs[OLE DB Destination Input].ExternalColumns[Dzien_tygodnia]"
+                      refId="Package\Czas i Data\Data.Inputs[OLE DB Destination Input].ExternalColumns[Dzien_tygodnia]"
                       codePage="1250"
                       dataType="str"
                       length="191"
@@ -440,22 +440,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Czas i Data Mandatów\Data.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Czas i Data\Data.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Czas i Data Mandatów\Data.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Czas i Data\Data.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Czas i Data\Data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Czas i Data Mandatów\Data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Czas i Data\Data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Czas i Data\Data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Czas i Data Mandatów\Data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Czas i Data\Data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -464,7 +464,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Czas i Data Mandatów\Derived Column"
+              refId="Package\Czas i Data\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -472,34 +472,34 @@
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Czas i Data Mandatów\Derived Column.Inputs[Derived Column Input]"
+                  refId="Package\Czas i Data\Derived Column.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Czas i Data Mandatów\Derived Column.Inputs[Derived Column Input].Columns[Czas Wystawienia]"
+                      refId="Package\Czas i Data\Derived Column.Inputs[Derived Column Input].Columns[Czas Wystawienia]"
                       cachedDataType="date"
                       cachedName="Czas Wystawienia"
                       cachedSortKeyPosition="1"
-                      lineageId="Package\Czas i Data Mandatów\Merge.Outputs[Merge Output 1].Columns[Czas Wystawienia]" />
+                      lineageId="Package\Czas i Data\Merge.Outputs[Merge Output 1].Columns[Czas Wystawienia]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Czas i Data Mandatów\Derived Column.Outputs[Derived Column Output]"
+                  refId="Package\Czas i Data\Derived Column.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Czas i Data Mandatów\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Czas i Data\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Derived Column.Outputs[Derived Column Output].Columns[Data]"
+                      refId="Package\Czas i Data\Derived Column.Outputs[Derived Column Output].Columns[Data]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column.Outputs[Derived Column Output].Columns[Data]"
+                      lineageId="Package\Czas i Data\Derived Column.Outputs[Derived Column Output].Columns[Data]"
                       name="Data"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -507,7 +507,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_DBDATE)#{Package\Czas i Data Mandatów\Merge.Outputs[Merge Output 1].Columns[Czas Wystawienia]}</property>
+                          name="Expression">(DT_DBDATE)#{Package\Czas i Data\Merge.Outputs[Merge Output 1].Columns[Czas Wystawienia]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -520,23 +520,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Czas i Data Mandatów\Derived Column.Outputs[Derived Column Error Output]"
+                  refId="Package\Czas i Data\Derived Column.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Czas i Data Mandatów\Derived Column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Czas i Data\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Czas i Data\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Czas i Data\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Czas i Data\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Czas i Data\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -545,7 +545,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Czas i Data Mandatów\Derived Column 1"
+              refId="Package\Czas i Data\Derived Column 1"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -553,39 +553,39 @@
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Czas i Data Mandatów\Derived Column 1.Inputs[Derived Column Input]"
+                  refId="Package\Czas i Data\Derived Column 1.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Czas i Data Mandatów\Derived Column 1.Inputs[Derived Column Input].Columns[Czas Wystawienia]"
+                      refId="Package\Czas i Data\Derived Column 1.Inputs[Derived Column Input].Columns[Czas Wystawienia]"
                       cachedDataType="date"
                       cachedName="Czas Wystawienia"
-                      lineageId="Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]" />
+                      lineageId="Package\Czas i Data\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]" />
                     <inputColumn
-                      refId="Package\Czas i Data Mandatów\Derived Column 1.Inputs[Derived Column Input].Columns[Czy świeto]"
+                      refId="Package\Czas i Data\Derived Column 1.Inputs[Derived Column Input].Columns[Czy świeto]"
                       cachedDataType="wstr"
                       cachedLength="1"
                       cachedName="Czy świeto"
-                      lineageId="Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1].Columns[Czy świeto]" />
+                      lineageId="Package\Czas i Data\Union All 1.Outputs[Union All Output 1].Columns[Czy świeto]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output]"
+                  refId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Czas i Data Mandatów\Derived Column 1.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Czas i Data\Derived Column 1.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output].Columns[Rok]"
+                      refId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output].Columns[Rok]"
                       dataType="i4"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output].Columns[Rok]"
+                      lineageId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output].Columns[Rok]"
                       name="Rok"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -593,7 +593,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[YEAR](#{Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]})</property>
+                          name="Expression">[YEAR](#{Package\Czas i Data\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -603,11 +603,11 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output].Columns[Miesiąc]"
+                      refId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output].Columns[Miesiąc]"
                       dataType="i4"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output].Columns[Miesiąc]"
+                      lineageId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output].Columns[Miesiąc]"
                       name="Miesiąc"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -615,7 +615,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[MONTH](#{Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]})</property>
+                          name="Expression">[MONTH](#{Package\Czas i Data\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -625,11 +625,11 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output].Columns[Dzień]"
+                      refId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output].Columns[Dzień]"
                       dataType="i4"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output].Columns[Dzień]"
+                      lineageId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output].Columns[Dzień]"
                       name="Dzień"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -637,7 +637,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[DAY](#{Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]})</property>
+                          name="Expression">[DAY](#{Package\Czas i Data\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -647,11 +647,11 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output].Columns[Godzina]"
+                      refId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output].Columns[Godzina]"
                       dataType="i4"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output].Columns[Godzina]"
+                      lineageId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output].Columns[Godzina]"
                       name="Godzina"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -659,7 +659,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[DATEPART]("Hh",#{Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]})</property>
+                          name="Expression">[DATEPART]("Hh",#{Package\Czas i Data\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -669,11 +669,11 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output].Columns[Minuta]"
+                      refId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output].Columns[Minuta]"
                       dataType="i4"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output].Columns[Minuta]"
+                      lineageId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output].Columns[Minuta]"
                       name="Minuta"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -681,7 +681,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[DATEPART]("mi",#{Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]})</property>
+                          name="Expression">[DATEPART]("mi",#{Package\Czas i Data\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -691,13 +691,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output].Columns[Czy święto]"
+                      refId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output].Columns[Czy święto]"
                       codePage="1250"
                       dataType="str"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="191"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output].Columns[Czy święto]"
+                      lineageId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output].Columns[Czy święto]"
                       name="Czy święto"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -705,7 +705,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_STR,191,1250)#{Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1].Columns[Czy świeto]}</property>
+                          name="Expression">(DT_STR,191,1250)#{Package\Czas i Data\Union All 1.Outputs[Union All Output 1].Columns[Czy świeto]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -715,11 +715,11 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output].Columns[Dzień tygodnia]"
+                      refId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output].Columns[Dzień tygodnia]"
                       dataType="i4"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output].Columns[Dzień tygodnia]"
+                      lineageId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output].Columns[Dzień tygodnia]"
                       name="Dzień tygodnia"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -727,7 +727,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">[DATEPART]("wk",#{Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]})</property>
+                          name="Expression">[DATEPART]("wk",#{Package\Czas i Data\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -740,23 +740,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Error Output]"
+                  refId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Czas i Data Mandatów\Derived Column 1.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Czas i Data\Derived Column 1.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -765,7 +765,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Czas i Data Mandatów\Lookup"
+              refId="Package\Czas i Data\Lookup"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -821,7 +821,7 @@ where [refTable].[data] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Czas i Data Mandatów\Derived Column.Outputs[Derived Column Output].Columns[Data]};</property>
+                  name="ParameterMap">#{Package\Czas i Data\Derived Column.Outputs[Derived Column Output].Columns[Data]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -833,7 +833,7 @@ where [refTable].[data] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Czas i Data Mandatów\Lookup.Connections[OleDbConnection]"
+                  refId="Package\Czas i Data\Lookup.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[tempHD_DB]"
                   connectionManagerRefId="Package.ConnectionManagers[tempHD_DB]"
                   description="Connection manager used to access lookup data."
@@ -841,14 +841,14 @@ where [refTable].[data] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Czas i Data Mandatów\Lookup.Inputs[Lookup Input]"
+                  refId="Package\Czas i Data\Lookup.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Czas i Data Mandatów\Lookup.Inputs[Lookup Input].Columns[Data]"
+                      refId="Package\Czas i Data\Lookup.Inputs[Lookup Input].Columns[Data]"
                       cachedDataType="dbDate"
                       cachedName="Data"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column.Outputs[Derived Column Output].Columns[Data]">
+                      lineageId="Package\Czas i Data\Derived Column.Outputs[Derived Column Output].Columns[Data]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -866,38 +866,38 @@ where [refTable].[data] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Czas i Data Mandatów\Lookup.Outputs[Lookup Match Output]"
+                  refId="Package\Czas i Data\Lookup.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\Czas i Data Mandatów\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Czas i Data\Lookup.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Czas i Data Mandatów\Lookup.Outputs[Lookup No Match Output]"
+                  refId="Package\Czas i Data\Lookup.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\Czas i Data Mandatów\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Czas i Data\Lookup.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Czas i Data Mandatów\Lookup.Outputs[Lookup Error Output]"
+                  refId="Package\Czas i Data\Lookup.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\Czas i Data Mandatów\Lookup.Inputs[Lookup Input]">
+                  synchronousInputId="Package\Czas i Data\Lookup.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\Czas i Data\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Czas i Data Mandatów\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Czas i Data\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\Czas i Data\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Czas i Data Mandatów\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Czas i Data\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -906,7 +906,7 @@ where [refTable].[data] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Czas i Data Mandatów\Merge"
+              refId="Package\Czas i Data\Merge"
               componentClassID="Microsoft.Merge"
               contactInfo="Merge;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Combines rows from multiple sorted data flows into one sorted data flow. Unlike the Merge Join, all rows flow to the output. For example, combine two sorted lists of customers into a single sorted list. If sorting is not important, use the Union All transformation. "
@@ -914,42 +914,42 @@ where [refTable].[data] = ?</property>
               version="1">
               <inputs>
                 <input
-                  refId="Package\Czas i Data Mandatów\Merge.Inputs[Merge Input 1]"
+                  refId="Package\Czas i Data\Merge.Inputs[Merge Input 1]"
                   name="Merge Input 1">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Czas i Data Mandatów\Merge.Inputs[Merge Input 1].Columns[Czas Wystawienia]"
+                      refId="Package\Czas i Data\Merge.Inputs[Merge Input 1].Columns[Czas Wystawienia]"
                       cachedDataType="date"
                       cachedName="Czas Wystawienia"
                       cachedSortKeyPosition="1"
-                      lineageId="Package\Czas i Data Mandatów\Sort.Outputs[Sort Output].Columns[Czas Wystawienia]">
+                      lineageId="Package\Czas i Data\Sort.Outputs[Sort Output].Columns[Czas Wystawienia]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Czas i Data Mandatów\Merge.Outputs[Merge Output 1].Columns[Czas Wystawienia]}</property>
+                          name="OutputColumnLineageID">#{Package\Czas i Data\Merge.Outputs[Merge Output 1].Columns[Czas Wystawienia]}</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
                 <input
-                  refId="Package\Czas i Data Mandatów\Merge.Inputs[Merge Input 2]"
+                  refId="Package\Czas i Data\Merge.Inputs[Merge Input 2]"
                   name="Merge Input 2">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Czas i Data Mandatów\Merge.Inputs[Merge Input 2].Columns[Data patrolu]"
+                      refId="Package\Czas i Data\Merge.Inputs[Merge Input 2].Columns[Data patrolu]"
                       cachedDataType="date"
                       cachedName="Data patrolu"
                       cachedSortKeyPosition="1"
-                      lineageId="Package\Czas i Data Mandatów\Sort 1.Outputs[Sort Output].Columns[Data patrolu]">
+                      lineageId="Package\Czas i Data\Sort 1.Outputs[Sort Output].Columns[Data patrolu]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Czas i Data Mandatów\Merge.Outputs[Merge Output 1].Columns[Czas Wystawienia]}</property>
+                          name="OutputColumnLineageID">#{Package\Czas i Data\Merge.Outputs[Merge Output 1].Columns[Czas Wystawienia]}</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -958,14 +958,14 @@ where [refTable].[data] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Czas i Data Mandatów\Merge.Outputs[Merge Output 1]"
+                  refId="Package\Czas i Data\Merge.Outputs[Merge Output 1]"
                   isSorted="true"
                   name="Merge Output 1">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Merge.Outputs[Merge Output 1].Columns[Czas Wystawienia]"
+                      refId="Package\Czas i Data\Merge.Outputs[Merge Output 1].Columns[Czas Wystawienia]"
                       dataType="date"
-                      lineageId="Package\Czas i Data Mandatów\Merge.Outputs[Merge Output 1].Columns[Czas Wystawienia]"
+                      lineageId="Package\Czas i Data\Merge.Outputs[Merge Output 1].Columns[Czas Wystawienia]"
                       name="Czas Wystawienia"
                       sortKeyPosition="1" />
                   </outputColumns>
@@ -974,45 +974,45 @@ where [refTable].[data] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Czas i Data Mandatów\Multicast"
+              refId="Package\Czas i Data\Multicast"
               componentClassID="Microsoft.Multicast"
               contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
               name="Multicast">
               <inputs>
                 <input
-                  refId="Package\Czas i Data Mandatów\Multicast.Inputs[Multicast Input 1]"
+                  refId="Package\Czas i Data\Multicast.Inputs[Multicast Input 1]"
                   name="Multicast Input 1">
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Czas i Data Mandatów\Multicast.Outputs[Multicast Output 1]"
+                  refId="Package\Czas i Data\Multicast.Outputs[Multicast Output 1]"
                   deleteOutputOnPathDetached="true"
                   name="Multicast Output 1"
-                  synchronousInputId="Package\Czas i Data Mandatów\Multicast.Inputs[Multicast Input 1]">
+                  synchronousInputId="Package\Czas i Data\Multicast.Inputs[Multicast Input 1]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Czas i Data Mandatów\Multicast.Outputs[Multicast Output 2]"
+                  refId="Package\Czas i Data\Multicast.Outputs[Multicast Output 2]"
                   deleteOutputOnPathDetached="true"
                   name="Multicast Output 2"
-                  synchronousInputId="Package\Czas i Data Mandatów\Multicast.Inputs[Multicast Input 1]">
+                  synchronousInputId="Package\Czas i Data\Multicast.Inputs[Multicast Input 1]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Czas i Data Mandatów\Multicast.Outputs[Multicast Output 3]"
+                  refId="Package\Czas i Data\Multicast.Outputs[Multicast Output 3]"
                   dangling="true"
                   deleteOutputOnPathDetached="true"
                   name="Multicast Output 3"
-                  synchronousInputId="Package\Czas i Data Mandatów\Multicast.Inputs[Multicast Input 1]">
+                  synchronousInputId="Package\Czas i Data\Multicast.Inputs[Multicast Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
             </component>
             <component
-              refId="Package\Czas i Data Mandatów\Patrole"
+              refId="Package\Czas i Data\Patrole"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Flat File Source"
@@ -1032,23 +1032,23 @@ where [refTable].[data] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Czas i Data Mandatów\Patrole.Connections[FlatFileConnection]"
+                  refId="Package\Czas i Data\Patrole.Connections[FlatFileConnection]"
                   connectionManagerID="{D9F0FCB3-AC03-42E5-9FF9-8D31ED4D38B0}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Patrole]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Czas i Data Mandatów\Patrole.Outputs[Flat File Source Output]"
+                  refId="Package\Czas i Data\Patrole.Outputs[Flat File Source Output]"
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Patrole.Outputs[Flat File Source Output].Columns[Data patrolu]"
+                      refId="Package\Czas i Data\Patrole.Outputs[Flat File Source Output].Columns[Data patrolu]"
                       dataType="date"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Czas i Data Mandatów\Patrole.Outputs[Flat File Source Output].ExternalColumns[Data patrolu]"
-                      lineageId="Package\Czas i Data Mandatów\Patrole.Outputs[Flat File Source Output].Columns[Data patrolu]"
+                      externalMetadataColumnId="Package\Czas i Data\Patrole.Outputs[Flat File Source Output].ExternalColumns[Data patrolu]"
+                      lineageId="Package\Czas i Data\Patrole.Outputs[Flat File Source Output].Columns[Data patrolu]"
                       name="Data patrolu"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1066,69 +1066,69 @@ where [refTable].[data] = ?</property>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Patrole.Outputs[Flat File Source Output].ExternalColumns[Numer porządkowy samochodu funkcjonariuszy]"
+                      refId="Package\Czas i Data\Patrole.Outputs[Flat File Source Output].ExternalColumns[Numer porządkowy samochodu funkcjonariuszy]"
                       codePage="28592"
                       dataType="str"
                       length="50"
                       name="Numer porządkowy samochodu funkcjonariuszy" />
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Patrole.Outputs[Flat File Source Output].ExternalColumns[Długość trasy patrolu]"
+                      refId="Package\Czas i Data\Patrole.Outputs[Flat File Source Output].ExternalColumns[Długość trasy patrolu]"
                       codePage="28592"
                       dataType="str"
                       length="50"
                       name="Długość trasy patrolu" />
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Patrole.Outputs[Flat File Source Output].ExternalColumns[Początek trasy]"
+                      refId="Package\Czas i Data\Patrole.Outputs[Flat File Source Output].ExternalColumns[Początek trasy]"
                       codePage="28592"
                       dataType="str"
                       length="50"
                       name="Początek trasy" />
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Patrole.Outputs[Flat File Source Output].ExternalColumns[Koniec trasy]"
+                      refId="Package\Czas i Data\Patrole.Outputs[Flat File Source Output].ExternalColumns[Koniec trasy]"
                       codePage="28592"
                       dataType="str"
                       length="50"
                       name="Koniec trasy" />
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Patrole.Outputs[Flat File Source Output].ExternalColumns[Czas patrolu]"
+                      refId="Package\Czas i Data\Patrole.Outputs[Flat File Source Output].ExternalColumns[Czas patrolu]"
                       codePage="28592"
                       dataType="str"
                       length="50"
                       name="Czas patrolu" />
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Patrole.Outputs[Flat File Source Output].ExternalColumns[Ilość problemów podczas patrolu]"
+                      refId="Package\Czas i Data\Patrole.Outputs[Flat File Source Output].ExternalColumns[Ilość problemów podczas patrolu]"
                       codePage="28592"
                       dataType="str"
                       length="50"
                       name="Ilość problemów podczas patrolu" />
                     <externalMetadataColumn
-                      refId="Package\Czas i Data Mandatów\Patrole.Outputs[Flat File Source Output].ExternalColumns[Data patrolu]"
+                      refId="Package\Czas i Data\Patrole.Outputs[Flat File Source Output].ExternalColumns[Data patrolu]"
                       dataType="date"
                       name="Data patrolu" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Czas i Data Mandatów\Patrole.Outputs[Flat File Source Error Output]"
+                  refId="Package\Czas i Data\Patrole.Outputs[Flat File Source Error Output]"
                   isErrorOut="true"
                   name="Flat File Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Patrole.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      refId="Package\Czas i Data\Patrole.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       codePage="28592"
                       dataType="text"
                       description="Flat File Source Error Output Column"
-                      lineageId="Package\Czas i Data Mandatów\Patrole.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      lineageId="Package\Czas i Data\Patrole.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                       name="Flat File Source Error Output Column" />
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Patrole.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Czas i Data\Patrole.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Czas i Data Mandatów\Patrole.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Czas i Data\Patrole.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Patrole.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Czas i Data\Patrole.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Czas i Data Mandatów\Patrole.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Czas i Data\Patrole.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1137,7 +1137,7 @@ where [refTable].[data] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Czas i Data Mandatów\Sort"
+              refId="Package\Czas i Data\Sort"
               componentClassID="Microsoft.Sort"
               contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
@@ -1156,14 +1156,14 @@ where [refTable].[data] = ?</property>
               </properties>
               <inputs>
                 <input
-                  refId="Package\Czas i Data Mandatów\Sort.Inputs[Sort Input]"
+                  refId="Package\Czas i Data\Sort.Inputs[Sort Input]"
                   name="Sort Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Czas i Data Mandatów\Sort.Inputs[Sort Input].Columns[Czas Wystawienia]"
+                      refId="Package\Czas i Data\Sort.Inputs[Sort Input].Columns[Czas Wystawienia]"
                       cachedDataType="date"
                       cachedName="Czas Wystawienia"
-                      lineageId="Package\Czas i Data Mandatów\Czasy mandatów.Outputs[Flat File Source Output].Columns[Czas Wystawienia]">
+                      lineageId="Package\Czas i Data\Czasy mandatów.Outputs[Flat File Source Output].Columns[Czas Wystawienia]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1181,14 +1181,14 @@ where [refTable].[data] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Czas i Data Mandatów\Sort.Outputs[Sort Output]"
+                  refId="Package\Czas i Data\Sort.Outputs[Sort Output]"
                   isSorted="true"
                   name="Sort Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Sort.Outputs[Sort Output].Columns[Czas Wystawienia]"
+                      refId="Package\Czas i Data\Sort.Outputs[Sort Output].Columns[Czas Wystawienia]"
                       dataType="date"
-                      lineageId="Package\Czas i Data Mandatów\Sort.Outputs[Sort Output].Columns[Czas Wystawienia]"
+                      lineageId="Package\Czas i Data\Sort.Outputs[Sort Output].Columns[Czas Wystawienia]"
                       name="Czas Wystawienia"
                       sortKeyPosition="1">
                       <properties>
@@ -1196,7 +1196,7 @@ where [refTable].[data] = ?</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Czas i Data Mandatów\Czasy mandatów.Outputs[Flat File Source Output].Columns[Czas Wystawienia]}</property>
+                          name="SortColumnId">#{Package\Czas i Data\Czasy mandatów.Outputs[Flat File Source Output].Columns[Czas Wystawienia]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -1205,7 +1205,7 @@ where [refTable].[data] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Czas i Data Mandatów\Sort 1"
+              refId="Package\Czas i Data\Sort 1"
               componentClassID="Microsoft.Sort"
               contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
@@ -1224,14 +1224,14 @@ where [refTable].[data] = ?</property>
               </properties>
               <inputs>
                 <input
-                  refId="Package\Czas i Data Mandatów\Sort 1.Inputs[Sort Input]"
+                  refId="Package\Czas i Data\Sort 1.Inputs[Sort Input]"
                   name="Sort Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Czas i Data Mandatów\Sort 1.Inputs[Sort Input].Columns[Data patrolu]"
+                      refId="Package\Czas i Data\Sort 1.Inputs[Sort Input].Columns[Data patrolu]"
                       cachedDataType="date"
                       cachedName="Data patrolu"
-                      lineageId="Package\Czas i Data Mandatów\Patrole.Outputs[Flat File Source Output].Columns[Data patrolu]">
+                      lineageId="Package\Czas i Data\Patrole.Outputs[Flat File Source Output].Columns[Data patrolu]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1249,14 +1249,14 @@ where [refTable].[data] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Czas i Data Mandatów\Sort 1.Outputs[Sort Output]"
+                  refId="Package\Czas i Data\Sort 1.Outputs[Sort Output]"
                   isSorted="true"
                   name="Sort Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Sort 1.Outputs[Sort Output].Columns[Data patrolu]"
+                      refId="Package\Czas i Data\Sort 1.Outputs[Sort Output].Columns[Data patrolu]"
                       dataType="date"
-                      lineageId="Package\Czas i Data Mandatów\Sort 1.Outputs[Sort Output].Columns[Data patrolu]"
+                      lineageId="Package\Czas i Data\Sort 1.Outputs[Sort Output].Columns[Data patrolu]"
                       name="Data patrolu"
                       sortKeyPosition="1">
                       <properties>
@@ -1264,7 +1264,7 @@ where [refTable].[data] = ?</property>
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the lineage identifier of the input column that is associated with this output column."
-                          name="SortColumnId">#{Package\Czas i Data Mandatów\Patrole.Outputs[Flat File Source Output].Columns[Data patrolu]}</property>
+                          name="SortColumnId">#{Package\Czas i Data\Patrole.Outputs[Flat File Source Output].Columns[Data patrolu]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -1273,7 +1273,7 @@ where [refTable].[data] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Czas i Data Mandatów\Union All 1"
+              refId="Package\Czas i Data\Union All 1"
               componentClassID="Microsoft.UnionAll"
               contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
@@ -1281,104 +1281,104 @@ where [refTable].[data] = ?</property>
               version="1">
               <inputs>
                 <input
-                  refId="Package\Czas i Data Mandatów\Union All 1.Inputs[Union All Input 1]"
+                  refId="Package\Czas i Data\Union All 1.Inputs[Union All Input 1]"
                   name="Union All Input 1">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Czas i Data Mandatów\Union All 1.Inputs[Union All Input 1].Columns[Czas Wystawienia]"
+                      refId="Package\Czas i Data\Union All 1.Inputs[Union All Input 1].Columns[Czas Wystawienia]"
                       cachedDataType="date"
                       cachedName="Czas Wystawienia"
                       cachedSortKeyPosition="1"
-                      lineageId="Package\Czas i Data Mandatów\Merge.Outputs[Merge Output 1].Columns[Czas Wystawienia]">
+                      lineageId="Package\Czas i Data\Merge.Outputs[Merge Output 1].Columns[Czas Wystawienia]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]}</property>
+                          name="OutputColumnLineageID">#{Package\Czas i Data\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Czas i Data Mandatów\Union All 1.Inputs[Union All Input 1].Columns[Data]"
+                      refId="Package\Czas i Data\Union All 1.Inputs[Union All Input 1].Columns[Data]"
                       cachedDataType="dbDate"
                       cachedName="Data"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column.Outputs[Derived Column Output].Columns[Data]">
+                      lineageId="Package\Czas i Data\Derived Column.Outputs[Derived Column Output].Columns[Data]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1].Columns[Data]}</property>
+                          name="OutputColumnLineageID">#{Package\Czas i Data\Union All 1.Outputs[Union All Output 1].Columns[Data]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Czas i Data Mandatów\Union All 1.Inputs[Union All Input 1].Columns[Czy świeto]"
+                      refId="Package\Czas i Data\Union All 1.Inputs[Union All Input 1].Columns[Czy świeto]"
                       cachedDataType="wstr"
                       cachedLength="1"
                       cachedName="Czy świeto"
-                      lineageId="Package\Czas i Data Mandatów\Święto.Outputs[Derived Column Output].Columns[Czy świeto]">
+                      lineageId="Package\Czas i Data\Święto.Outputs[Derived Column Output].Columns[Czy świeto]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1].Columns[Czy świeto]}</property>
+                          name="OutputColumnLineageID">#{Package\Czas i Data\Union All 1.Outputs[Union All Output 1].Columns[Czy świeto]}</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
                 <input
-                  refId="Package\Czas i Data Mandatów\Union All 1.Inputs[Union All Input 2]"
+                  refId="Package\Czas i Data\Union All 1.Inputs[Union All Input 2]"
                   hasSideEffects="true"
                   name="Union All Input 2">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Czas i Data Mandatów\Union All 1.Inputs[Union All Input 2].Columns[Czas Wystawienia]"
+                      refId="Package\Czas i Data\Union All 1.Inputs[Union All Input 2].Columns[Czas Wystawienia]"
                       cachedDataType="date"
                       cachedName="Czas Wystawienia"
                       cachedSortKeyPosition="1"
-                      lineageId="Package\Czas i Data Mandatów\Merge.Outputs[Merge Output 1].Columns[Czas Wystawienia]">
+                      lineageId="Package\Czas i Data\Merge.Outputs[Merge Output 1].Columns[Czas Wystawienia]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]}</property>
+                          name="OutputColumnLineageID">#{Package\Czas i Data\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Czas i Data Mandatów\Union All 1.Inputs[Union All Input 2].Columns[Data]"
+                      refId="Package\Czas i Data\Union All 1.Inputs[Union All Input 2].Columns[Data]"
                       cachedDataType="dbDate"
                       cachedName="Data"
-                      lineageId="Package\Czas i Data Mandatów\Derived Column.Outputs[Derived Column Output].Columns[Data]">
+                      lineageId="Package\Czas i Data\Derived Column.Outputs[Derived Column Output].Columns[Data]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1].Columns[Data]}</property>
+                          name="OutputColumnLineageID">#{Package\Czas i Data\Union All 1.Outputs[Union All Output 1].Columns[Data]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Czas i Data Mandatów\Union All 1.Inputs[Union All Input 2].Columns[Czy święto]"
+                      refId="Package\Czas i Data\Union All 1.Inputs[Union All Input 2].Columns[Czy święto]"
                       cachedDataType="wstr"
                       cachedLength="1"
                       cachedName="Czy święto"
-                      lineageId="Package\Czas i Data Mandatów\Zwykły dzień.Outputs[Derived Column Output].Columns[Czy święto]">
+                      lineageId="Package\Czas i Data\Zwykły dzień.Outputs[Derived Column Output].Columns[Czy święto]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1].Columns[Czy świeto]}</property>
+                          name="OutputColumnLineageID">#{Package\Czas i Data\Union All 1.Outputs[Union All Output 1].Columns[Czy świeto]}</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
                 <input
-                  refId="Package\Czas i Data Mandatów\Union All 1.Inputs[Union All Input 3]"
+                  refId="Package\Czas i Data\Union All 1.Inputs[Union All Input 3]"
                   dangling="true"
                   hasSideEffects="true"
                   name="Union All Input 3">
@@ -1387,24 +1387,24 @@ where [refTable].[data] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1]"
+                  refId="Package\Czas i Data\Union All 1.Outputs[Union All Output 1]"
                   name="Union All Output 1">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]"
+                      refId="Package\Czas i Data\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]"
                       dataType="date"
-                      lineageId="Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]"
+                      lineageId="Package\Czas i Data\Union All 1.Outputs[Union All Output 1].Columns[Czas Wystawienia]"
                       name="Czas Wystawienia" />
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1].Columns[Data]"
+                      refId="Package\Czas i Data\Union All 1.Outputs[Union All Output 1].Columns[Data]"
                       dataType="dbDate"
-                      lineageId="Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1].Columns[Data]"
+                      lineageId="Package\Czas i Data\Union All 1.Outputs[Union All Output 1].Columns[Data]"
                       name="Data" />
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1].Columns[Czy świeto]"
+                      refId="Package\Czas i Data\Union All 1.Outputs[Union All Output 1].Columns[Czy świeto]"
                       dataType="wstr"
                       length="1"
-                      lineageId="Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1].Columns[Czy świeto]"
+                      lineageId="Package\Czas i Data\Union All 1.Outputs[Union All Output 1].Columns[Czy świeto]"
                       name="Czy świeto" />
                   </outputColumns>
                   <externalMetadataColumns />
@@ -1412,7 +1412,7 @@ where [refTable].[data] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Czas i Data Mandatów\Zwykły dzień"
+              refId="Package\Czas i Data\Zwykły dzień"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -1420,7 +1420,7 @@ where [refTable].[data] = ?</property>
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Czas i Data Mandatów\Zwykły dzień.Inputs[Derived Column Input]"
+                  refId="Package\Czas i Data\Zwykły dzień.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <externalMetadataColumns />
@@ -1428,19 +1428,19 @@ where [refTable].[data] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Czas i Data Mandatów\Zwykły dzień.Outputs[Derived Column Output]"
+                  refId="Package\Czas i Data\Zwykły dzień.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Czas i Data Mandatów\Zwykły dzień.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Czas i Data\Zwykły dzień.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Zwykły dzień.Outputs[Derived Column Output].Columns[Czy święto]"
+                      refId="Package\Czas i Data\Zwykły dzień.Outputs[Derived Column Output].Columns[Czy święto]"
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="1"
-                      lineageId="Package\Czas i Data Mandatów\Zwykły dzień.Outputs[Derived Column Output].Columns[Czy święto]"
+                      lineageId="Package\Czas i Data\Zwykły dzień.Outputs[Derived Column Output].Columns[Czy święto]"
                       name="Czy święto"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1461,23 +1461,23 @@ where [refTable].[data] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Czas i Data Mandatów\Zwykły dzień.Outputs[Derived Column Error Output]"
+                  refId="Package\Czas i Data\Zwykły dzień.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Czas i Data Mandatów\Zwykły dzień.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Czas i Data\Zwykły dzień.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Zwykły dzień.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Czas i Data\Zwykły dzień.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Czas i Data Mandatów\Zwykły dzień.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Czas i Data\Zwykły dzień.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Zwykły dzień.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Czas i Data\Zwykły dzień.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Czas i Data Mandatów\Zwykły dzień.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Czas i Data\Zwykły dzień.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1486,7 +1486,7 @@ where [refTable].[data] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Czas i Data Mandatów\Święto"
+              refId="Package\Czas i Data\Święto"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -1494,7 +1494,7 @@ where [refTable].[data] = ?</property>
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Czas i Data Mandatów\Święto.Inputs[Derived Column Input]"
+                  refId="Package\Czas i Data\Święto.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <externalMetadataColumns />
@@ -1502,19 +1502,19 @@ where [refTable].[data] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Czas i Data Mandatów\Święto.Outputs[Derived Column Output]"
+                  refId="Package\Czas i Data\Święto.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Czas i Data Mandatów\Święto.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Czas i Data\Święto.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Święto.Outputs[Derived Column Output].Columns[Czy świeto]"
+                      refId="Package\Czas i Data\Święto.Outputs[Derived Column Output].Columns[Czy świeto]"
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="1"
-                      lineageId="Package\Czas i Data Mandatów\Święto.Outputs[Derived Column Output].Columns[Czy świeto]"
+                      lineageId="Package\Czas i Data\Święto.Outputs[Derived Column Output].Columns[Czy świeto]"
                       name="Czy świeto"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -1535,23 +1535,23 @@ where [refTable].[data] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Czas i Data Mandatów\Święto.Outputs[Derived Column Error Output]"
+                  refId="Package\Czas i Data\Święto.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Czas i Data Mandatów\Święto.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Czas i Data\Święto.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Święto.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Czas i Data\Święto.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Czas i Data Mandatów\Święto.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Czas i Data\Święto.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Czas i Data Mandatów\Święto.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Czas i Data\Święto.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Czas i Data Mandatów\Święto.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Czas i Data\Święto.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1562,75 +1562,75 @@ where [refTable].[data] = ?</property>
           </components>
           <paths>
             <path
-              refId="Package\Czas i Data Mandatów.Paths[Derived Column Output]"
-              endId="Package\Czas i Data Mandatów\Union All 1.Inputs[Union All Input 1]"
+              refId="Package\Czas i Data.Paths[Derived Column Output]"
+              endId="Package\Czas i Data\Union All 1.Inputs[Union All Input 1]"
               name="Derived Column Output"
-              startId="Package\Czas i Data Mandatów\Święto.Outputs[Derived Column Output]" />
+              startId="Package\Czas i Data\Święto.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Czas i Data Mandatów.Paths[Derived Column Output1]"
-              endId="Package\Czas i Data Mandatów\Union All 1.Inputs[Union All Input 2]"
+              refId="Package\Czas i Data.Paths[Derived Column Output1]"
+              endId="Package\Czas i Data\Union All 1.Inputs[Union All Input 2]"
               name="Derived Column Output"
-              startId="Package\Czas i Data Mandatów\Zwykły dzień.Outputs[Derived Column Output]" />
+              startId="Package\Czas i Data\Zwykły dzień.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Czas i Data Mandatów.Paths[Derived Column Output2]"
-              endId="Package\Czas i Data Mandatów\Multicast.Inputs[Multicast Input 1]"
+              refId="Package\Czas i Data.Paths[Derived Column Output2]"
+              endId="Package\Czas i Data\Multicast.Inputs[Multicast Input 1]"
               name="Derived Column Output"
-              startId="Package\Czas i Data Mandatów\Derived Column 1.Outputs[Derived Column Output]" />
+              startId="Package\Czas i Data\Derived Column 1.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Czas i Data Mandatów.Paths[Derived Column Output3]"
-              endId="Package\Czas i Data Mandatów\Lookup.Inputs[Lookup Input]"
+              refId="Package\Czas i Data.Paths[Derived Column Output3]"
+              endId="Package\Czas i Data\Lookup.Inputs[Lookup Input]"
               name="Derived Column Output"
-              startId="Package\Czas i Data Mandatów\Derived Column.Outputs[Derived Column Output]" />
+              startId="Package\Czas i Data\Derived Column.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Czas i Data Mandatów.Paths[Flat File Source Output]"
-              endId="Package\Czas i Data Mandatów\Sort 1.Inputs[Sort Input]"
+              refId="Package\Czas i Data.Paths[Flat File Source Output]"
+              endId="Package\Czas i Data\Sort 1.Inputs[Sort Input]"
               name="Flat File Source Output"
-              startId="Package\Czas i Data Mandatów\Patrole.Outputs[Flat File Source Output]" />
+              startId="Package\Czas i Data\Patrole.Outputs[Flat File Source Output]" />
             <path
-              refId="Package\Czas i Data Mandatów.Paths[Flat File Source Output1]"
-              endId="Package\Czas i Data Mandatów\Sort.Inputs[Sort Input]"
+              refId="Package\Czas i Data.Paths[Flat File Source Output1]"
+              endId="Package\Czas i Data\Sort.Inputs[Sort Input]"
               name="Flat File Source Output"
-              startId="Package\Czas i Data Mandatów\Czasy mandatów.Outputs[Flat File Source Output]" />
+              startId="Package\Czas i Data\Czasy mandatów.Outputs[Flat File Source Output]" />
             <path
-              refId="Package\Czas i Data Mandatów.Paths[Lookup Match Output]"
-              endId="Package\Czas i Data Mandatów\Święto.Inputs[Derived Column Input]"
+              refId="Package\Czas i Data.Paths[Lookup Match Output]"
+              endId="Package\Czas i Data\Święto.Inputs[Derived Column Input]"
               name="Lookup Match Output"
-              startId="Package\Czas i Data Mandatów\Lookup.Outputs[Lookup Match Output]" />
+              startId="Package\Czas i Data\Lookup.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Czas i Data Mandatów.Paths[Lookup No Match Output]"
-              endId="Package\Czas i Data Mandatów\Zwykły dzień.Inputs[Derived Column Input]"
+              refId="Package\Czas i Data.Paths[Lookup No Match Output]"
+              endId="Package\Czas i Data\Zwykły dzień.Inputs[Derived Column Input]"
               name="Lookup No Match Output"
-              startId="Package\Czas i Data Mandatów\Lookup.Outputs[Lookup No Match Output]" />
+              startId="Package\Czas i Data\Lookup.Outputs[Lookup No Match Output]" />
             <path
-              refId="Package\Czas i Data Mandatów.Paths[Merge Output 1]"
-              endId="Package\Czas i Data Mandatów\Derived Column.Inputs[Derived Column Input]"
+              refId="Package\Czas i Data.Paths[Merge Output 1]"
+              endId="Package\Czas i Data\Derived Column.Inputs[Derived Column Input]"
               name="Merge Output 1"
-              startId="Package\Czas i Data Mandatów\Merge.Outputs[Merge Output 1]" />
+              startId="Package\Czas i Data\Merge.Outputs[Merge Output 1]" />
             <path
-              refId="Package\Czas i Data Mandatów.Paths[Multicast Output 1]"
-              endId="Package\Czas i Data Mandatów\Czas.Inputs[OLE DB Destination Input]"
+              refId="Package\Czas i Data.Paths[Multicast Output 1]"
+              endId="Package\Czas i Data\Czas.Inputs[OLE DB Destination Input]"
               name="Multicast Output 1"
-              startId="Package\Czas i Data Mandatów\Multicast.Outputs[Multicast Output 1]" />
+              startId="Package\Czas i Data\Multicast.Outputs[Multicast Output 1]" />
             <path
-              refId="Package\Czas i Data Mandatów.Paths[Multicast Output 2]"
-              endId="Package\Czas i Data Mandatów\Data.Inputs[OLE DB Destination Input]"
+              refId="Package\Czas i Data.Paths[Multicast Output 2]"
+              endId="Package\Czas i Data\Data.Inputs[OLE DB Destination Input]"
               name="Multicast Output 2"
-              startId="Package\Czas i Data Mandatów\Multicast.Outputs[Multicast Output 2]" />
+              startId="Package\Czas i Data\Multicast.Outputs[Multicast Output 2]" />
             <path
-              refId="Package\Czas i Data Mandatów.Paths[Sort Output]"
-              endId="Package\Czas i Data Mandatów\Merge.Inputs[Merge Input 1]"
+              refId="Package\Czas i Data.Paths[Sort Output]"
+              endId="Package\Czas i Data\Merge.Inputs[Merge Input 1]"
               name="Sort Output"
-              startId="Package\Czas i Data Mandatów\Sort.Outputs[Sort Output]" />
+              startId="Package\Czas i Data\Sort.Outputs[Sort Output]" />
             <path
-              refId="Package\Czas i Data Mandatów.Paths[Sort Output1]"
-              endId="Package\Czas i Data Mandatów\Merge.Inputs[Merge Input 2]"
+              refId="Package\Czas i Data.Paths[Sort Output1]"
+              endId="Package\Czas i Data\Merge.Inputs[Merge Input 2]"
               name="Sort Output"
-              startId="Package\Czas i Data Mandatów\Sort 1.Outputs[Sort Output]" />
+              startId="Package\Czas i Data\Sort 1.Outputs[Sort Output]" />
             <path
-              refId="Package\Czas i Data Mandatów.Paths[Union All Output 1]"
-              endId="Package\Czas i Data Mandatów\Derived Column 1.Inputs[Derived Column Input]"
+              refId="Package\Czas i Data.Paths[Union All Output 1]"
+              endId="Package\Czas i Data\Derived Column 1.Inputs[Derived Column Input]"
               name="Union All Output 1"
-              startId="Package\Czas i Data Mandatów\Union All 1.Outputs[Union All Output 1]" />
+              startId="Package\Czas i Data\Union All 1.Outputs[Union All Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1703,12 +1703,12 @@ where [refTable].[data] = ?</property>
       DTS:From="Package\Święta"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Czas i Data Mandatów" />
+      DTS:To="Package\Czas i Data" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{EFA436B0-7954-44F1-8623-84100AE3B2A9}"
-      DTS:From="Package\Czas i Data Mandatów"
+      DTS:From="Package\Czas i Data"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\Usuwanie" />
@@ -1726,9 +1726,9 @@ where [refTable].[data] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="182.666666666667,42"
-          Id="Package\Czas i Data Mandatów"
-          TopLeft="91,232" />
+          Size="132,42.6666666666667"
+          Id="Package\Czas i Data"
+          TopLeft="90.5833333395421,232" />
         <NodeLayout
           Size="110,42"
           Id="Package\Święta"
@@ -1740,7 +1740,7 @@ where [refTable].[data] = ?</property>
         <NodeLayout
           Size="124,42"
           Id="Package\Usuwanie"
-          TopLeft="114,333" />
+          TopLeft="96.5000002607703,333.866666651169" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="177.124999332552,77.3333327134451">
@@ -1765,18 +1765,30 @@ where [refTable].[data] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="179.777777798474,165.111111162768">
+          TopLeft="177.222222263614,165.111111162768">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,66.8888888372315"
+              EndConnector="-20.6388889240719,66.888888837232"
               Start="0,0"
-              End="0,59.3888888372315">
+              End="-20.6388889240719,59.388888837232">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,59.3888888372315" />
+                    End="0,29.444444418616" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.444444418616"
+                    Point2="0,33.444444418616"
+                    Point3="-4,33.444444418616" />
+                  <mssgle:LineSegment
+                    End="-16.6388889240719,33.444444418616" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.6388889240719,33.444444418616"
+                    Point2="-20.6388889240719,33.444444418616"
+                    Point3="-20.6388889240719,37.444444418616" />
+                  <mssgle:LineSegment
+                    End="-20.6388889240719,59.388888837232" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1787,18 +1799,18 @@ where [refTable].[data] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="179.166666666667,274">
+          TopLeft="157.541666800156,274.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,59"
+              EndConnector="0,59.1999999845027"
               Start="0,0"
-              End="0,51.5">
+              End="0,51.6999999845027">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.5" />
+                    End="0,51.6999999845027" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1811,52 +1823,68 @@ where [refTable].[data] = ?</property>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Czas i Data Mandatów">
+    design-time-name="Package\Czas i Data">
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="120,42"
-          Id="Package\Czas i Data Mandatów\Multicast"
-          TopLeft="491.5,743.499996590614" />
-        <NodeLayout
-          Size="162.666666666667,42"
-          Id="Package\Czas i Data Mandatów\Derived Column 1"
-          TopLeft="472,650.999996590614" />
-        <NodeLayout
-          Size="140,42"
-          Id="Package\Czas i Data Mandatów\Zwykły dzień"
-          TopLeft="579,485.999996590614" />
-        <NodeLayout
-          Size="101.333333333334,42"
-          Id="Package\Czas i Data Mandatów\Data"
-          TopLeft="581,835.999996590614" />
-        <NodeLayout
           Size="113.333333333334,42"
-          Id="Package\Czas i Data Mandatów\Lookup"
+          Id="Package\Czas i Data\Lookup"
           TopLeft="484,393.999996590614" />
         <NodeLayout
-          Size="158,42"
-          Id="Package\Czas i Data Mandatów\Czasy mandatów"
-          TopLeft="183,56" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Czas i Data Mandatów\Union All 1"
-          TopLeft="487,571.999996590614" />
-        <NodeLayout
           Size="154,42"
-          Id="Package\Czas i Data Mandatów\Derived Column"
+          Id="Package\Czas i Data\Derived Column"
           TopLeft="468.666663214564,285.616663919787" />
         <NodeLayout
-          Size="101.333333333334,42"
-          Id="Package\Czas i Data Mandatów\Czas"
-          TopLeft="346,837.999996590614" />
+          Size="120,42"
+          Id="Package\Czas i Data\Multicast"
+          TopLeft="491.5,743.499996590614" />
         <NodeLayout
           Size="110,42"
-          Id="Package\Czas i Data Mandatów\Święto"
+          Id="Package\Czas i Data\Święto"
           TopLeft="393,484.999996590614" />
+        <NodeLayout
+          Size="108,42.6666666666667"
+          Id="Package\Czas i Data\Sort 1"
+          TopLeft="635.416657198221,128.916665523748" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Czas i Data\Czasy mandatów"
+          TopLeft="183,56" />
+        <NodeLayout
+          Size="109.333333333334,42.6666666666667"
+          Id="Package\Czas i Data\Merge"
+          TopLeft="558.333325013518,210.083329904576" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Czas i Data\Zwykły dzień"
+          TopLeft="579,485.999996590614" />
+        <NodeLayout
+          Size="98.6666666666667,42.6666666666667"
+          Id="Package\Czas i Data\Sort"
+          TopLeft="440.624993434176,128.833331357439" />
+        <NodeLayout
+          Size="112,42.6666666666667"
+          Id="Package\Czas i Data\Patrole"
+          TopLeft="543.749991897494,30.3333327909311" />
+        <NodeLayout
+          Size="162.666666666667,42"
+          Id="Package\Czas i Data\Derived Column 1"
+          TopLeft="472,650.999996590614" />
+        <NodeLayout
+          Size="101.333333333334,42"
+          Id="Package\Czas i Data\Data"
+          TopLeft="581,835.999996590614" />
+        <NodeLayout
+          Size="101.333333333334,42"
+          Id="Package\Czas i Data\Czas"
+          TopLeft="346,837.999996590614" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Czas i Data\Union All 1"
+          TopLeft="487,571.999996590614" />
         <EdgeLayout
-          Id="Package\Czas i Data Mandatów.Paths[Union All Output 1]"
+          Id="Package\Czas i Data.Paths[Union All Output 1]"
           TopLeft="552.75,613.999996590614">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1878,7 +1906,75 @@ where [refTable].[data] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Czas i Data Mandatów.Paths[Multicast Output 2]"
+          Id="Package\Czas i Data.Paths[Sort Output1]"
+          TopLeft="689.416657198221,171.583332190414">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-59.5277766291466,38.499997714162"
+              Start="0,0"
+              End="-59.5277766291466,30.999997714162">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.7668255713554" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.7668255713554"
+                    Point2="0,22.7668255713554"
+                    Point3="-4,22.7668255713554" />
+                  <mssgle:LineSegment
+                    End="-55.5277766291466,22.7668255713554" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-55.5277766291466,22.7668255713554"
+                    Point2="-59.5277766291466,22.7668255713554"
+                    Point3="-59.5277766291466,26.7668255713554" />
+                  <mssgle:LineSegment
+                    End="-59.5277766291466,30.999997714162" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Czas i Data.Paths[Sort Output]"
+          TopLeft="489.958326767509,171.499998024106">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="123.041664912676,38.5833318804702"
+              Start="0,0"
+              End="123.041664912676,31.0833318804702">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.2916659402351" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.2916659402351"
+                    Point2="0,19.2916659402351"
+                    Point3="4,19.2916659402351" />
+                  <mssgle:LineSegment
+                    End="119.041664912676,19.2916659402351" />
+                  <mssgle:CubicBezierSegment
+                    Point1="119.041664912676,19.2916659402351"
+                    Point2="123.041664912676,19.2916659402351"
+                    Point3="123.041664912676,23.2916659402351" />
+                  <mssgle:LineSegment
+                    End="123.041664912676,31.0833318804702" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Czas i Data.Paths[Multicast Output 2]"
           TopLeft="570.166666666667,785.499996590614">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1912,7 +2008,7 @@ where [refTable].[data] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Czas i Data Mandatów.Paths[Multicast Output 1]"
+          Id="Package\Czas i Data.Paths[Multicast Output 1]"
           TopLeft="532.833333333333,785.499996590614">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1946,7 +2042,41 @@ where [refTable].[data] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Czas i Data Mandatów.Paths[Lookup No Match Output]"
+          Id="Package\Czas i Data.Paths[Merge Output 1]"
+          TopLeft="612.999991680185,252.749996571243">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-67.3333284656208,32.8666673485438"
+              Start="0,0"
+              End="-67.3333284656208,25.3666673485438">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.4333336742719" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.4333336742719"
+                    Point2="0,16.4333336742719"
+                    Point3="-4,16.4333336742719" />
+                  <mssgle:LineSegment
+                    End="-63.3333284656208,16.4333336742719" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-63.3333284656208,16.4333336742719"
+                    Point2="-67.3333284656208,16.4333336742719"
+                    Point3="-67.3333284656208,20.4333336742719" />
+                  <mssgle:LineSegment
+                    End="-67.3333284656208,25.3666673485438" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Czas i Data.Paths[Lookup No Match Output]"
           TopLeft="558,435.999996590614">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1982,7 +2112,7 @@ where [refTable].[data] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Czas i Data Mandatów.Paths[Lookup Match Output]"
+          Id="Package\Czas i Data.Paths[Lookup Match Output]"
           TopLeft="540.5,435.999996590614">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2018,7 +2148,97 @@ where [refTable].[data] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Czas i Data Mandatów.Paths[Derived Column Output2]"
+          Id="Package\Czas i Data.Paths[Flat File Source Output1]"
+          TopLeft="262,98">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="227.958326767509,30.8333313574394"
+              Start="0,0"
+              End="227.958326767509,23.3333313574394">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.4166656787197" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.4166656787197"
+                    Point2="0,15.4166656787197"
+                    Point3="4,15.4166656787197" />
+                  <mssgle:LineSegment
+                    End="223.958326767509,15.4166656787197" />
+                  <mssgle:CubicBezierSegment
+                    Point1="223.958326767509,15.4166656787197"
+                    Point2="227.958326767509,15.4166656787197"
+                    Point3="227.958326767509,19.4166656787197" />
+                  <mssgle:LineSegment
+                    End="227.958326767509,23.3333313574394" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Czas i Data.Paths[Flat File Source Output]"
+          TopLeft="599.749991897494,72.9999994575977">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="89.6666653007269,55.9166660661499"
+              Start="0,0"
+              End="89.6666653007269,48.4166660661499">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.9583330330749" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.9583330330749"
+                    Point2="0,27.9583330330749"
+                    Point3="4,27.9583330330749" />
+                  <mssgle:LineSegment
+                    End="85.6666653007269,27.9583330330749" />
+                  <mssgle:CubicBezierSegment
+                    Point1="85.6666653007269,27.9583330330749"
+                    Point2="89.6666653007269,27.9583330330749"
+                    Point3="89.6666653007269,31.9583330330749" />
+                  <mssgle:LineSegment
+                    End="89.6666653007269,48.4166660661499" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Czas i Data.Paths[Derived Column Output3]"
+          TopLeft="543.166664940615,327.616663919787">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66.3833326708278"
+              Start="0,0"
+              End="0,58.8833326708278">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.8833326708278" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Czas i Data.Paths[Derived Column Output2]"
           TopLeft="552.5,692.999996590614">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2040,7 +2260,7 @@ where [refTable].[data] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Czas i Data Mandatów.Paths[Derived Column Output1]"
+          Id="Package\Czas i Data.Paths[Derived Column Output1]"
           TopLeft="649,527.999996590614">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2074,7 +2294,7 @@ where [refTable].[data] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Czas i Data Mandatów.Paths[Derived Column Output]"
+          Id="Package\Czas i Data.Paths[Derived Column Output]"
           TopLeft="448,526.999996590614">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -2107,219 +2327,34 @@ where [refTable].[data] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="112,42.6666666666667"
-          Id="Package\Czas i Data Mandatów\Patrole"
-          TopLeft="543.749991897494,30.3333327909311" />
-        <NodeLayout
-          Size="108,42.6666666666667"
-          Id="Package\Czas i Data Mandatów\Sort 1"
-          TopLeft="635.416657198221,128.916665523748" />
-        <EdgeLayout
-          Id="Package\Czas i Data Mandatów.Paths[Flat File Source Output]"
-          TopLeft="599.749991897494,72.9999994575977">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="89.6666653007269,55.9166660661499"
-              Start="0,0"
-              End="89.6666653007269,48.4166660661499">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.9583330330749" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.9583330330749"
-                    Point2="0,27.9583330330749"
-                    Point3="4,27.9583330330749" />
-                  <mssgle:LineSegment
-                    End="85.6666653007269,27.9583330330749" />
-                  <mssgle:CubicBezierSegment
-                    Point1="85.6666653007269,27.9583330330749"
-                    Point2="89.6666653007269,27.9583330330749"
-                    Point3="89.6666653007269,31.9583330330749" />
-                  <mssgle:LineSegment
-                    End="89.6666653007269,48.4166660661499" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="98.6666666666667,42.6666666666667"
-          Id="Package\Czas i Data Mandatów\Sort"
-          TopLeft="440.624993434176,128.833331357439" />
-        <EdgeLayout
-          Id="Package\Czas i Data Mandatów.Paths[Flat File Source Output1]"
-          TopLeft="262,98">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="227.958326767509,30.8333313574394"
-              Start="0,0"
-              End="227.958326767509,23.3333313574394">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.4166656787197" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.4166656787197"
-                    Point2="0,15.4166656787197"
-                    Point3="4,15.4166656787197" />
-                  <mssgle:LineSegment
-                    End="223.958326767509,15.4166656787197" />
-                  <mssgle:CubicBezierSegment
-                    Point1="223.958326767509,15.4166656787197"
-                    Point2="227.958326767509,15.4166656787197"
-                    Point3="227.958326767509,19.4166656787197" />
-                  <mssgle:LineSegment
-                    End="227.958326767509,23.3333313574394" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="109.333333333334,42.6666666666667"
-          Id="Package\Czas i Data Mandatów\Merge"
-          TopLeft="558.333325013518,210.083329904576" />
-        <EdgeLayout
-          Id="Package\Czas i Data Mandatów.Paths[Sort Output]"
-          TopLeft="489.958326767509,171.499998024106">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="123.041664912676,38.5833318804702"
-              Start="0,0"
-              End="123.041664912676,31.0833318804702">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.2916659402351" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.2916659402351"
-                    Point2="0,19.2916659402351"
-                    Point3="4,19.2916659402351" />
-                  <mssgle:LineSegment
-                    End="119.041664912676,19.2916659402351" />
-                  <mssgle:CubicBezierSegment
-                    Point1="119.041664912676,19.2916659402351"
-                    Point2="123.041664912676,19.2916659402351"
-                    Point3="123.041664912676,23.2916659402351" />
-                  <mssgle:LineSegment
-                    End="123.041664912676,31.0833318804702" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Czas i Data Mandatów.Paths[Sort Output1]"
-          TopLeft="689.416657198221,171.583332190414">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-59.5277766291466,38.499997714162"
-              Start="0,0"
-              End="-59.5277766291466,30.999997714162">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.7668255713554" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.7668255713554"
-                    Point2="0,22.7668255713554"
-                    Point3="-4,22.7668255713554" />
-                  <mssgle:LineSegment
-                    End="-55.5277766291466,22.7668255713554" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-55.5277766291466,22.7668255713554"
-                    Point2="-59.5277766291466,22.7668255713554"
-                    Point3="-59.5277766291466,26.7668255713554" />
-                  <mssgle:LineSegment
-                    End="-59.5277766291466,30.999997714162" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Czas i Data Mandatów.Paths[Merge Output 1]"
-          TopLeft="612.999991680185,252.749996571243">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-67.3333284656208,32.8666673485438"
-              Start="0,0"
-              End="-67.3333284656208,25.3666673485438">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,12.4333336742719" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.4333336742719"
-                    Point2="0,16.4333336742719"
-                    Point3="-4,16.4333336742719" />
-                  <mssgle:LineSegment
-                    End="-63.3333284656208,16.4333336742719" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-63.3333284656208,16.4333336742719"
-                    Point2="-67.3333284656208,16.4333336742719"
-                    Point3="-67.3333284656208,20.4333336742719" />
-                  <mssgle:LineSegment
-                    End="-67.3333284656208,25.3666673485438" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Czas i Data Mandatów.Paths[Derived Column Output3]"
-          TopLeft="543.166664940615,327.616663919787">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,66.3833326708278"
-              Start="0,0"
-              End="0,58.8833326708278">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,58.8833326708278" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Czas i Data Mandatów\Data">
+    design-time-name="Package\Czas i Data\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[swieta]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Czas i Data\Data">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2332,30 +2367,7 @@ where [refTable].[data] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Czas i Data Mandatów\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[swieta]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Czas i Data Mandatów\Czas">
+    design-time-name="Package\Czas i Data\Czas">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

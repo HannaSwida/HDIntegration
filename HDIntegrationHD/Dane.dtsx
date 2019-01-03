@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Dane"
   DTS:PackageType="5"
-  DTS:VersionBuild="68"
-  DTS:VersionGUID="{542E7FBB-A242-444A-BE2D-8CA8E2B65AFF}">
+  DTS:VersionBuild="71"
+  DTS:VersionGUID="{02B25F07-4F01-4437-8E1F-A382A6C1D9C6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4338,14 +4338,14 @@
               startId="Package\Informacje o funkcjonariuszach\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]" />
             <path
               refId="Package\Informacje o funkcjonariuszach.Paths[Merge Join Output1]"
-              endId="Package\Informacje o funkcjonariuszach\Sort 3.Inputs[Sort Input]"
-              name="Merge Join Output"
-              startId="Package\Informacje o funkcjonariuszach\Merge Join.Outputs[Merge Join Output]" />
-            <path
-              refId="Package\Informacje o funkcjonariuszach.Paths[Merge Join Output]"
               endId="Package\Informacje o funkcjonariuszach\Derived Column.Inputs[Derived Column Input]"
               name="Merge Join Output"
               startId="Package\Informacje o funkcjonariuszach\Merge Join 1.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Informacje o funkcjonariuszach.Paths[Merge Join Output]"
+              endId="Package\Informacje o funkcjonariuszach\Sort 3.Inputs[Sort Input]"
+              name="Merge Join Output"
+              startId="Package\Informacje o funkcjonariuszach\Merge Join.Outputs[Merge Join Output]" />
             <path
               refId="Package\Informacje o funkcjonariuszach.Paths[New Output]"
               endId="Package\Informacje o funkcjonariuszach\Union All.Inputs[Union All Input 1]"
@@ -7555,6 +7555,31 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
                       cachedDataType="dbTimeStamp"
                       cachedName="Czas_wystawienia"
                       lineageId="Package\Mandaty\Wystawianie Mandatów.Outputs[OLE DB Source Output].Columns[Czas_wystawienia]" />
+                    <inputColumn
+                      refId="Package\Mandaty\Derived Column.Inputs[Derived Column Input].Columns[Powod]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="191"
+                      cachedName="Powod"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Mandaty\Wystawianie Mandatów.Outputs[OLE DB Source Output].Columns[Powod]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,191,1250)#{Package\Mandaty\Wystawianie Mandatów.Outputs[OLE DB Source Output].Columns[Powod]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,191,1250)Powod</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -7675,6 +7700,28 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">DATEPART("mi",Czas_wystawienia)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Mandaty\Derived Column.Outputs[Derived Column Output].Columns[Id_patrolu]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Mandaty\Derived Column.Outputs[Derived Column Output].Columns[Id_patrolu]"
+                      name="Id_patrolu"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">1</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -12113,11 +12160,15 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <ConnectionManager
+    design-time-name="Package.ConnectionManagers[DESKTOP-R6J54M1\HDLABS]">
+    <ProjectReferenceName></ProjectReferenceName>
+  </ConnectionManager>
   <TaskHost
     design-time-name="Package\Dane patroli">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="152.666666666667,41.3333333333334"
           Id="Package\Dane patroli\Derived Column"
@@ -12149,7 +12200,9 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12171,7 +12224,9 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12187,31 +12242,31 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
           Id="Package\Informacje o funkcjonariuszach\Data Conversion"
           TopLeft="225,629.5" />
         <NodeLayout
-          Size="149,43"
+          Size="149.333333333334,42.6666666666667"
           Id="Package\Informacje o funkcjonariuszach\Funkcjonariusz"
           TopLeft="201.5,5.5" />
         <NodeLayout
-          Size="121,42"
+          Size="121.333333333334,42"
           Id="Package\Informacje o funkcjonariuszach\Union All"
           TopLeft="242.5,1037.5" />
         <NodeLayout
-          Size="107,42"
+          Size="106.666666666667,42"
           Id="Package\Informacje o funkcjonariuszach\Sort 1"
           TopLeft="59.5,108.5" />
         <NodeLayout
-          Size="135,43"
+          Size="134.666666666667,42.6666666666667"
           Id="Package\Informacje o funkcjonariuszach\Dane osoby"
           TopLeft="5.5,5.5" />
         <NodeLayout
-          Size="163,42"
+          Size="162.666666666667,42"
           Id="Package\Informacje o funkcjonariuszach\Derived Column 2"
           TopLeft="221.5,1139.5" />
         <NodeLayout
-          Size="107,42"
+          Size="106.666666666667,42"
           Id="Package\Informacje o funkcjonariuszach\Sort 3"
           TopLeft="81.5000000000001,323.5" />
         <NodeLayout
-          Size="163,42"
+          Size="162.666666666667,42"
           Id="Package\Informacje o funkcjonariuszach\Insert Destination"
           TopLeft="221.5,1241.5" />
         <NodeLayout
@@ -12223,19 +12278,19 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
           Id="Package\Informacje o funkcjonariuszach\Sort"
           TopLeft="227,108.5" />
         <NodeLayout
-          Size="163,42"
+          Size="162.666666666667,42"
           Id="Package\Informacje o funkcjonariuszach\Derived Column 1"
           TopLeft="78.5000000000001,833.5" />
         <NodeLayout
-          Size="209,42"
+          Size="209.333333333334,42"
           Id="Package\Informacje o funkcjonariuszach\Slowly Changing Dimension"
           TopLeft="198.5,731.5" />
         <NodeLayout
-          Size="129,53"
+          Size="129.333333333334,53.3333333333334"
           Id="Package\Informacje o funkcjonariuszach\Komisariat"
           TopLeft="238.5,210.5" />
         <NodeLayout
-          Size="139,42"
+          Size="138.666666666667,42"
           Id="Package\Informacje o funkcjonariuszach\Merge Join 1"
           TopLeft="233.5,425.5" />
         <NodeLayout
@@ -12247,7 +12302,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
           Id="Package\Informacje o funkcjonariuszach\Merge Join"
           TopLeft="48,216" />
         <NodeLayout
-          Size="107,42"
+          Size="106.666666666667,42"
           Id="Package\Informacje o funkcjonariuszach\Sort 2"
           TopLeft="249.5,323.5" />
         <EdgeLayout
@@ -12269,9 +12324,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12305,9 +12358,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12341,9 +12392,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12377,9 +12426,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12413,9 +12460,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12449,9 +12494,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12486,12 +12529,12 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-34.4247200520833,136.104705383637,54.1827734375,11.43359375"
+              BoundingBox="-34.4247200520834,136.104705383637,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o funkcjonariuszach.Paths[Merge Join Output]"
+          Id="Package\Informacje o funkcjonariuszach.Paths[Merge Join Output1]"
           TopLeft="303,467.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12509,13 +12552,11 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Informacje o funkcjonariuszach.Paths[Merge Join Output1]"
+          Id="Package\Informacje o funkcjonariuszach.Paths[Merge Join Output]"
           TopLeft="113,258">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12545,9 +12586,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12617,9 +12656,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12641,9 +12678,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12665,9 +12700,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12689,9 +12722,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12713,9 +12744,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12737,9 +12766,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12761,9 +12788,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12864,7 +12889,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="155,43"
+          Size="154.666666666667,42.6666666666667"
           Id="Package\Informacje o Osobach legitymowanych\Derived Column"
           TopLeft="232.5,312.5" />
         <NodeLayout
@@ -12872,19 +12897,19 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
           Id="Package\Informacje o Osobach legitymowanych\Merge Join"
           TopLeft="245,210.5" />
         <NodeLayout
-          Size="109,43"
+          Size="109.333333333334,42.6666666666667"
           Id="Package\Informacje o Osobach legitymowanych\Osoby"
           TopLeft="255.5,5.5" />
         <NodeLayout
-          Size="107,42"
+          Size="106.666666666667,42"
           Id="Package\Informacje o Osobach legitymowanych\Sort 1"
           TopLeft="256.5,108.5" />
         <NodeLayout
-          Size="209,42"
+          Size="209.333333333334,42"
           Id="Package\Informacje o Osobach legitymowanych\Slowly Changing Dimension"
           TopLeft="205.5,518.5" />
         <NodeLayout
-          Size="121,42"
+          Size="121.333333333334,42"
           Id="Package\Informacje o Osobach legitymowanych\Union All"
           TopLeft="249.5,824.5" />
         <NodeLayout
@@ -12892,7 +12917,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
           Id="Package\Informacje o Osobach legitymowanych\Sort"
           TopLeft="98,108.5" />
         <NodeLayout
-          Size="163,42"
+          Size="162.666666666667,42"
           Id="Package\Informacje o Osobach legitymowanych\Derived Column 2"
           TopLeft="228.5,926.5" />
         <NodeLayout
@@ -12900,19 +12925,19 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
           Id="Package\Informacje o Osobach legitymowanych\OLE DB Command"
           TopLeft="83.0000000000001,722.5" />
         <NodeLayout
-          Size="163,42"
+          Size="162.666666666667,42"
           Id="Package\Informacje o Osobach legitymowanych\Derived Column 1"
           TopLeft="85.5000000000001,620.5" />
         <NodeLayout
-          Size="189,41"
+          Size="189.333333333334,41.3333333333334"
           Id="Package\Informacje o Osobach legitymowanych\Wystawianie mandatów"
           TopLeft="5.49999999999997,6.5" />
         <NodeLayout
-          Size="163,42"
+          Size="162.666666666667,42"
           Id="Package\Informacje o Osobach legitymowanych\Insert Destination"
           TopLeft="228.5,1028.5" />
         <NodeLayout
-          Size="157,43"
+          Size="157.333333333334,42.6666666666667"
           Id="Package\Informacje o Osobach legitymowanych\Data Conversion"
           TopLeft="231.5,415.5" />
         <EdgeLayout
@@ -12934,9 +12959,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12970,9 +12993,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13006,9 +13027,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13042,9 +13061,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13079,7 +13096,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-34.4247200520833,136.104705383637,54.1827734375,11.43359375"
+              BoundingBox="-34.4247200520834,136.104705383637,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -13102,9 +13119,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13162,9 +13177,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13198,9 +13211,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13222,9 +13233,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13246,9 +13255,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13270,9 +13277,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13294,9 +13299,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13385,71 +13388,41 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="190.666666666667,42.6666666666667"
-          Id="Package\Mandaty\Wystawianie Mandatów"
-          TopLeft="48.6666666666667,22" />
-        <NodeLayout
           Size="149.333333333334,42.6666666666667"
           Id="Package\Mandaty\Funkcjonariusz"
           TopLeft="395.805554882934,468.555554961496" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Mandaty\OLE DB Destination"
+          TopLeft="386.111105357607,539.277772883243" />
         <NodeLayout
           Size="101.333333333334,42.6666666666667"
           Id="Package\Mandaty\Data"
           TopLeft="376.666666666667,244.666666666667" />
         <NodeLayout
-          Size="154.666666666667,42.6666666666667"
-          Id="Package\Mandaty\Derived Column"
-          TopLeft="129.333333333333,94.6666666666667" />
-        <NodeLayout
-          Size="110.666666666667,42.6666666666667"
-          Id="Package\Mandaty\Powód"
-          TopLeft="368.666666666667,121.333333333333" />
+          Size="190.666666666667,42.6666666666667"
+          Id="Package\Mandaty\Wystawianie Mandatów"
+          TopLeft="48.6666666666667,22" />
         <NodeLayout
           Size="177.333333333334,42.6666666666667"
           Id="Package\Mandaty\Osoba legitymowana"
           TopLeft="375.861110666146,321.222221938106" />
         <NodeLayout
-          Size="100.666666666667,42.6666666666667"
-          Id="Package\Mandaty\Czas"
-          TopLeft="372,184.666666666667" />
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Mandaty\Derived Column"
+          TopLeft="129.333333333333,94.6666666666667" />
         <NodeLayout
           Size="161.333333333334,42.6666666666667"
           Id="Package\Mandaty\Miejsce zdarzenia"
           TopLeft="388.4722215496,401.222221628163" />
-        <EdgeLayout
-          Id="Package\Mandaty.Paths[OLE DB Source Output]"
-          TopLeft="144,64.6666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="62.6666666666666,30"
-              Start="0,0"
-              End="62.6666666666666,22.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11"
-                    Point2="0,15"
-                    Point3="4,15" />
-                  <mssgle:LineSegment
-                    End="58.6666666666666,15" />
-                  <mssgle:CubicBezierSegment
-                    Point1="58.6666666666666,15"
-                    Point2="62.6666666666666,15"
-                    Point3="62.6666666666666,19" />
-                  <mssgle:LineSegment
-                    End="62.6666666666666,22.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="110.666666666667,42.6666666666667"
+          Id="Package\Mandaty\Powód"
+          TopLeft="368.666666666667,121.333333333333" />
+        <NodeLayout
+          Size="100.666666666667,42.6666666666667"
+          Id="Package\Mandaty\Czas"
+          TopLeft="372,184.666666666667" />
         <EdgeLayout
           Id="Package\Mandaty.Paths[Lookup Match Output1]"
           TopLeft="372,206">
@@ -13557,6 +13530,112 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Mandaty.Paths[OLE DB Source Output]"
+          TopLeft="144,64.6666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="62.6666666666663,30"
+              Start="0,0"
+              End="62.6666666666663,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11"
+                    Point2="0,15"
+                    Point3="4,15" />
+                  <mssgle:LineSegment
+                    End="58.6666666666663,15" />
+                  <mssgle:CubicBezierSegment
+                    Point1="58.6666666666663,15"
+                    Point2="62.6666666666663,15"
+                    Point3="62.6666666666663,19" />
+                  <mssgle:LineSegment
+                    End="62.6666666666663,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Mandaty.Paths[Lookup Match Output5]"
+          TopLeft="471.291663453604,511.222221628162">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.0555512550809"
+              Start="0,0"
+              End="0,20.5555512550809">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5555512550809" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,4.47308812754045,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Mandaty.Paths[Lookup Match Output4]"
+          TopLeft="469.805554882934,443.888888294829">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.6666666666663"
+              Start="0,0"
+              End="0,17.1666666666663">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.1666666666663" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,2.77864583333314,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Mandaty.Paths[Lookup Match Output3]"
+          TopLeft="466.83333277454,363.888888604773">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.3333330233896"
+              Start="0,0"
+              End="0,29.8333330233896">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.8333330233896" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,9.11197901169479,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Mandaty.Paths[Lookup Match Output2]"
           TopLeft="427.333333333334,287.333333333334">
           <EdgeLayout.Curve>
@@ -13592,105 +13671,16 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Mandaty.Paths[Lookup Match Output3]"
-          TopLeft="466.83333277454,363.888888604773">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37.3333330233896"
-              Start="0,0"
-              End="0,29.8333330233896">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.8333330233896" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,9.11197901169479,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Mandaty.Paths[Lookup Match Output4]"
-          TopLeft="469.805554882934,443.888888294829">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,24.6666666666663"
-              Start="0,0"
-              End="0,17.1666666666663">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.1666666666663" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,2.77864583333314,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="172,42.6666666666667"
-          Id="Package\Mandaty\OLE DB Destination"
-          TopLeft="386.111105357607,539.277772883243" />
-        <EdgeLayout
-          Id="Package\Mandaty.Paths[Lookup Match Output5]"
-          TopLeft="471.291663453604,511.222221628162">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28.0555512550809"
-              Start="0,0"
-              End="0,20.5555512550809">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5555512550809" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,4.47308812754045,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Mandaty\Wystawianie Mandatów">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Mandaty\Funkcjonariusz">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -13700,10 +13690,23 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Mandaty\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -13731,7 +13734,20 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Mandaty\Powód">
+    design-time-name="Package\Mandaty\Wystawianie Mandatów">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Mandaty\Osoba legitymowana">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -13741,7 +13757,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Powod]</Value>
+          type="q3:string">[dbo].[Osoba_legitymowana]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -13754,7 +13770,30 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Mandaty\Osoba legitymowana">
+    design-time-name="Package\Mandaty\Miejsce zdarzenia">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Miejsce_zdarzenia]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Mandaty\Powód">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -13764,7 +13803,7 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Osoba_legitymowana]</Value>
+          type="q3:string">[dbo].[Powod]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -13793,29 +13832,6 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
         <Name>TableInfoObjectType</Name>
         <Value
           type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Mandaty\Miejsce zdarzenia">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Miejsce_zdarzenia]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -14069,13 +14085,13 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="112,42.6666666666667"
-          Id="Package\Patrole\Patrole"
-          TopLeft="74,16.6666666666667" />
+          Size="140,42.6666666666667"
+          Id="Package\Patrole\Dane patrolu"
+          TopLeft="301.333333333333,120.666666666667" />
         <NodeLayout
-          Size="137.333333333334,42.6666666666667"
-          Id="Package\Patrole\Czas patrolu"
-          TopLeft="298,206.666666666667" />
+          Size="152,42.6666666666667"
+          Id="Package\Patrole\OLE DB Patrole"
+          TopLeft="294.666666666667,352" />
         <NodeLayout
           Size="138,42.6666666666667"
           Id="Package\Patrole\Data patrolu"
@@ -14084,6 +14100,86 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
           Size="154.666666666667,42.6666666666667"
           Id="Package\Patrole\Derived Column"
           TopLeft="88,111.333333333333" />
+        <NodeLayout
+          Size="112,42.6666666666667"
+          Id="Package\Patrole\Patrole"
+          TopLeft="74,16.6666666666667" />
+        <NodeLayout
+          Size="137.333333333334,42.6666666666667"
+          Id="Package\Patrole\Czas patrolu"
+          TopLeft="298,206.666666666667" />
+        <EdgeLayout
+          Id="Package\Patrole.Paths[Lookup Match Output2]"
+          TopLeft="368.5,320.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.3333333333333"
+              Start="0,0"
+              End="0,23.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,6.11197916666666,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Patrole.Paths[Lookup Match Output1]"
+          TopLeft="366.5,249.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.6666666666667"
+              Start="0,0"
+              End="0,21.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,4.77864583333334,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Patrole.Paths[Lookup Match Output]"
+          TopLeft="369,163.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.3333333333333"
+              Start="0,0"
+              End="0,35.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,12.1119791666666,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Patrole.Paths[Flat File Source Output]"
           TopLeft="130,59.3333333333334">
@@ -14115,13 +14211,11 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="140,42.6666666666667"
-          Id="Package\Patrole\Dane patrolu"
-          TopLeft="301.333333333333,120.666666666667" />
         <EdgeLayout
           Id="Package\Patrole.Paths[Derived Column Output]"
           TopLeft="242.666666666667,132.666666666667">
@@ -14153,82 +14247,8 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Patrole.Paths[Lookup Match Output]"
-          TopLeft="369,163.333333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43.3333333333333"
-              Start="0,0"
-              End="0,35.8333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.8333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,12.1119791666666,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Patrole.Paths[Lookup Match Output1]"
-          TopLeft="366.5,249.333333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28.6666666666667"
-              Start="0,0"
-              End="0,21.1666666666667">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.1666666666667" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,4.77864583333334,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="152,42.6666666666667"
-          Id="Package\Patrole\OLE DB Patrole"
-          TopLeft="294.666666666667,352" />
-        <EdgeLayout
-          Id="Package\Patrole.Paths[Lookup Match Output2]"
-          TopLeft="368.5,320.666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31.3333333333333"
-              Start="0,0"
-              End="0,23.8333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.8333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,6.11197916666666,96.3827734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14425,22 +14445,5 @@ where [refTable].[Rok] = ? and [refTable].[Miesiac] = ? and [refTable].[Dzien] =
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Mandaty\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <ConnectionManager
-    design-time-name="Package.ConnectionManagers[DESKTOP-R6J54M1\HDLABS]">
-    <ProjectReferenceName></ProjectReferenceName>
-  </ConnectionManager>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

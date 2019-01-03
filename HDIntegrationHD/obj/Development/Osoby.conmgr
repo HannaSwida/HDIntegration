@@ -11,7 +11,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x003C_none_x003E_"
       DTS:CodePage="1250"
-      DTS:ConnectionString="C:\Users\Felo\Desktop\ETAP 2 GENERATOR\HD-GENERATOR\t1\Osoby.bulk">
+      DTS:ConnectionString="C:\Users\Felo\Desktop\ETAP-2-GENERATOR\ETAP 2 GENERATOR\HD-GENERATOR\t1\Osoby.bulk">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -20,7 +20,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="ID"
-          DTS:DTSID="{0AFE4D77-8C7A-4BA1-8EA3-A9CADF98B0A5}"
+          DTS:DTSID="{B983608C-EA19-4BE0-A7DB-1DD113D3B18F}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Imie"
-          DTS:DTSID="{26F6AF28-0F4E-43F7-AD60-B266AAA5ACA0}"
+          DTS:DTSID="{644F2D5C-C3F2-43E1-A44B-EB1D57F1A3DA}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Nazwisko"
-          DTS:DTSID="{95574C10-A8BE-407F-8973-47C777E8FCC4}"
+          DTS:DTSID="{52302DE4-6B9E-4A7E-864D-62FCA384F276}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -47,7 +47,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Pesel"
-          DTS:DTSID="{BAB2D395-3378-4F45-AB2E-E3F816EF6CD3}"
+          DTS:DTSID="{22356CA8-C3DE-4CE0-BAC6-F5D36D037D75}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -56,7 +56,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Telefon"
-          DTS:DTSID="{4275ADDD-462B-4C67-B719-58B7336BCCB9}"
+          DTS:DTSID="{7075CFF1-2151-4560-94AB-0ED0988C7F38}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -65,7 +65,7 @@
           DTS:DataType="130"
           DTS:TextQualified="True"
           DTS:ObjectName="Mail"
-          DTS:DTSID="{6025BDBA-5794-4528-8E85-538092AFA41B}"
+          DTS:DTSID="{6DA3D050-D80A-4C42-BA8C-D3D2C73C3047}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
