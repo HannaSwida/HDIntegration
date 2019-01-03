@@ -5,10 +5,6 @@
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=192.168.0.52, 1433;User ID=admin;Initial Catalog=Policja;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
-      <DTS:Password
-        DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArmogg/lyU0+wL0imCpubXAAAAAACAAAAAAAQZgAAAAEAACAAAACMkeAkjCCVNaPZi+dK2/hWbrg8lSJGOlpKGMPP5E3jPwAAAAAOgAAAAAIAACAAAACPxeGNU2ehH92PElLV+mvz4hSp1lSLMK9IeaNQe/pW5oAAAABKYNohFT1HlU6GG9nYlE0o74OUvfC/OPAyZcEVwWs0Wb52z6LSR7jlMZb3I6wy8jKO3XhIxITNmAjGjPDO44lVSyBmiO3Ps5LIN3+uVZYaDH4KxAL55QPmbfDVXw3oEIAdA+f2+RUFGgr0ioU84TZp1RnaJffnNs+c+HJvlMMen0AAAABJgKr/f/zJgtGlWckMK4cQMdZwcC388QY0P6I8wUMabVSAQ1FhFKAv6QrWa7PXlupEbrzO5jBa66L9gWZ5R2c9</DTS:Password>
-    </DTS:ConnectionManager>
+      DTS:ConnectionString="Data Source=DESKTOP-R6J54M1\HDLABS;Initial Catalog=Policja;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>

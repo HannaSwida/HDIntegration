@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Dane"
   DTS:PackageType="5"
-  DTS:VersionBuild="57"
-  DTS:VersionGUID="{F24BAF9C-3E60-439C-945C-D6D00C6880F0}">
+  DTS:VersionBuild="61"
+  DTS:VersionGUID="{ED12B0DB-B78A-4A43-9722-54296EBF5C33}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,7 +21,6 @@
       DTS:refId="Package\Informacje o funkcjonariuszach"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{145C2D6E-31B7-4726-97F1-AD70CA8C3BDA}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -3796,7 +3795,6 @@
       DTS:refId="Package\Informacje o Osobach legitymowanych"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{5EEA382E-3CCB-46CC-84E9-5394665BB0DD}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -6571,7 +6569,6 @@
       DTS:refId="Package\Miejsce Zdarzenia"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{4BAC9439-1BBD-4D59-8DAE-8CE972A94987}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -7995,8 +7992,7 @@
       DTS:refId="Package\Patrole"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{CA782EC6-B1B3-451F-A8AF-625B948A0885}"
+      DTS:DTSID="{55545019-f495-47f4-93fd-c7e0607ef2e6}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Patrole"
@@ -8007,49 +8003,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Patrole\Multicast"
-              componentClassID="Microsoft.Multicast"
-              contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
-              name="Multicast">
-              <inputs>
-                <input
-                  refId="Package\Patrole\Multicast.Inputs[Multicast Input 1]"
-                  name="Multicast Input 1">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Patrole\Multicast.Outputs[Multicast Output 1]"
-                  deleteOutputOnPathDetached="true"
-                  name="Multicast Output 1"
-                  synchronousInputId="Package\Patrole\Multicast.Inputs[Multicast Input 1]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Patrole\Multicast.Outputs[Multicast Output 2]"
-                  deleteOutputOnPathDetached="true"
-                  name="Multicast Output 2"
-                  synchronousInputId="Package\Patrole\Multicast.Inputs[Multicast Input 1]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Patrole\Multicast.Outputs[Multicast Output 3]"
-                  dangling="true"
-                  deleteOutputOnPathDetached="true"
-                  name="Multicast Output 3"
-                  synchronousInputId="Package\Patrole\Multicast.Inputs[Multicast Input 1]">
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Patrole\OLE DB Dane patroli"
+              refId="Package\Patrole\Dane Patroli"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="OLE DB Dane patroli"
+              name="Dane Patroli"
               usesDispositions="true"
               version="4">
               <properties>
@@ -8102,7 +8060,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Patrole\OLE DB Dane patroli.Connections[OleDbConnection]"
+                  refId="Package\Patrole\Dane Patroli.Connections[OleDbConnection]"
                   connectionManagerID="{5E850A63-B3C5-4A71-AA9B-DF60415326F1}:external"
                   connectionManagerRefId="Project.ConnectionManagers[Policja_DB]"
                   description="The OLE DB runtime connection used to access the database."
@@ -8110,57 +8068,57 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Patrole\OLE DB Dane patroli.Inputs[OLE DB Destination Input]"
+                  refId="Package\Patrole\Dane Patroli.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Patrole\OLE DB Dane patroli.Inputs[OLE DB Destination Input].Columns[Numer porządkowy samochodu funkcjonariuszy]"
-                      cachedCodepage="28592"
+                      refId="Package\Patrole\Dane Patroli.Inputs[OLE DB Destination Input].Columns[Nr Porządkowy DC]"
+                      cachedCodepage="1250"
                       cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Numer porządkowy samochodu funkcjonariuszy"
-                      externalMetadataColumnId="Package\Patrole\OLE DB Dane patroli.Inputs[OLE DB Destination Input].ExternalColumns[Numer_porzadkowy_radiowozu]"
-                      lineageId="Package\Patrole\Patrole.Outputs[Flat File Source Output].Columns[Numer porządkowy samochodu funkcjonariuszy]" />
+                      cachedLength="191"
+                      cachedName="Nr Porządkowy DC"
+                      externalMetadataColumnId="Package\Patrole\Dane Patroli.Inputs[OLE DB Destination Input].ExternalColumns[Numer_porzadkowy_radiowozu]"
+                      lineageId="Package\Patrole\Derived Column.Outputs[Derived Column Output].Columns[Nr Porządkowy DC]" />
                     <inputColumn
-                      refId="Package\Patrole\OLE DB Dane patroli.Inputs[OLE DB Destination Input].Columns[Czas patrolu]"
-                      cachedCodepage="28592"
+                      refId="Package\Patrole\Dane Patroli.Inputs[OLE DB Destination Input].Columns[Czas patrolu DC]"
+                      cachedCodepage="1250"
                       cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Czas patrolu"
-                      externalMetadataColumnId="Package\Patrole\OLE DB Dane patroli.Inputs[OLE DB Destination Input].ExternalColumns[Czas_patrolu]"
-                      lineageId="Package\Patrole\Patrole.Outputs[Flat File Source Output].Columns[Czas patrolu]" />
+                      cachedLength="191"
+                      cachedName="Czas patrolu DC"
+                      externalMetadataColumnId="Package\Patrole\Dane Patroli.Inputs[OLE DB Destination Input].ExternalColumns[Czas_patrolu]"
+                      lineageId="Package\Patrole\Derived Column.Outputs[Derived Column Output].Columns[Czas patrolu DC]" />
                     <inputColumn
-                      refId="Package\Patrole\OLE DB Dane patroli.Inputs[OLE DB Destination Input].Columns[Ilość problemów podczas patrolu]"
-                      cachedCodepage="28592"
+                      refId="Package\Patrole\Dane Patroli.Inputs[OLE DB Destination Input].Columns[Ilość problemów DC]"
+                      cachedCodepage="1250"
                       cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Ilość problemów podczas patrolu"
-                      externalMetadataColumnId="Package\Patrole\OLE DB Dane patroli.Inputs[OLE DB Destination Input].ExternalColumns[Ilosc_problemow_patrolu]"
-                      lineageId="Package\Patrole\Patrole.Outputs[Flat File Source Output].Columns[Ilość problemów podczas patrolu]" />
+                      cachedLength="191"
+                      cachedName="Ilość problemów DC"
+                      externalMetadataColumnId="Package\Patrole\Dane Patroli.Inputs[OLE DB Destination Input].ExternalColumns[Ilosc_problemow_patrolu]"
+                      lineageId="Package\Patrole\Derived Column.Outputs[Derived Column Output].Columns[Ilość problemów DC]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Patrole\OLE DB Dane patroli.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      refId="Package\Patrole\Dane Patroli.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
                       dataType="i4"
                       name="Id" />
                     <externalMetadataColumn
-                      refId="Package\Patrole\OLE DB Dane patroli.Inputs[OLE DB Destination Input].ExternalColumns[Numer_porzadkowy_radiowozu]"
+                      refId="Package\Patrole\Dane Patroli.Inputs[OLE DB Destination Input].ExternalColumns[Numer_porzadkowy_radiowozu]"
                       codePage="1250"
                       dataType="str"
                       length="191"
                       name="Numer_porzadkowy_radiowozu" />
                     <externalMetadataColumn
-                      refId="Package\Patrole\OLE DB Dane patroli.Inputs[OLE DB Destination Input].ExternalColumns[Czas_patrolu]"
+                      refId="Package\Patrole\Dane Patroli.Inputs[OLE DB Destination Input].ExternalColumns[Czas_patrolu]"
                       codePage="1250"
                       dataType="str"
                       length="191"
                       name="Czas_patrolu" />
                     <externalMetadataColumn
-                      refId="Package\Patrole\OLE DB Dane patroli.Inputs[OLE DB Destination Input].ExternalColumns[Ilosc_problemow_patrolu]"
+                      refId="Package\Patrole\Dane Patroli.Inputs[OLE DB Destination Input].ExternalColumns[Ilosc_problemow_patrolu]"
                       codePage="1250"
                       dataType="str"
                       length="191"
@@ -8170,22 +8128,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Patrole\OLE DB Dane patroli.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Patrole\Dane Patroli.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Patrole\OLE DB Dane patroli.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Patrole\Dane Patroli.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Patrole\OLE DB Dane patroli.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Patrole\Dane Patroli.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Patrole\OLE DB Dane patroli.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Patrole\Dane Patroli.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Patrole\OLE DB Dane patroli.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Patrole\Dane Patroli.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Patrole\OLE DB Dane patroli.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Patrole\Dane Patroli.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -8194,96 +8152,144 @@
               </outputs>
             </component>
             <component
-              refId="Package\Patrole\OLE DB Patrole"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="OLE DB Patrole"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1250</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Patrole\OLE DB Patrole.Connections[OleDbConnection]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
+              refId="Package\Patrole\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Patrole\OLE DB Patrole.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <externalMetadataColumns
-                    isUsed="True" />
+                  refId="Package\Patrole\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Patrole\Derived Column.Inputs[Derived Column Input].Columns[Numer porządkowy samochodu funkcjonariuszy]"
+                      cachedCodepage="28592"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Numer porządkowy samochodu funkcjonariuszy"
+                      lineageId="Package\Patrole\Patrole.Outputs[Flat File Source Output].Columns[Numer porządkowy samochodu funkcjonariuszy]" />
+                    <inputColumn
+                      refId="Package\Patrole\Derived Column.Inputs[Derived Column Input].Columns[Czas patrolu]"
+                      cachedCodepage="28592"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Czas patrolu"
+                      lineageId="Package\Patrole\Patrole.Outputs[Flat File Source Output].Columns[Czas patrolu]" />
+                    <inputColumn
+                      refId="Package\Patrole\Derived Column.Inputs[Derived Column Input].Columns[Ilość problemów podczas patrolu]"
+                      cachedCodepage="28592"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ilość problemów podczas patrolu"
+                      lineageId="Package\Patrole\Patrole.Outputs[Flat File Source Output].Columns[Ilość problemów podczas patrolu]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Patrole\OLE DB Patrole.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Patrole\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Patrole\OLE DB Patrole.Inputs[OLE DB Destination Input]">
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Patrole\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Patrole\OLE DB Patrole.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Patrole\Derived Column.Outputs[Derived Column Output].Columns[Nr Porządkowy DC]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="191"
+                      lineageId="Package\Patrole\Derived Column.Outputs[Derived Column Output].Columns[Nr Porządkowy DC]"
+                      name="Nr Porządkowy DC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,191,1250)#{Package\Patrole\Patrole.Outputs[Flat File Source Output].Columns[Numer porządkowy samochodu funkcjonariuszy]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,191,1250)[Numer porządkowy samochodu funkcjonariuszy]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Patrole\Derived Column.Outputs[Derived Column Output].Columns[Czas patrolu DC]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="191"
+                      lineageId="Package\Patrole\Derived Column.Outputs[Derived Column Output].Columns[Czas patrolu DC]"
+                      name="Czas patrolu DC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,191,1250)#{Package\Patrole\Patrole.Outputs[Flat File Source Output].Columns[Czas patrolu]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,191,1250)[Czas patrolu]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Patrole\Derived Column.Outputs[Derived Column Output].Columns[Ilość problemów DC]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="191"
+                      lineageId="Package\Patrole\Derived Column.Outputs[Derived Column Output].Columns[Ilość problemów DC]"
+                      name="Ilość problemów DC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,191,1250)#{Package\Patrole\Patrole.Outputs[Flat File Source Output].Columns[Ilość problemów podczas patrolu]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,191,1250)[Ilość problemów podczas patrolu]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Patrole\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Patrole\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Patrole\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Patrole\OLE DB Patrole.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Patrole\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Patrole\OLE DB Patrole.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Patrole\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Patrole\OLE DB Patrole.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Patrole\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -8454,6 +8460,28 @@
                           name="UseBinaryFormat">false</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Patrole\Patrole.Outputs[Flat File Source Output].Columns[Data patrolu]"
+                      codePage="28592"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Patrole\Patrole.Outputs[Flat File Source Output].ExternalColumns[Data patrolu]"
+                      length="255"
+                      lineageId="Package\Patrole\Patrole.Outputs[Flat File Source Output].Columns[Data patrolu]"
+                      name="Data patrolu"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -8493,6 +8521,12 @@
                       dataType="str"
                       length="50"
                       name="Ilość problemów podczas patrolu" />
+                    <externalMetadataColumn
+                      refId="Package\Patrole\Patrole.Outputs[Flat File Source Output].ExternalColumns[Data patrolu]"
+                      codePage="28592"
+                      dataType="str"
+                      length="255"
+                      name="Data patrolu" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -8527,20 +8561,478 @@
           </components>
           <paths>
             <path
+              refId="Package\Patrole.Paths[Derived Column Output]"
+              endId="Package\Patrole\Dane Patroli.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Patrole\Derived Column.Outputs[Derived Column Output]" />
+            <path
               refId="Package\Patrole.Paths[Flat File Source Output]"
-              endId="Package\Patrole\Multicast.Inputs[Multicast Input 1]"
+              endId="Package\Patrole\Derived Column.Inputs[Derived Column Input]"
               name="Flat File Source Output"
               startId="Package\Patrole\Patrole.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Powody"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{6af01fad-2d01-4e20-a3cb-cbaf26056321}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Powody"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Powody\Dane Powody"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Dane Powody"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Powod]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Powody\Dane Powody.Connections[OleDbConnection]"
+                  connectionManagerID="{5E850A63-B3C5-4A71-AA9B-DF60415326F1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Policja_DB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Powody\Dane Powody.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Powody\Dane Powody.Inputs[OLE DB Destination Input].Columns[PowódCon]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="191"
+                      cachedName="PowódCon"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Powody\Dane Powody.Inputs[OLE DB Destination Input].ExternalColumns[Tresc_powodu]"
+                      lineageId="Package\Powody\Sort.Outputs[Sort Output].Columns[PowódCon]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Powody\Dane Powody.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Powody\Dane Powody.Inputs[OLE DB Destination Input].ExternalColumns[Tresc_powodu]"
+                      codePage="1250"
+                      dataType="str"
+                      length="191"
+                      name="Tresc_powodu" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Powody\Dane Powody.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Powody\Dane Powody.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Powody\Dane Powody.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Powody\Dane Powody.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Powody\Dane Powody.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Powody\Dane Powody.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Powody\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Powody\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Powody\Derived Column.Inputs[Derived Column Input].Columns[Powód]"
+                      cachedCodepage="1250"
+                      cachedDataType="text"
+                      cachedName="Powód"
+                      lineageId="Package\Powody\Wyst mandatow.Outputs[Flat File Source Output].Columns[Powód]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Powody\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Powody\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Powody\Derived Column.Outputs[Derived Column Output].Columns[PowódCon]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="191"
+                      lineageId="Package\Powody\Derived Column.Outputs[Derived Column Output].Columns[PowódCon]"
+                      name="PowódCon"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,191,1250)#{Package\Powody\Wyst mandatow.Outputs[Flat File Source Output].Columns[Powód]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,191,1250)[Powód]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Powody\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Powody\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Powody\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Powody\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Powody\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Powody\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Powody\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Powody\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Powody\Sort.Inputs[Sort Input].Columns[Powód]"
+                      cachedCodepage="1250"
+                      cachedDataType="text"
+                      cachedName="Powód"
+                      lineageId="Package\Powody\Wyst mandatow.Outputs[Flat File Source Output].Columns[Powód]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Powody\Sort.Inputs[Sort Input].Columns[PowódCon]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="191"
+                      cachedName="PowódCon"
+                      lineageId="Package\Powody\Derived Column.Outputs[Derived Column Output].Columns[PowódCon]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Powody\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Powody\Sort.Outputs[Sort Output].Columns[Powód]"
+                      codePage="1250"
+                      dataType="text"
+                      lineageId="Package\Powody\Sort.Outputs[Sort Output].Columns[Powód]"
+                      name="Powód">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Powody\Wyst mandatow.Outputs[Flat File Source Output].Columns[Powód]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Powody\Sort.Outputs[Sort Output].Columns[PowódCon]"
+                      codePage="1250"
+                      dataType="str"
+                      length="191"
+                      lineageId="Package\Powody\Sort.Outputs[Sort Output].Columns[PowódCon]"
+                      name="PowódCon"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Powody\Derived Column.Outputs[Derived Column Output].Columns[PowódCon]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Powody\Wyst mandatow"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1045"
+              name="Wyst mandatow"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Powody\Wyst mandatow.Connections[FlatFileConnection]"
+                  connectionManagerID="{8C47707B-22F3-47FF-B5F8-07A0E4942891}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Wystawianie Mandatów]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Powody\Wyst mandatow.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Powody\Wyst mandatow.Outputs[Flat File Source Output].Columns[Powód]"
+                      codePage="1250"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Powody\Wyst mandatow.Outputs[Flat File Source Output].ExternalColumns[Powód]"
+                      lineageId="Package\Powody\Wyst mandatow.Outputs[Flat File Source Output].Columns[Powód]"
+                      name="Powód"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Powody\Wyst mandatow.Outputs[Flat File Source Output].ExternalColumns[ID]"
+                      dataType="wstr"
+                      length="50"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Powody\Wyst mandatow.Outputs[Flat File Source Output].ExternalColumns[Kwota]"
+                      dataType="wstr"
+                      length="50"
+                      name="Kwota" />
+                    <externalMetadataColumn
+                      refId="Package\Powody\Wyst mandatow.Outputs[Flat File Source Output].ExternalColumns[Powód]"
+                      codePage="1250"
+                      dataType="text"
+                      name="Powód" />
+                    <externalMetadataColumn
+                      refId="Package\Powody\Wyst mandatow.Outputs[Flat File Source Output].ExternalColumns[Czas Wystawienia]"
+                      dataType="date"
+                      name="Czas Wystawienia" />
+                    <externalMetadataColumn
+                      refId="Package\Powody\Wyst mandatow.Outputs[Flat File Source Output].ExternalColumns[Osoba Legitymowana (FK)]"
+                      dataType="wstr"
+                      length="50"
+                      name="Osoba Legitymowana (FK)" />
+                    <externalMetadataColumn
+                      refId="Package\Powody\Wyst mandatow.Outputs[Flat File Source Output].ExternalColumns[Miejsce Zdarzenia (FK)]"
+                      dataType="wstr"
+                      length="50"
+                      name="Miejsce Zdarzenia (FK)" />
+                    <externalMetadataColumn
+                      refId="Package\Powody\Wyst mandatow.Outputs[Flat File Source Output].ExternalColumns[Funkcjonariusz (FK)]"
+                      dataType="wstr"
+                      length="50"
+                      name="Funkcjonariusz (FK)" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Powody\Wyst mandatow.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Powody\Wyst mandatow.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1250"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Powody\Wyst mandatow.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Powody\Wyst mandatow.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Powody\Wyst mandatow.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Powody\Wyst mandatow.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Powody\Wyst mandatow.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
             <path
-              refId="Package\Patrole.Paths[Multicast Output 1]"
-              endId="Package\Patrole\OLE DB Dane patroli.Inputs[OLE DB Destination Input]"
-              name="Multicast Output 1"
-              startId="Package\Patrole\Multicast.Outputs[Multicast Output 1]" />
+              refId="Package\Powody.Paths[Derived Column Output]"
+              endId="Package\Powody\Sort.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\Powody\Derived Column.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Patrole.Paths[Multicast Output 2]"
-              endId="Package\Patrole\OLE DB Patrole.Inputs[OLE DB Destination Input]"
-              name="Multicast Output 2"
-              startId="Package\Patrole\Multicast.Outputs[Multicast Output 2]" />
+              refId="Package\Powody.Paths[Flat File Source Output]"
+              endId="Package\Powody\Derived Column.Inputs[Derived Column Input]"
+              name="Flat File Source Output"
+              startId="Package\Powody\Wyst mandatow.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Powody.Paths[Sort Output]"
+              endId="Package\Powody\Dane Powody.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Powody\Sort.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -8563,6 +9055,22 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Miejsce Zdarzenia" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{8DF0ADBC-3272-4431-8073-1376B7C43977}"
+      DTS:From="Package\Miejsce Zdarzenia"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Powody" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{735ACFC4-BB06-482F-95A4-9AE274CCFF54}"
+      DTS:From="Package\Powody"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Patrole" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -8575,26 +9083,30 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="227,43"
+          Size="226.666666666667,42.6666666666667"
           Id="Package\Informacje o funkcjonariuszach"
-          TopLeft="104.333332911134,401.466664977471" />
+          TopLeft="79.3333329111337,123.466664977471" />
         <NodeLayout
-          Size="261,41"
+          Size="261.333333333334,41.3333333333334"
           Id="Package\Informacje o Osobach legitymowanych"
-          TopLeft="94.1190486992805,312.352941998144" />
+          TopLeft="69.1190486992805,34.352941998144" />
         <NodeLayout
-          Size="163,42"
+          Size="162.666666666667,42"
           Id="Package\Miejsce Zdarzenia"
-          TopLeft="134,489" />
+          TopLeft="109,211" />
         <NodeLayout
-          Size="112,42"
+          Size="111.333333333334,41.3333333333334"
           Id="Package\Patrole"
-          TopLeft="478,78" />
+          TopLeft="136.666664630175,371.799993351698" />
+        <NodeLayout
+          Size="115.333333333334,41.3333333333334"
+          Id="Package\Powody"
+          TopLeft="133.333331346512,287.083328199883" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="221.226190805207,353.686275331478">
+          TopLeft="196.226190805207,75.686275331478">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8616,7 +9128,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="216.666666455567,444.466664977471">
+          TopLeft="191.666666455567,166.466664977471">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8628,6 +9140,50 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,37.0333350225289" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="190.666665673256,253">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.0833281998834"
+              Start="0,0"
+              End="0,26.5833281998834">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5833281998834" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="191.66666465501,328.416661533217">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.3833318184812"
+              Start="0,0"
+              End="0,35.8833318184812">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.8833318184812" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8953,6 +9509,30 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Informacje o funkcjonariuszach.Paths[Merge Join Output]"
+          TopLeft="303,467.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Informacje o funkcjonariuszach.Paths[Merge Join Output1]"
           TopLeft="113,258">
           <EdgeLayout.Curve>
@@ -8978,30 +9558,6 @@
                     Point3="22,36.75" />
                   <mssgle:LineSegment
                     End="22,58" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Informacje o funkcjonariuszach.Paths[Merge Join Output]"
-          TopLeft="303,467.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10086,109 +10642,161 @@
     design-time-name="Package\Patrole">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="112,42"
+          Size="152.666666666667,41.3333333333334"
+          Id="Package\Patrole\Derived Column"
+          TopLeft="69.7142869015129,125.411766464735" />
+        <NodeLayout
+          Size="136,41.3333333333334"
+          Id="Package\Patrole\Dane Patroli"
+          TopLeft="73.0317484285354,241.757519707384" />
+        <NodeLayout
+          Size="112,42.6666666666667"
           Id="Package\Patrole\Patrole"
-          TopLeft="174,17" />
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Patrole\OLE DB Patrole"
-          TopLeft="270,247" />
-        <NodeLayout
-          Size="120,42"
-          Id="Package\Patrole\Multicast"
-          TopLeft="172,88" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Patrole\OLE DB Dane patroli"
-          TopLeft="39,247" />
-        <EdgeLayout
-          Id="Package\Patrole.Paths[Multicast Output 2]"
-          TopLeft="250.666666666667,130">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="94.8333333333333,117"
-              Start="0,0"
-              End="94.8333333333333,109.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.7236842105263" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,43.7236842105263"
-                    Point2="0,47.7236842105263"
-                    Point3="4,47.7236842105263" />
-                  <mssgle:LineSegment
-                    End="90.8333333333333,47.7236842105263" />
-                  <mssgle:CubicBezierSegment
-                    Point1="90.8333333333333,47.7236842105263"
-                    Point2="94.8333333333333,47.7236842105263"
-                    Point3="94.8333333333333,51.7236842105263" />
-                  <mssgle:LineSegment
-                    End="94.8333333333333,109.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Patrole.Paths[Multicast Output 1]"
-          TopLeft="232,130">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-105.5,117"
-              Start="0,0"
-              End="-105.5,109.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,54.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,54.5"
-                    Point2="0,58.5"
-                    Point3="-4,58.5" />
-                  <mssgle:LineSegment
-                    End="-101.5,58.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-101.5,58.5"
-                    Point2="-105.5,58.5"
-                    Point3="-105.5,62.5" />
-                  <mssgle:LineSegment
-                    End="-105.5,109.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="86.1190485800712,38.184314233359" />
         <EdgeLayout
           Id="Package\Patrole.Paths[Flat File Source Output]"
-          TopLeft="231,59">
+          TopLeft="144.083334407459,80.8509809000256">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,29"
+              EndConnector="0,44.5607855647093"
               Start="0,0"
-              End="0,21.5">
+              End="0,37.0607855647093">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.5" />
+                    End="0,37.0607855647093" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Patrole.Paths[Derived Column Output]"
+          TopLeft="143.539684331691,166.745099798068">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,75.0124199093156"
+              Start="0,0"
+              End="0,67.5124199093156">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.5124199093156" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Powody">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="154.666666666667,41.3333333333334"
+          Id="Package\Powody\Wyst mandatow"
+          TopLeft="123.428573530548,40.3764711545001" />
+        <NodeLayout
+          Size="97.3333333333334,41.3333333333334"
+          Id="Package\Powody\Sort"
+          TopLeft="150.285716845065,198.82353220019" />
+        <NodeLayout
+          Size="142.666666666667,41.3333333333334"
+          Id="Package\Powody\Dane Powody"
+          TopLeft="428.000007288797,227.670591058038" />
+        <NodeLayout
+          Size="152.666666666667,41.3333333333334"
+          Id="Package\Powody\Derived Column"
+          TopLeft="116.928573326189,117.688236744099" />
+        <EdgeLayout
+          Id="Package\Powody.Paths[Sort Output]"
+          TopLeft="247.885716845065,219.62353220019">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="180.114290443732,28.8470588578485"
+              Start="0,0"
+              End="172.614290443732,28.8470588578485">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="86.057145221866,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="86.057145221866,0"
+                    Point2="90.057145221866,0"
+                    Point3="90.057145221866,4" />
+                  <mssgle:LineSegment
+                    End="90.057145221866,24.8470588578485" />
+                  <mssgle:CubicBezierSegment
+                    Point1="90.057145221866,24.8470588578485"
+                    Point2="90.057145221866,28.8470588578485"
+                    Point3="94.057145221866,28.8470588578485" />
+                  <mssgle:LineSegment
+                    End="172.614290443732,28.8470588578485" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Powody.Paths[Flat File Source Output]"
+          TopLeft="196.978573428368,81.9764711545">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.7117655895986"
+              Start="0,0"
+              End="0,28.2117655895986">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.2117655895986" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Powody.Paths[Derived Column Output]"
+          TopLeft="196.207145085627,159.288236744099">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.535295456091"
+              Start="0,0"
+              End="0,32.035295456091">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.035295456091" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10202,18 +10810,5 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Patrole\OLE DB Dane patroli">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
