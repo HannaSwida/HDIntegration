@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="Policja_DB"
+  DTS:ObjectName="Policja_OLAP"
   DTS:DTSID="{5E850A63-B3C5-4A71-AA9B-DF60415326F1}"
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
