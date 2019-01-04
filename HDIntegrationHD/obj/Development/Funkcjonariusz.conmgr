@@ -11,7 +11,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x003C_none_x003E_"
       DTS:CodePage="1250"
-      DTS:ConnectionString="C:\Users\Felo\Desktop\ETAP-2-GENERATOR\ETAP 2 GENERATOR\HD-GENERATOR\t1\Funkcjonariusz.bulk">
+      DTS:ConnectionString="C:\Users\Felo\Desktop\HD-GENERATOR\t1\Funkcjonariusz.bulk">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -20,7 +20,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="ID"
-          DTS:DTSID="{03A73C5D-70C0-4916-B482-5A9C122CBF9A}"
+          DTS:DTSID="{757FEBAD-6AA6-447E-BC8D-970B6EA23818}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Stopień"
-          DTS:DTSID="{4B23B02D-02B5-45F3-BC84-0FE0EC07780E}"
+          DTS:DTSID="{CCCFF54D-14AC-46C3-8B1B-A749A5369328}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -38,7 +38,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Dane Osoby (FK)"
-          DTS:DTSID="{80573143-CAC1-4709-9F18-756141819411}"
+          DTS:DTSID="{485368E9-B75E-425C-A4A5-05E3E2571622}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -47,7 +47,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Miejsce Przydziału (FK)"
-          DTS:DTSID="{8660E031-CD9F-4F5D-980C-4E7BC89CF288}"
+          DTS:DTSID="{12FCA372-56D3-456F-8FDA-552D47543E77}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

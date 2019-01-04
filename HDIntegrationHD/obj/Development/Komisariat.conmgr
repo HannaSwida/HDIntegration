@@ -11,7 +11,7 @@
       DTS:RowDelimiter=""
       DTS:TextQualifier="_x003C_none_x003E_"
       DTS:CodePage="1250"
-      DTS:ConnectionString="C:\Users\Felo\Desktop\ETAP-2-GENERATOR\ETAP 2 GENERATOR\HD-GENERATOR\t1\Komisariat.bulk">
+      DTS:ConnectionString="C:\Users\Felo\Desktop\HD-GENERATOR\t1\Komisariat.bulk">
       <DTS:FlatFileColumns>
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -20,7 +20,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="ID"
-          DTS:DTSID="{6106E6CF-9661-481E-873C-97D595A5108B}"
+          DTS:DTSID="{62FF3B09-31A4-4F47-B33E-0BDF5EE65EFC}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -29,7 +29,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Nazwa"
-          DTS:DTSID="{A4E4DAFA-5112-465B-B4A8-971693CE75B0}"
+          DTS:DTSID="{0090496E-4A33-4700-AA79-39B3A0E13AF1}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -37,8 +37,8 @@
           DTS:MaximumWidth="50"
           DTS:DataType="129"
           DTS:TextQualified="True"
-          DTS:ObjectName="Adres (FK)"
-          DTS:DTSID="{0F6EBAD9-7B10-42C2-A08A-B1F66F92083E}"
+          DTS:ObjectName="Adres"
+          DTS:DTSID="{7DC76BAF-F86F-4087-8C31-FD1B8618198C}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>

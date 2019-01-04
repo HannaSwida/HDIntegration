@@ -21,7 +21,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Numer porządkowy samochodu funkcjonariuszy"
-          DTS:DTSID="{AD2AEAA3-F711-49FC-BA3B-66A66D9B9832}"
+          DTS:DTSID="{EF128B8B-9AEF-41A3-B2DE-B377EA918938}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -30,7 +30,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Długość trasy patrolu"
-          DTS:DTSID="{D467FAFE-B2E3-431A-A377-3786CDF8CD75}"
+          DTS:DTSID="{0540E135-27DC-4D09-B079-497D7D4EF2F7}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Początek trasy"
-          DTS:DTSID="{22739CCD-6EE2-44CE-825B-9262104DFDDE}"
+          DTS:DTSID="{B65492C8-E74C-4EA1-A745-E03C9018AD57}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Koniec trasy"
-          DTS:DTSID="{5CD5E588-1978-4B27-BB22-2D077612769E}"
+          DTS:DTSID="{FBA44378-8C91-42D4-90A8-045AB13C682C}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Czas patrolu"
-          DTS:DTSID="{B0249553-9ACF-4E97-9AB9-FB55177AF52B}"
+          DTS:DTSID="{0DB28F14-56A5-4E52-86FF-67D6C94A7FF8}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
@@ -66,15 +66,15 @@
           DTS:DataType="129"
           DTS:TextQualified="True"
           DTS:ObjectName="Ilość problemów podczas patrolu"
-          DTS:DTSID="{62672D4E-CB75-482F-B164-377E6C582CA4}"
+          DTS:DTSID="{4A39799D-9A82-4397-BB98-895374FD2ADA}"
           DTS:CreationName="" />
         <DTS:FlatFileColumn
           DTS:ColumnType="Delimited"
           DTS:ColumnDelimiter="_x000D__x000A_"
-          DTS:DataType="7"
+          DTS:DataType="135"
           DTS:TextQualified="True"
           DTS:ObjectName="Data patrolu"
-          DTS:DTSID="{4639A6A5-CDCF-4E16-AB91-19149AFF0D6F}"
+          DTS:DTSID="{68A667A3-DED9-4B63-8315-7E3F9A0E5298}"
           DTS:CreationName="" />
       </DTS:FlatFileColumns>
     </DTS:ConnectionManager>
